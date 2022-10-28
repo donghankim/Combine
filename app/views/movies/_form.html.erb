@@ -1,0 +1,48 @@
+<%= form_with(model: movie) do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+        <% movie.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.text_field :name, class: "form-control", placeholder: "Movie Title" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.text_field :director, class: "form-control", placeholder: "Director" %>
+  </div>
+
+  <div class="field mb-3">
+    <div id="emailHelp" class="form-text">List movie stars you would like to include</div>
+    <%= form.text_field :movie_stars, class: "form-control", placeholder: "Movie Stars" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.number_field :year, class: "form-control", placeholder: "Year Released" %>
+  </div>
+
+  <div class="field mb-3">
+    <div id="emailHelp" class="form-text">List all relevant genres</div>
+    <%= form.text_field :genre, class: "form-control", placeholder: "Genre" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.text_field :rating, class: "form-control", placeholder: "Rating" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.number_field :user_id, id: :movie_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+  <div class="action">
+    <%= form.submit class:'btn btn-outline-secondary' %>
+    <%= link_to 'Return', movies_path, class: "btn btn-outline-secondary" %>
+  </div>
+<% end %>
