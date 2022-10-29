@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @podcast.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @podcast.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @podcast.company %>
+</p>
+
+<p>
+  <strong>Recent episode:</strong>
+  <%= @podcast.recent_episode %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @podcast.genre %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @podcast.rating %>
+</p>
+
+<%= link_to 'Edit', edit_podcast_path(@podcast) %> |
+<%= link_to 'Back', podcasts_path %>

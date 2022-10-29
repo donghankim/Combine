@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Podcasts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Recent episode</th>
+      <th>Genre</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @podcasts.each do |podcast| %>
+      <tr>
+        <td><%= podcast.user_id %></td>
+        <td><%= podcast.name %></td>
+        <td><%= podcast.company %></td>
+        <td><%= podcast.recent_episode %></td>
+        <td><%= podcast.genre %></td>
+        <td><%= podcast.rating %></td>
+        <td><%= link_to 'Show', podcast %></td>
+        <td><%= link_to 'Edit', edit_podcast_path(podcast) %></td>
+        <td><%= link_to 'Destroy', podcast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Podcast', new_podcast_path %>

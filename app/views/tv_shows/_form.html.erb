@@ -1,0 +1,52 @@
+<%= form_with(model: tv_show) do |form| %>
+  <% if tv_show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tv_show.errors.count, "error") %> prohibited this tv_show from being saved:</h2>
+
+      <ul>
+        <% tv_show.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :director %>
+    <%= form.text_field :director %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show_stars %>
+    <%= form.text_field :show_stars %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seasons %>
+    <%= form.number_field :seasons %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre %>
+    <%= form.text_field :genre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

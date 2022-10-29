@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_28_205624) do
+ActiveRecord::Schema.define(version: 2022_10_29_004347) do
+
+  create_table "games", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "company"
+    t.integer "year"
+    t.string "genre"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "name"
@@ -23,6 +35,31 @@ ActiveRecord::Schema.define(version: 2022_10_28_205624) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_movies_on_user_id"
+  end
+
+  create_table "podcasts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "company"
+    t.string "recent_episode"
+    t.string "genre"
+    t.float "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_podcasts_on_user_id"
+  end
+
+  create_table "tv_shows", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "director"
+    t.string "show_stars"
+    t.integer "seasons"
+    t.string "genre"
+    t.float "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tv_shows_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
