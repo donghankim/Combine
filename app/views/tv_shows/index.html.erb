@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Tv Shows</h1>
+<h3>Tv Shows</h3>
+<%= link_to 'New Tv Show', new_tv_show_path, class: "btn btn-outline-secondary"%>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>User</th>
@@ -12,7 +12,6 @@
       <th>Seasons</th>
       <th>Genre</th>
       <th>Rating</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -26,14 +25,10 @@
         <td><%= tv_show.seasons %></td>
         <td><%= tv_show.genre %></td>
         <td><%= tv_show.rating %></td>
-        <td><%= link_to 'Show', tv_show %></td>
-        <td><%= link_to 'Edit', edit_tv_show_path(tv_show) %></td>
-        <td><%= link_to 'Destroy', tv_show, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Tv Show', new_tv_show_path %>
+

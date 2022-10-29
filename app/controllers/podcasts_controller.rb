@@ -1,6 +1,7 @@
 class PodcastsController < ApplicationController
   before_action :set_podcast, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :isVerified, only: [:edit, :update, :destroy]
   # GET /podcasts or /podcasts.json
   def index
     @podcasts = Podcast.all
@@ -12,7 +13,7 @@ class PodcastsController < ApplicationController
 
   # GET /podcasts/new
   def new
-    @podcast = Podcast.new
+    @podcast = current_user.podcast.build
   end
 
   # GET /podcasts/1/edit
@@ -21,7 +22,7 @@ class PodcastsController < ApplicationController
 
   # POST /podcasts or /podcasts.json
   def create
-    @podcast = Podcast.new(podcast_params)
+    @podcast = current_user.podcast.build(podcast_params)
 
     respond_to do |format|
       if @podcast.save
@@ -52,9 +53,14 @@ class PodcastsController < ApplicationController
     @podcast.destroy
 
     respond_to do |format|
-      format.html { redirect_to podcasts_url, notice: "Podcast was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Podcast was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def isVerified
+    @poscast = current_user.podcast.find_by(id: params[:id])
+    redirect_to root_path, notice: "Not Authorized To Edit or Delete This Podcast" if @podcast.nil?
   end
 
   private

@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :isVerified, only: [:edit, :update, :destroy]
   # GET /games or /games.json
   def index
     @games = Game.all
@@ -12,7 +13,7 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = current_user.game.build
   end
 
   # GET /games/1/edit
@@ -21,7 +22,7 @@ class GamesController < ApplicationController
 
   # POST /games or /games.json
   def create
-    @game = Game.new(game_params)
+    @game = current_user.game.build(game_params)
 
     respond_to do |format|
       if @game.save
@@ -52,9 +53,14 @@ class GamesController < ApplicationController
     @game.destroy
 
     respond_to do |format|
-      format.html { redirect_to games_url, notice: "Game was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Game was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def isVerified
+    @game = current_user.game.find_by(id: params[:id])
+    redirect_to game_path, notice: "Not Authorized To Edit or Delete This Game" if @game.nil?
   end
 
   private

@@ -1,6 +1,5 @@
-<h1>My Movies</h1>
-<br/>
-<br/>
+<h3>My Movies</h3>
+<%= link_to 'Add Movie', new_movie_path, class: "btn btn-outline-secondary" %>
 
 <table class="table table-hover">
   <thead>
@@ -15,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @movies.each_with_index do |movie, index| %>
+    <% @movies.each do |movie| %>
       <% if movie.user == current_user %>
         <tr>
           <td><%= link_to movie.name, movie %></td>
@@ -30,5 +29,3 @@
   </tbody>
 </table>
 
-<br>
-<%= link_to 'New Movie', new_movie_path, class: "btn btn-outline-secondary" %>

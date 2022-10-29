@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :movie
+         has_many :game
+         has_many :podcast
+         has_many :tv_show
 end

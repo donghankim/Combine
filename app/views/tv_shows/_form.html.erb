@@ -11,42 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+  <div class="field mb-3">
+    <%= form.text_field :name, class: "form-control", placeholder: "Show Title" %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field mb-3">
+    <%= form.text_field :director, class: "form-control", placeholder: "Director" %>
   </div>
 
-  <div class="field">
-    <%= form.label :director %>
-    <%= form.text_field :director %>
+  <div class="field mb-3">
+    <div id="emailHelp" class="form-text">List show stars you would like to include</div>
+    <%= form.text_field :show_stars, class: "form-control", placeholder: "Show Stars" %>
   </div>
 
-  <div class="field">
-    <%= form.label :show_stars %>
-    <%= form.text_field :show_stars %>
+  <div class="field mb-3">
+    <%= form.number_field :seasons, class: "form-control", placeholder: "Number of Seasons" %>
   </div>
 
-  <div class="field">
-    <%= form.label :seasons %>
-    <%= form.number_field :seasons %>
+  <div class="field mb-3">
+    <div id="emailHelp" class="form-text">List all relevant genres</div>
+    <%= form.text_field :genre, class: "form-control", placeholder: "Genre" %>
   </div>
 
-  <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre %>
+  <div class="field mb-3">
+    <%= form.text_field :rating, class: "form-control", placeholder: "Rating" %>
   </div>
 
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.text_field :rating %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="action">
+    <%= form.submit class:'btn btn-outline-secondary' %>
+    <%= link_to 'Return', @tv_show, class: "btn btn-outline-secondary" %>
   </div>
 <% end %>

@@ -1,37 +1,27 @@
-<p id="notice"><%= notice %></p>
+<h3>My Games</h3>
+<%= link_to 'Add Game', new_game_path, class: "btn btn-outline-secondary" %>
 
-<h1>Games</h1>
-
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>User</th>
       <th>Name</th>
       <th>Company</th>
       <th>Year</th>
       <th>Genre</th>
       <th>Rating</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= game.user_id %></td>
-        <td><%= game.name %></td>
+        <td><%= link_to game.name, game %></td>
         <td><%= game.company %></td>
         <td><%= game.year %></td>
         <td><%= game.genre %></td>
         <td><%= game.rating %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Game', new_game_path %>

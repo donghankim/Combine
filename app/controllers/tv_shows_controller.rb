@@ -1,5 +1,7 @@
 class TvShowsController < ApplicationController
   before_action :set_tv_show, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :isVerified, only: [:edit, :update, :destroy]
 
   # GET /tv_shows or /tv_shows.json
   def index
@@ -12,7 +14,7 @@ class TvShowsController < ApplicationController
 
   # GET /tv_shows/new
   def new
-    @tv_show = TvShow.new
+    @tv_show = current_user.tv_show.build
   end
 
   # GET /tv_shows/1/edit
@@ -21,7 +23,7 @@ class TvShowsController < ApplicationController
 
   # POST /tv_shows or /tv_shows.json
   def create
-    @tv_show = TvShow.new(tv_show_params)
+    @tv_show = current_user.tv_show.build(tv_show_params)
 
     respond_to do |format|
       if @tv_show.save
@@ -52,9 +54,14 @@ class TvShowsController < ApplicationController
     @tv_show.destroy
 
     respond_to do |format|
-      format.html { redirect_to tv_shows_url, notice: "Tv show was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Tv show was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def isVerified
+    @tv_show = current_user.tv_show.find_by(id: params[:id])
+    redirect_to movies_path, notice: "Not Authorized To Edit or Delete This Show" if @tv_show.nil?
   end
 
   private

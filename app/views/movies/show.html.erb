@@ -72,17 +72,15 @@
         -webkit-overflow-scrolling: touch;
       }
     </style>
-
-
   </head>
 
   <body>
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
+        <%= link_to 'Return', root_path, class: "btn btn-outline-secondary btn-lg" %>
         <h1 class="display-5 fw-bold"><%= @movie.name %>:</h1><h1 class="display-5 fw-bold"><%= @movie.rating %></h1>
         <p class="col-md-8 fs-4"><%= @movie.director %></p>
         <%= link_to 'Edit Movie', edit_movie_path(@movie), class: "btn btn-outline-secondary btn-lg" %>
-        <%= link_to 'Return', movies_path, class: "btn btn-outline-secondary btn-lg" %>
         <%= link_to 'Destroy', @movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger" %>
       </div>
     </div>

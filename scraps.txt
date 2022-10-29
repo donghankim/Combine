@@ -1,0 +1,2 @@
+<%= render 'movies/form', movie: @movies %>
+<%= current_user.inspect %>

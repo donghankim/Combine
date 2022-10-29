@@ -1,2 +1,141 @@
-<h1>My Media</h1>
+<% if user_signed_in? %>
+    <!-- Movie -->
+    <h3>My Movies</h3>
+    <%= link_to 'Add Movie', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Director</th>
+        <th>Movie stars</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @userMovies.each do |movie| %>
+        <% if movie.user == current_user %>
+            <tr>
+            <td><%= link_to movie.name, movie %></td>
+            <td><%= movie.director %></td>
+            <td><%= movie.movie_stars %></td>
+            <td><%= movie.year %></td>
+            <td><%= movie.genre %></td>
+            <td><%= movie.rating %></td>
+            </tr>
+        <% end %>
+        <% end %>
+    </tbody>
+    </table>
+    <br/>
+
+    <!-- TV Shows -->
+    <h3>My TV Shows</h3>
+    <%= link_to 'New Tv Show', new_tv_show_path, class: "btn btn-outline-secondary btn-sm"%>
+
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Director</th>
+        <th>Show stars</th>
+        <th>Seasons</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @userShows.each do |tv_show| %>
+        <tr>
+            <td><%= link_to tv_show.name, tv_show %></td>
+            <td><%= tv_show.director %></td>
+            <td><%= tv_show.show_stars %></td>
+            <td><%= tv_show.seasons %></td>
+            <td><%= tv_show.genre %></td>
+            <td><%= tv_show.rating %></td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+    <br/>
+
+    <!-- Podcasts -->
+    <h3>My Podcasts</h3>
+    <%= link_to 'Add Podcast', new_podcast_path, class: "btn btn-outline-secondary btn-sm" %>
+
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Recent episode</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @userPodcasts.each do |podcast| %>
+        <tr>
+            <td><%= link_to podcast.name, podcast %></td>
+            <td><%= podcast.company %></td>
+            <td><%= podcast.recent_episode %></td>
+            <td><%= podcast.genre %></td>
+            <td><%= podcast.rating %></td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+    <br/>
+
+    <!-- Games -->
+    <h3>My Games</h3>
+    <%= link_to 'Add Game', new_game_path, class: "btn btn-outline-secondary btn-sm" %>
+
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @userGames.each do |game| %>
+        <tr>
+            <td><%= link_to game.name, game %></td>
+            <td><%= game.company %></td>
+            <td><%= game.year %></td>
+            <td><%= game.genre %></td>
+            <td><%= game.rating %></td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+    <br/>
+
+<% else %>
+
+<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Welcome to Combine!</h1>
+        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary btn-lg px-4 me-sm-3" %>
+            <%= link_to 'Login', new_user_session_path, class: "btn btn-outline-primary btn-lg px-4 me-2" %>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+        <%= image_tag "landing.webp", class: "rounded-lg-3", width: 720 %>
+      </div>
+</div>
+
+<% end %>
+
 
