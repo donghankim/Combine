@@ -58,4 +58,7 @@ rake db:migrate
 
 # start server on localhost:3000
 rails server
+
+# to run cucumber tests
+bundle exec cucumber
 ```
