@@ -1,20 +1,20 @@
 # Group 29: Combine!
 
-Jade Kaleel jik2124\
-Donghan Kim dk3245\
-Elia Lejzerowicz eel2157\
-Tianyu Yang ty2467
+* Jade Kaleel jik2124\
+* Donghan Kim dk3245\
+* Elia Lejzerowicz eel2157\
+* Tianyu Yang ty2467
 
 <a href="https://group29-combine.herokuapp.com/" target="_blank">Heroku deployment</a>
 
 ## Software Requirements
-Ruby Version: 2.6.6\
-Rails Version: 6.1.7\
-Node Version: v14.20.1\
-Development DB: sqlite3 v1.4\
-Production DB: postgres v1.4\
-OS: Mac Monterey 12.5\
-Heroku stack: 20
+* Ruby Version: 2.6.6\
+* Rails Version: 6.1.7\
+* Node Version: v14.20.1\
+* Development DB: sqlite3 v1.4\
+* Production DB: postgres v1.4\
+* OS: Mac Monterey 12.5\
+* Heroku stack: 20
 
 
 ## Software Installations Guide
