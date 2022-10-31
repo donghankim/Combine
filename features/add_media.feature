@@ -13,7 +13,7 @@ Background: the user exists
 Scenario: add a movie
   # enter step(s) to go to add movie page
   When  I am on the new movie page
-  
+
   # enter step(s) to add movie to a profile
   Given a movie
   And add the movie "The Incredibles"
