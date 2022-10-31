@@ -3,6 +3,14 @@ Given /(.*) user exists/ do |user|
   #TODO
 end
 
+Given /a movie/ do
+  @movieName = "The Incredibles"
+end
+
+And /add the movie "(.*)"/ do |movie|
+  Movie.create movie
+end
+
 #confirms you are on a certain page
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
