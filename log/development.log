@@ -18027,3 +18027,386 @@ Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-29 
   
 ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
   
+Started GET "/" for ::1 at 2022-10-30 20:46:35 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 54.1ms | Allocations: 19434)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 984)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 429)
+  Rendered layout layouts/application.html.erb (Duration: 77.4ms | Allocations: 25748)
+Completed 200 OK in 112ms (Views: 85.6ms | ActiveRecord: 0.0ms | Allocations: 32093)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:46:36 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 710)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5784)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 6273)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started GET "/users/sign_in" for ::1 at 2022-10-30 20:46:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 645)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5087)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 745)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 10390)
+Completed 200 OK in 47ms (Views: 26.4ms | ActiveRecord: 1.1ms | Allocations: 17075)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started POST "/users/sign_in" for ::1 at 2022-10-30 20:46:39 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1831ms (ActiveRecord: 1.2ms | Allocations: 4672)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:46:40 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mGame Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mPodcast Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 764)
+  Rendered layouts/_alerts.html.erb (Duration: 0.6ms | Allocations: 151)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 7080)
+Completed 200 OK in 38ms (Views: 11.6ms | ActiveRecord: 2.1ms | Allocations: 15240)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started GET "/movies/new" for ::1 at 2022-10-30 20:46:42 -0400
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.3ms | Allocations: 1693)
+  Rendered movies/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 784)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 7156)
+Completed 200 OK in 50ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 17149)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started POST "/movies" for ::1 at 2022-10-30 20:46:47 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"name"=>"asda", "director"=>"adad", "movie_stars"=>"asda", "year"=>"2312", "genre"=>"adas", "rating"=>"1", "user_id"=>"2"}, "commit"=>"Create Movie"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:29:in `block in create'
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "movie_stars", "year", "genre", "rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "asda"], ["director", "adad"], ["movie_stars", "asda"], ["year", 2312], ["genre", "adas"], ["rating", 1.0], ["created_at", "2022-10-31 00:46:47.830137"], ["updated_at", "2022-10-31 00:46:47.830137"], ["user_id", 2]]
+  ↳ app/controllers/movies_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/movies/12
+Completed 302 Found in 27ms (ActiveRecord: 1.7ms | Allocations: 4115)
+
+
+Started GET "/movies/12" for ::1 at 2022-10-30 20:46:47 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:70:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 501)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:17
+  Rendered layouts/_header.html.erb (Duration: 4.3ms | Allocations: 1698)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 6733)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.3ms | Allocations: 8031)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started GET "/" for ::1 at 2022-10-30 20:46:48 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mMovie Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mGame Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mPodcast Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =2)[0m
+  ↳ app/views/home/index.html.erb:25
+  Rendered home/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 760)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7204)
+Completed 200 OK in 39ms (Views: 16.0ms | ActiveRecord: 1.5ms | Allocations: 10992)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started DELETE "/users/sign_out" for ::1 at 2022-10-30 20:46:53 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms | Allocations: 2241)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:46:53 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 706)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 5879)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 6368)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started GET "/home/recommendations" for ::1 at 2022-10-30 20:46:54 -0400
+Processing by HomeController#recommendations as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-30 20:46:54 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1070)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 732)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 6384)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 7013)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started GET "/" for ::1 at 2022-10-30 20:46:56 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 706)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 5769)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 6263)
+
+
+Started GET "/docs/5.2/assets/img/favicons/manifest.json" for ::1 at 2022-10-30 20:46:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/docs/5.2/assets/img/favicons/manifest.json"):
+  
+Started GET "/" for ::1 at 2022-10-30 20:47:51 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1913)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 963)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 7853)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.0ms | Allocations: 9176)
+
+
+Started GET "/home/about" for ::1 at 2022-10-30 20:47:56 -0400
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 1.5ms | Allocations: 192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 770)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 5377)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 5891)
+
+
+Started GET "/home/recommendations" for ::1 at 2022-10-30 20:47:57 -0400
+Processing by HomeController#recommendations as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-30 20:47:57 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 554)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1855)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 732)
+  Rendered layouts/_alerts.html.erb (Duration: 0.5ms | Allocations: 148)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 7404)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 8994)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-10-30 20:47:58 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1803ms (ActiveRecord: 0.4ms | Allocations: 3347)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:48:00 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mMovie Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mGame Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =2)[0m
+  ↳ app/views/home/index.html.erb:25
+  Rendered home/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 760)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7312)
+Completed 200 OK in 25ms (Views: 12.7ms | ActiveRecord: 0.9ms | Allocations: 11100)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-10-30 20:48:02 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.4ms | Allocations: 1765)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:48:02 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 706)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5879)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 6368)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:50:26 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1916)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 963)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 7855)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.0ms | Allocations: 9178)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:50:27 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 710)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 5782)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 6266)
+
+
+Started GET "/home/recommendations" for ::1 at 2022-10-30 20:50:28 -0400
+Processing by HomeController#recommendations as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-30 20:50:28 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 554)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1858)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 732)
+  Rendered layouts/_alerts.html.erb (Duration: 0.6ms | Allocations: 148)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 7408)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 9001)
+
+
+Started GET "/" for ::1 at 2022-10-30 20:50:30 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 710)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 5813)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 6715)
+
+
