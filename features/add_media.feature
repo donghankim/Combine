@@ -7,7 +7,7 @@ Feature: Add a media type to the user's profile
 Background: the user exists
 
   Given test@columbia.edu user exists:
-  And  I am on the Combine home page
+  And I am on the Combine home page
   Then 0 types of media should exist
 
 Scenario: add a movie

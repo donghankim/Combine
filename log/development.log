@@ -18410,3 +18410,458 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 6715)
 
 
+Started GET "/" for ::1 at 2022-10-31 02:51:19 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 6993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1011)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 429)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 13340)
+Completed 200 OK in 30ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 16501)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-31 02:51:21 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 645)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 5274)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 744)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 10457)
+Completed 200 OK in 43ms (Views: 24.1ms | ActiveRecord: 1.0ms | Allocations: 16986)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-10-31 02:51:30 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1056ms (ActiveRecord: 1.3ms | Allocations: 4918)
+
+
+Started GET "/" for ::1 at 2022-10-31 02:51:31 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mGame Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =2)[0m
+  ↳ app/views/home/index.html.erb:25
+  Rendered home/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 6968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 776)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 12441)
+Completed 200 OK in 28ms (Views: 14.5ms | ActiveRecord: 1.2ms | Allocations: 20548)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-10-31 02:55:02 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 58ms (ActiveRecord: 0.4ms | Allocations: 8845)
+
+
+Started GET "/" for ::1 at 2022-10-31 02:55:02 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 722)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 5918)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 6415)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-31 02:55:05 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1076)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 744)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 6430)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 7040)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-10-31 02:55:07 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1052ms (ActiveRecord: 0.4ms | Allocations: 2328)
+
+
+Started GET "/" for ::1 at 2022-10-31 02:55:09 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mPodcast Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =2)[0m
+  ↳ app/views/home/index.html.erb:25
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 768)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7322)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 11109)
+
+
+Started GET "/movies/new" for ::1 at 2022-10-31 03:00:23 -0400
+Processing by MoviesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 3.7ms | Allocations: 1638)
+  Rendered movies/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 796)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 7115)
+Completed 200 OK in 25ms (Views: 11.5ms | ActiveRecord: 0.4ms | Allocations: 13315)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-10-31 03:03:57 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.5ms | Allocations: 1768)
+
+
+Started GET "/" for ::1 at 2022-10-31 03:03:57 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 722)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5916)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 6406)
+
+
+Started GET "/movies/new" for ::1 at 2022-10-31 03:04:07 -0400
+Processing by MoviesController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 244)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-31 03:04:07 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1070)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 744)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 6291)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 6909)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-10-31 03:04:14 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/movies/new
+Completed 302 Found in 1048ms (ActiveRecord: 0.4ms | Allocations: 2327)
+
+
+Started GET "/movies/new" for ::1 at 2022-10-31 03:04:15 -0400
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 1.2ms | Allocations: 1049)
+  Rendered movies/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 790)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6466)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 8195)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-10-31 03:13:29 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 2.2ms | Allocations: 2837)
+
+
+Started GET "/" for ::1 at 2022-10-31 03:13:29 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 740)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 718)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 41)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5903)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 6397)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-31 03:13:31 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 170)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 736)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6412)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 7026)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-10-31 03:13:36 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.5ms | Allocations: 1520)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 170)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1059)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 709)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 6252)
+Completed 200 OK in 1041ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 6831)
+
+
+Started GET "/" for ::1 at 2022-10-31 03:15:42 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 779)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 718)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 6389)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 6881)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-31 03:17:44 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.9ms | Allocations: 999)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2316)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 993)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 8569)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 10365)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-31 03:18:46 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 554)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1855)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 993)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 430)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 7967)
+Completed 200 OK in 49ms (Views: 44.9ms | ActiveRecord: 0.0ms | Allocations: 9747)
+
+
+Started GET "/" for ::1 at 2022-10-31 03:18:47 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 722)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7093)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 8646)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-10-31 03:18:51 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 227)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 154)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1618)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 744)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 6796)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 8039)
+
+
+Started GET "/" for ::1 at 2022-10-31 03:21:27 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1925)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 975)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 8479)
+Completed 200 OK in 33ms (Views: 30.7ms | Allocations: 9802)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-10-31 03:21:28 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 565)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 744)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 7664)
+Completed 200 OK in 33ms (Views: 30.2ms | Allocations: 9234)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-10-31 03:21:30 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1055ms (ActiveRecord: 1.1ms | Allocations: 4394)
+
+
+Started GET "/" for ::1 at 2022-10-31 03:21:31 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mTvShow Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =2)[0m
+  ↳ app/views/home/index.html.erb:25
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 773)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 152)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 7579)
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 11410)
+
+
+Started GET "/movies/12" for ::1 at 2022-10-31 03:21:32 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:70:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 502)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:17
+  Rendered layouts/_header.html.erb (Duration: 6.3ms | Allocations: 1708)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 6643)
+Completed 200 OK in 34ms (Views: 23.0ms | ActiveRecord: 0.7ms | Allocations: 8534)
+
+
+Started DELETE "/movies/12" for ::1 at 2022-10-31 03:22:20 -0400
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"12"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:70:in `set_movie'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:63:in `isVerified'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:54:in `destroy'
+  [1m[36mMovie Destroy (0.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/movies_controller.rb:54:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:54:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 2.7ms | Allocations: 4734)
+
+
+Started GET "/" for ::1 at 2022-10-31 03:22:20 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mMovie Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2804)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1025)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 148)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 9145)
+Completed 200 OK in 29ms (Views: 16.4ms | ActiveRecord: 0.6ms | Allocations: 13766)
+
+
+Started GET "/movies/new" for ::1 at 2022-10-31 03:37:27 -0400
+Processing by MoviesController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 3.1ms | Allocations: 1550)
+  Rendered movies/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1899)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 796)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 7127)
+Completed 200 OK in 31ms (Views: 13.1ms | ActiveRecord: 1.1ms | Allocations: 11024)
+
+

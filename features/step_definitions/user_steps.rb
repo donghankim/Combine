@@ -41,10 +41,10 @@ end
 
 def sign_in
   visit root_path
-  click_on "Login"
+  click_on "Log In"
   fill_in "Email", :with => @visitor[:email]
   fill_in "Password", :with => @visitor[:password]
-  click_on "Log in"
+  click_on "Log In"
 end
 
 def sign_out

@@ -13,7 +13,7 @@ end
 
 #confirms you are on a certain page
 Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
+  visit page_name
 end
 
 #how many movies are in the user's profile
