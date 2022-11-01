@@ -1,11 +1,8 @@
-# Group 29: Combine!
+# [Group 29] Combine!: <a href="https://group29-combine.herokuapp.com/" target="_blank">Heroku Link</a>
 
 * Jade Kaleel jik2124
 * Donghan Kim dk3245
 * Elia Lejzerowicz eel2157
-* Tianyu Yang ty2467
-
-<a href="https://group29-combine.herokuapp.com/" target="_blank">Heroku deployment</a>
 
 ## Software Requirements
 * Ruby Version: 2.6.6
@@ -15,7 +12,6 @@
 * Production DB: postgres v1.4
 * OS: Mac Monterey 12.5
 * Heroku stack: 20
-
 
 ## Software Installations Guide
 ALL packages were installed using homebrew. These steps will work on **M1/M2 macbooks**. However, for other mac variants some of these steps might not work at once.
@@ -41,7 +37,7 @@ brew install sqlite3
 brew install postgresql
 ```
 
-## Application Development
+## Application Local Development
 The following are instructions to run this application on your local machine
 ```sh
 # cloning the repository

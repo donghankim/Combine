@@ -23,5 +23,5 @@ Feature: Add New Tv-show
     Scenario: Delete a TV-show
       When I add a tv-show
       And I click on the new tv-show
-      When I press "Destroy"
+      When I press "Remove"
       Then I should not see the tv-show

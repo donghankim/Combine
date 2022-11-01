@@ -23,5 +23,5 @@ Feature: Add New Podcast
     Scenario: Delete a Podcast
       When I add a podcast
       And I click on the new podcast
-      When I press "Destroy"
+      When I press "Remove"
       Then I should not see the podcast

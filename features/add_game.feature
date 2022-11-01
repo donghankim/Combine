@@ -23,5 +23,5 @@ Feature: Add New Game
     Scenario: Delete a Game
       When I add a game
       And I click on the new game
-      When I press "Destroy"
+      When I press "Remove"
       Then I should not see the game
