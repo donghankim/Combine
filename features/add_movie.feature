@@ -8,9 +8,4 @@ Feature: Add New Movie
       And I press "Create Movie"
       Then I should see the movie card page
       When I press "Return"
-      Then I should see the the new movie on my movies table
-
-
-
-
-
+      Then I should see the new movie on my movies table
