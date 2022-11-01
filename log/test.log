@@ -31388,3 +31388,1913 @@ Processing by Devise::RegistrationsController#create as HTML
 Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 6250)
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$f6GQURDVIZsVVye4yBR8Qu6aRhcZCjxcYVudmqR2ZPiQMr4WXJENG"], ["created_at", "2022-11-01 17:21:14.200454"], ["updated_at", "2022-11-01 17:21:14.200454"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 76.6ms | Allocations: 25834)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 963)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 397)
+  Rendered layout layouts/application.html.erb (Duration: 84.2ms | Allocations: 30015)
+Completed 200 OK in 100ms (Views: 87.0ms | ActiveRecord: 0.0ms | Allocations: 33029)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 611)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 8211)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 9963)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 2543)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1596)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 744)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 5148)
+Completed 200 OK in 22ms (Views: 8.3ms | ActiveRecord: 1.2ms | Allocations: 10879)
+Started GET "/games/new" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/_form.html.erb (Duration: 2.9ms | Allocations: 1350)
+  Rendered games/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1613)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 764)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4978)
+Completed 200 OK in 27ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 12856)
+Started POST "/games" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"game"=>{"name"=>"Mario", "company"=>"someone", "year"=>"2010", "genre"=>"genre1, genre2", "rating"=>"10.5"}, "commit"=>"Create Game"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "name", "company", "year", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Mario"], ["company", "someone"], ["year", 2010], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:14.488585"], ["updated_at", "2022-11-01 17:21:14.488585"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/games/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1352)
+Started GET "/games/1" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 463)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1021)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4131)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4974)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4772)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 6137)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$U5YTOf9tsPsv18AH4eB9..w3q6OgAGqFzIn7NVK.JjKGgLrq4TCEK"], ["created_at", "2022-11-01 17:21:14.580286"], ["updated_at", "2022-11-01 17:21:14.580286"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 708)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3899)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4302)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4722)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 890)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 6248)
+Started GET "/games/new" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/_form.html.erb (Duration: 1.5ms | Allocations: 766)
+  Rendered games/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 810)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4168)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 5034)
+Started POST "/games" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"game"=>{"name"=>"Mario", "company"=>"someone", "year"=>"2010", "genre"=>"genre1, genre2", "rating"=>"10.5"}, "commit"=>"Create Game"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.1ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "name", "company", "year", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Mario"], ["company", "someone"], ["year", 2010], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:14.683479"], ["updated_at", "2022-11-01 17:21:14.683479"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/games/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1276)
+Started GET "/games/1" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3831)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4390)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4751)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 6111)
+Started GET "/games/1" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4320)
+Started GET "/games/1/edit" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ? AND "games"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/edit.html.erb within layouts/application
+  Rendered games/_form.html.erb (Duration: 1.7ms | Allocations: 899)
+  Rendered games/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 764)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4400)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 5714)
+Started PATCH "/games/1" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#update as HTML
+  Parameters: {"game"=>{"name"=>"Mario 2.0", "company"=>"someone better", "year"=>"2020", "genre"=>"genre1, genre2, genre3", "rating"=>"100.5"}, "commit"=>"Update Game", "id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ? AND "games"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Update (0.1ms)[0m  [1m[33mUPDATE "games" SET "name" = ?, "company" = ?, "year" = ?, "genre" = ?, "rating" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["name", "Mario 2.0"], ["company", "someone better"], ["year", 2020], ["genre", "genre1, genre2, genre3"], ["rating", 100.5], ["updated_at", "2022-11-01 17:21:14.771447"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/games/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 1632)
+Started GET "/games/1" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3833)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4389)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1523)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4771)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 6132)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$OJKMSdh9j7PW4rnWEgzpxu9WuVdj.3ns7yqgChhd/KRre6pJkEMTy"], ["created_at", "2022-11-01 17:21:14.849177"], ["updated_at", "2022-11-01 17:21:14.849177"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4296)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4720)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 888)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6261)
+Started GET "/games/new" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/_form.html.erb (Duration: 1.5ms | Allocations: 764)
+  Rendered games/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 808)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4166)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 5037)
+Started POST "/games" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"game"=>{"name"=>"Mario", "company"=>"someone", "year"=>"2010", "genre"=>"genre1, genre2", "rating"=>"10.5"}, "commit"=>"Create Game"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.1ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "name", "company", "year", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Mario"], ["company", "someone"], ["year", 2010], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:14.952579"], ["updated_at", "2022-11-01 17:21:14.952579"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/games/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1276)
+Started GET "/games/1" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 22.2ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 3831)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.1ms | Allocations: 4384)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4751)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 6121)
+Started GET "/games/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4334)
+Started DELETE "/games/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by GamesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ? AND "games"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Destroy (0.1ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1284)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4873)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 6252)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$1E9K3RwcppierbvRodROceIs3lgNlh72TnX05jQwWxU0IqQ1fLUMy"], ["created_at", "2022-11-01 17:21:15.069706"], ["updated_at", "2022-11-01 17:21:15.069706"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4184)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4701)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 890)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6247)
+Started GET "/movies/new" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 2.9ms | Allocations: 1435)
+  Rendered movies/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 764)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 5060)
+Completed 200 OK in 24ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 11321)
+Started POST "/movies" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"name"=>"Avengers", "director"=>"someone", "movie_stars"=>"actor1, actor2, actor3", "year"=>"2010", "genre"=>"genre1, genre2", "rating"=>"10.5", "user_id"=>"1"}, "commit"=>"Create Movie"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "movie_stars", "year", "genre", "rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Avengers"], ["director", "someone"], ["movie_stars", "actor1, actor2, actor3"], ["year", 2010], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:15.189136"], ["updated_at", "2022-11-01 17:21:15.189136"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1354)
+Started GET "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1021)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4119)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4950)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1531)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4779)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 6138)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$/jrSra9mYjkZitnL0dIbIevOVseVouL0Vr0fNIoIkg0RM9f3XyUIK"], ["created_at", "2022-11-01 17:21:15.274110"], ["updated_at", "2022-11-01 17:21:15.274110"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4296)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4720)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 888)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 6263)
+Started GET "/movies/new" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 1.7ms | Allocations: 929)
+  Rendered movies/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4331)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 5194)
+Started POST "/movies" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"name"=>"Avengers", "director"=>"someone", "movie_stars"=>"actor1, actor2, actor3", "year"=>"2010", "genre"=>"genre1, genre2", "rating"=>"10.5", "user_id"=>"1"}, "commit"=>"Create Movie"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "movie_stars", "year", "genre", "rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Avengers"], ["director", "someone"], ["movie_stars", "actor1, actor2, actor3"], ["year", 2010], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:15.375872"], ["updated_at", "2022-11-01 17:21:15.375872"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1302)
+Started GET "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3831)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4383)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 1520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 4759)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.5ms | Allocations: 6117)
+Started GET "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4313)
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 1.9ms | Allocations: 1062)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 764)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4567)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 5882)
+Started PATCH "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>{"name"=>"Avengers 2.0", "director"=>"someone better", "movie_stars"=>"actor1, actor2, actor3, actor4", "year"=>"2020", "genre"=>"genre1, genre2, genre3", "rating"=>"100.5", "user_id"=>"1"}, "commit"=>"Update Movie", "id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "name" = ?, "director" = ?, "movie_stars" = ?, "year" = ?, "genre" = ?, "rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["name", "Avengers 2.0"], ["director", "someone better"], ["movie_stars", "actor1, actor2, actor3, actor4"], ["year", 2020], ["genre", "genre1, genre2, genre3"], ["rating", 100.5], ["updated_at", "2022-11-01 17:21:15.485682"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 1632)
+Started GET "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3833)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4382)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1532)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4780)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 6159)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$r8.xTf9kgm7jtoCdh1t45uYuc5oJNDsAJh.tDN3dU2UJw6osKGRr6"], ["created_at", "2022-11-01 17:21:15.567753"], ["updated_at", "2022-11-01 17:21:15.567753"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4296)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4720)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 890)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6259)
+Started GET "/movies/new" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 1.7ms | Allocations: 926)
+  Rendered movies/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4328)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 5196)
+Started POST "/movies" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"movie"=>{"name"=>"Avengers", "director"=>"someone", "movie_stars"=>"actor1, actor2, actor3", "year"=>"2010", "genre"=>"genre1, genre2", "rating"=>"10.5", "user_id"=>"1"}, "commit"=>"Create Movie"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "director", "movie_stars", "year", "genre", "rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Avengers"], ["director", "someone"], ["movie_stars", "actor1, actor2, actor3"], ["year", 2010], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:15.669194"], ["updated_at", "2022-11-01 17:21:15.669194"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/movies/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1300)
+Started GET "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3831)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 4395)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4759)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 6127)
+Started GET "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4327)
+Started DELETE "/movies/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by MoviesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1274)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4873)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6252)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$edPly/7CZ9R65hYZJgiwzOgRRGij6/HUIlC3ZYk/4WzgZ5tMvMsIW"], ["created_at", "2022-11-01 17:21:15.764523"], ["updated_at", "2022-11-01 17:21:15.764523"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4184)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4701)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 888)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 20.5ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 4872)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.4ms | Allocations: 6257)
+Started GET "/podcasts/new" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (Duration: 2.8ms | Allocations: 1328)
+  Rendered podcasts/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1591)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 764)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4956)
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 10724)
+Started POST "/podcasts" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by PodcastsController#create as HTML
+  Parameters: {"podcast"=>{"name"=>"Riverdale", "company"=>"someone", "recent_episode"=>"episode one, episode two", "genre"=>"genre1, genre2", "rating"=>"10.5", "user_id"=>"1"}, "commit"=>"Create Podcast"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPodcast Create (0.2ms)[0m  [1m[32mINSERT INTO "podcasts" ("user_id", "name", "company", "recent_episode", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Riverdale"], ["company", "someone"], ["recent_episode", "episode one, episode two"], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:15.903729"], ["updated_at", "2022-11-01 17:21:15.903729"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/podcasts/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1327)
+Started GET "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1021)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4119)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4951)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1525)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4773)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 6150)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$NBWYjmlKiTP9CVWfeixEO.S/VWATnicsT0UZq7kyZb3r07dJZ/tc."], ["created_at", "2022-11-01 17:21:15.982365"], ["updated_at", "2022-11-01 17:21:15.982365"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:15 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4296)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4720)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 890)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6265)
+Started GET "/podcasts/new" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (Duration: 1.6ms | Allocations: 846)
+  Rendered podcasts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4248)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 5118)
+Started POST "/podcasts" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#create as HTML
+  Parameters: {"podcast"=>{"name"=>"Riverdale", "company"=>"someone", "recent_episode"=>"episode one, episode two", "genre"=>"genre1, genre2", "rating"=>"10.5", "user_id"=>"1"}, "commit"=>"Create Podcast"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPodcast Create (0.1ms)[0m  [1m[32mINSERT INTO "podcasts" ("user_id", "name", "company", "recent_episode", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Riverdale"], ["company", "someone"], ["recent_episode", "episode one, episode two"], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:16.084826"], ["updated_at", "2022-11-01 17:21:16.084826"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/podcasts/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1291)
+Started GET "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3831)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4385)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4753)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 6113)
+Started GET "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4315)
+Started GET "/podcasts/1/edit" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."user_id" = ? AND "podcasts"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/edit.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (Duration: 1.7ms | Allocations: 970)
+  Rendered podcasts/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 764)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4470)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 5779)
+Started PATCH "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#update as HTML
+  Parameters: {"podcast"=>{"name"=>"Riverdale 2.0", "company"=>"someone better", "recent_episode"=>"episode one, episode two, episode three", "genre"=>"genre1, genre2, genre3", "rating"=>"100.5", "user_id"=>"1"}, "commit"=>"Update Podcast", "id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."user_id" = ? AND "podcasts"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPodcast Update (0.1ms)[0m  [1m[33mUPDATE "podcasts" SET "name" = ?, "company" = ?, "recent_episode" = ?, "genre" = ?, "rating" = ?, "updated_at" = ? WHERE "podcasts"."id" = ?[0m  [["name", "Riverdale 2.0"], ["company", "someone better"], ["recent_episode", "episode one, episode two, episode three"], ["genre", "genre1, genre2, genre3"], ["rating", 100.5], ["updated_at", "2022-11-01 17:21:16.171243"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/podcasts/1
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 2020)
+Started GET "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3833)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4410)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1525)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4773)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 6146)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$02fxqTcb.Kx5lLUjo.OomuPc1UzJBgyJiQDp2QDFweoZ7B0Yt4u6O"], ["created_at", "2022-11-01 17:21:16.269421"], ["updated_at", "2022-11-01 17:21:16.269421"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4300)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4722)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 890)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6259)
+Started GET "/podcasts/new" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/new.html.erb within layouts/application
+  Rendered podcasts/_form.html.erb (Duration: 1.6ms | Allocations: 843)
+  Rendered podcasts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4245)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 5122)
+Started POST "/podcasts" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#create as HTML
+  Parameters: {"podcast"=>{"name"=>"Riverdale", "company"=>"someone", "recent_episode"=>"episode one, episode two", "genre"=>"genre1, genre2", "rating"=>"10.5", "user_id"=>"1"}, "commit"=>"Create Podcast"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPodcast Create (0.2ms)[0m  [1m[32mINSERT INTO "podcasts" ("user_id", "name", "company", "recent_episode", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Riverdale"], ["company", "someone"], ["recent_episode", "episode one, episode two"], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:16.370142"], ["updated_at", "2022-11-01 17:21:16.370142"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/podcasts/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1277)
+Started GET "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3831)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 4383)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4753)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 6127)
+Started GET "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering podcasts/show.html.erb within layouts/application
+  Rendered podcasts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4303)
+Started DELETE "/podcasts/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by PodcastsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPodcast Load (0.1ms)[0m  [1m[34mSELECT "podcasts".* FROM "podcasts" WHERE "podcasts"."user_id" = ? AND "podcasts"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPodcast Destroy (0.1ms)[0m  [1m[31mDELETE FROM "podcasts" WHERE "podcasts"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1282)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4873)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6256)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$506d3d3vG6sgzmE3MM6p8eHariFjqGvl33/CU9xpfgiZ0aBZUSZc."], ["created_at", "2022-11-01 17:21:16.465257"], ["updated_at", "2022-11-01 17:21:16.465257"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4184)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4701)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 888)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 6255)
+Started GET "/tv_shows/new" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/new.html.erb within layouts/application
+  Rendered tv_shows/_form.html.erb (Duration: 2.8ms | Allocations: 1397)
+  Rendered tv_shows/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1658)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 765)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5024)
+Completed 200 OK in 24ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 11298)
+Started POST "/tv_shows" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#create as HTML
+  Parameters: {"tv_show"=>{"name"=>"Riverdale", "director"=>"someone", "show_stars"=>"actor1, actor2, actor3", "seasons"=>"10", "genre"=>"genre1, genre2", "rating"=>"10.5"}, "commit"=>"Create Tv show"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTvShow Create (0.2ms)[0m  [1m[32mINSERT INTO "tv_shows" ("user_id", "name", "director", "show_stars", "seasons", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Riverdale"], ["director", "someone"], ["show_stars", "actor1, actor2, actor3"], ["seasons", 10], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:16.586972"], ["updated_at", "2022-11-01 17:21:16.586972"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tv_shows/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1348)
+Started GET "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/show.html.erb within layouts/application
+  Rendered tv_shows/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1021)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4115)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4954)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1531)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4779)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 6152)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$RV342ex6tFIDYwtqLETNle0VLiVFIGCROi3TXdSWEZZjKheOoXb0K"], ["created_at", "2022-11-01 17:21:16.690495"], ["updated_at", "2022-11-01 17:21:16.690495"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4300)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4722)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 890)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 6255)
+Started GET "/tv_shows/new" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/new.html.erb within layouts/application
+  Rendered tv_shows/_form.html.erb (Duration: 1.6ms | Allocations: 883)
+  Rendered tv_shows/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4285)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 5156)
+Started POST "/tv_shows" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#create as HTML
+  Parameters: {"tv_show"=>{"name"=>"Riverdale", "director"=>"someone", "show_stars"=>"actor1, actor2, actor3", "seasons"=>"10", "genre"=>"genre1, genre2", "rating"=>"10.5"}, "commit"=>"Create Tv show"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTvShow Create (0.2ms)[0m  [1m[32mINSERT INTO "tv_shows" ("user_id", "name", "director", "show_stars", "seasons", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Riverdale"], ["director", "someone"], ["show_stars", "actor1, actor2, actor3"], ["seasons", 10], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:16.792072"], ["updated_at", "2022-11-01 17:21:16.792072"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tv_shows/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1288)
+Started GET "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/show.html.erb within layouts/application
+  Rendered tv_shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3831)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4379)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4759)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 6125)
+Started GET "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/show.html.erb within layouts/application
+  Rendered tv_shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4319)
+Started GET "/tv_shows/1/edit" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."user_id" = ? AND "tv_shows"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/edit.html.erb within layouts/application
+  Rendered tv_shows/_form.html.erb (Duration: 1.8ms | Allocations: 1019)
+  Rendered tv_shows/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 765)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4521)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 5836)
+Started PATCH "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#update as HTML
+  Parameters: {"tv_show"=>{"name"=>"Riverdale 2.0", "director"=>"someone better", "show_stars"=>"actor1, actor2, actor3, actor4", "seasons"=>"100", "genre"=>"genre1, genre2, genre3", "rating"=>"100.5"}, "commit"=>"Update Tv show", "id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."user_id" = ? AND "tv_shows"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTvShow Update (0.1ms)[0m  [1m[33mUPDATE "tv_shows" SET "name" = ?, "director" = ?, "show_stars" = ?, "seasons" = ?, "genre" = ?, "rating" = ?, "updated_at" = ? WHERE "tv_shows"."id" = ?[0m  [["name", "Riverdale 2.0"], ["director", "someone better"], ["show_stars", "actor1, actor2, actor3, actor4"], ["seasons", 100], ["genre", "genre1, genre2, genre3"], ["rating", 100.5], ["updated_at", "2022-11-01 17:21:16.878894"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tv_shows/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 1617)
+Started GET "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by TvShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/show.html.erb within layouts/application
+  Rendered tv_shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 172)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3832)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4387)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1532)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4780)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 6139)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@columbia.edu"], ["encrypted_password", "$2a$04$zs6ZP6pmXpgAOwXxRqgeyexUNSs9EuXpcfr18i.N7DdZkU5Ov2vpu"], ["created_at", "2022-11-01 17:21:16.962913"], ["updated_at", "2022-11-01 17:21:16.962913"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4296)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4202)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4720)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-11-01 13:21:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 888)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4872)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6255)
+Started GET "/tv_shows/new" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by TvShowsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/new.html.erb within layouts/application
+  Rendered tv_shows/_form.html.erb (Duration: 1.6ms | Allocations: 881)
+  Rendered tv_shows/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 925)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 758)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4283)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 5159)
+Started POST "/tv_shows" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by TvShowsController#create as HTML
+  Parameters: {"tv_show"=>{"name"=>"Riverdale", "director"=>"someone", "show_stars"=>"actor1, actor2, actor3", "seasons"=>"10", "genre"=>"genre1, genre2", "rating"=>"10.5"}, "commit"=>"Create Tv show"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTvShow Create (0.2ms)[0m  [1m[32mINSERT INTO "tv_shows" ("user_id", "name", "director", "show_stars", "seasons", "genre", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Riverdale"], ["director", "someone"], ["show_stars", "actor1, actor2, actor3"], ["seasons", 10], ["genre", "genre1, genre2"], ["rating", 10.5], ["created_at", "2022-11-01 17:21:17.084685"], ["updated_at", "2022-11-01 17:21:17.084685"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tv_shows/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1308)
+Started GET "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by TvShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/show.html.erb within layouts/application
+  Rendered tv_shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3831)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4385)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE (user_id =1)[0m
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4759)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 6139)
+Started GET "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by TvShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tv_shows/show.html.erb within layouts/application
+  Rendered tv_shows/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3779)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 4329)
+Started DELETE "/tv_shows/1" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by TvShowsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTvShow Load (0.1ms)[0m  [1m[34mSELECT "tv_shows".* FROM "tv_shows" WHERE "tv_shows"."user_id" = ? AND "tv_shows"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTvShow Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tv_shows" WHERE "tv_shows"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1258)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 734)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4873)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 6258)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4294)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 194)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1392)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4705)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 5859)
+Started POST "/users" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"manny@testerman.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "manny@testerman.com"], ["encrypted_password", "$2a$04$/QFvHPlDIT/4kkBrZelyxuZLWLkH4SXu533M133iqBe7cpPZs7rEW"], ["created_at", "2022-11-01 17:21:17.246803"], ["updated_at", "2022-11-01 17:21:17.246803"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms | Allocations: 1688)
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGame Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPodcast Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "podcasts" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTvShow Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tv_shows" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1591)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4891)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 6283)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3898)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 4296)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "notanemail"], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 683)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3987)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4439)
+Started POST "/users" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"notanemail", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "notanemail"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 606)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1585)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4882)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 6223)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "notanemail"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4294)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3983)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4435)
+Started POST "/users" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"manny@testerman.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.3ms | Allocations: 1120)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2419)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 5716)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 7128)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4294)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3896)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3983)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4438)
+Started POST "/users" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"manny@testerman.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 548)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1540)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4837)
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 6250)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4294)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 686)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3896)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4294)
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3983)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4435)
+Started POST "/users" for 127.0.0.1 at 2022-11-01 13:21:17 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"manny@testerman.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 548)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1540)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 704)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 285)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4837)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 6250)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "manny@testerman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
