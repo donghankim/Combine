@@ -8,5 +8,5 @@ Feature: Add New Podcast
       And I press "Create Podcast"
       Then I should see the podcast card page
       When I press "Return"
-      Then I should see the the new podcast on my podcast table
+      Then I should see the new podcast on my podcast table
 

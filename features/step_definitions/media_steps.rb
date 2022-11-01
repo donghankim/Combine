@@ -1,27 +1,20 @@
-#adds the user to the database
-Given /(.*) user exists/ do |user|
-  #TODO
+def create_media_visitor
+  @media_user = User.create!({
+             :email => "test@columbia.edu",
+             :password => "test123",
+             :password_confirmation => "test123"
+           })
 end
 
-Given /a movie/ do
-  @movieName = "The Incredibles"
+Given /^user has logged in$/ do
+  create_media_visitor
+  visit root_path
+  click_on "Log In"
+  fill_in "Email", :with => "test@columbia.edu"
+  fill_in "Password", :with => "test123"
+  click_on "Log In"
 end
 
-And /add the movie "(.*)"/ do |movie|
-  Movie.create movie
-end
-
-#confirms you are on a certain page
-Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit page_name
-end
-
-#how many movies are in the user's profile
-Then /(.*) types of media should exist/ do | n_movies |
-  expect(Movie.count).to eq n_movies.to_i
-end
-
-#a certain type of media is on the page
-Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  expect(page).to have_content(text)
+When('I press {string}') do |string|
+  click_on string
 end

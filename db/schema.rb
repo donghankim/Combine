@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_10_29_004347) do
     t.string "company"
     t.integer "year"
     t.string "genre"
-    t.integer "rating"
+    t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_games_on_user_id"
