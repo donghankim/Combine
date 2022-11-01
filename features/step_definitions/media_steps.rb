@@ -18,3 +18,7 @@ end
 When('I press {string}') do |string|
   click_on string
 end
+
+Then('I should see "Are you sure?"') do
+  expect(page).to have_content("Are you sure?")
+end
