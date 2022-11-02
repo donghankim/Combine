@@ -58,3 +58,4 @@ rails server
 # to run cucumber tests
 bundle exec cucumber
 ```
+If you get an error from running bundle install, try using **sudo bundle install**. This is not recommended, but will solve any permission errors you encounter.
