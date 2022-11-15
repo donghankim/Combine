@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/recommendations'
   get 'home/friends'
+  get 'home/search'
+
 
 end

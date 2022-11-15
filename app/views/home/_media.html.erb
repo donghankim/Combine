@@ -1,0 +1,10 @@
+<div class="input-group mb-3" style="width:400px;">
+    <input type="text" class="form-control" placeholder="Search">
+    <%= link_to 'Add Movie', home_search_path, class: "btn btn-outline-secondary"%>
+</div>
+
+<% if @moviesEmpty %>
+    <p>No movies!</p>
+<% else %>
+    <p>We have movies!</p>
+<% end %>

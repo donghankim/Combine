@@ -1,7 +1,10 @@
 <% if user_signed_in? %>
     <!-- Movie -->
+
+
     <h3>My Movies</h3>
-    <%= link_to 'Add Movie', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
+    <%= render 'media', data: @userMovies, empty: @moviesEmpty %>
+
     <table class="table table-hover">
     <thead>
         <tr>

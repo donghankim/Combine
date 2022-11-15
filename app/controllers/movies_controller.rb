@@ -15,6 +15,8 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = current_user.movie.build
+    fetch_movie("Avengers")
+    puts "hello world!"
   end
 
   # GET /movies/1/edit
