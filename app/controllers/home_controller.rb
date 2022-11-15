@@ -10,6 +10,7 @@ class HomeController < ApplicationController
       @userGames = Game.where("user_id =?", current_user.id)
       @userPodcasts = Podcast.where("user_id =?", current_user.id)
       @userShows = TvShow.where("user_id =?", current_user.id)
+      @userFriends = Friend.where("user_id =?", current_user.id)
 
       @moviesEmpty = isEmpty(@userMovies)
       @gamesEmpty = isEmpty(@userGames)
@@ -26,6 +27,15 @@ class HomeController < ApplicationController
     if !user_signed_in?
       flash[:notice] = "You need to log in first!"
       redirect_to new_user_session_path
+    end
+    
+    @friendsEmpty = false
+
+    if user_signed_in?
+      @userFriends = Friend.where("user_id =?", current_user.id)
+      @users = User.where("id !=?", 0)
+
+      @friendsEmpty = isEmpty(@userFriends)
     end
   end
 
