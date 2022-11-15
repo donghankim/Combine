@@ -85,6 +85,158 @@
           </tr>
         <% end %>
         </h1>
+        </br>
+
+        <!-- Movies -->
+        <h3><%= @friend.name %>'s Movies</h3>
+          <table class="table table-hover">
+          <thead>
+              <tr>
+              <th>Name</th>
+              <th>Director</th>
+              <th>Movie stars</th>
+              <th>Year</th>
+              <th>Genre</th>
+              <th>Rating</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <% if @friendsMoviesEmpty %>
+                  <tr>
+                      <td colspan="100%", style = "text-align: center;">They have not added any movies...
+                          <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                      </td>
+                  </tr>
+              <% else %>
+                  <% @friendsMovies.each do |movie| %>
+                      <tr>
+                      <td><%= movie.name %></td>
+                      <td><%= movie.director %></td>
+                      <td><%= movie.movie_stars %></td>
+                      <td><%= movie.year %></td>
+                      <td><%= movie.genre %></td>
+                      <td><%= movie.rating %></td>
+                      </tr>
+                  <% end %>
+              <% end %>
+
+          </tbody>
+          </table>
+
+          <br/>
+
+          <!-- TV Shows -->
+          <h3><%= @friend.name %>'s TV Shows</h3>
+
+          <table class="table table-hover">
+          <thead>
+              <tr>
+              <th>Name</th>
+              <th>Director</th>
+              <th>Show stars</th>
+              <th>Seasons</th>
+              <th>Genre</th>
+              <th>Rating</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <% if @friendsShowsEmpty %>
+                  <tr>
+                      <td colspan="100%", style = "text-align: center;">They have not added any tv shows...
+                          <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                      </td>
+                  </tr>
+              <% else %>
+                  <% @friendsShows.each do |tv_show| %>
+                      <tr>
+                          <td><%= tv_show.name %></td>
+                          <td><%= tv_show.director %></td>
+                          <td><%= tv_show.show_stars %></td>
+                          <td><%= tv_show.seasons %></td>
+                          <td><%= tv_show.genre %></td>
+                          <td><%= tv_show.rating %></td>
+                      </tr>
+                  <% end %>
+              <% end %>
+
+          </tbody>
+          </table>
+          <br/>
+
+          <!-- Podcasts -->
+          <h3><%= @friend.name %>'s Podcasts</h3>
+
+          <table class="table table-hover">
+          <thead>
+              <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Recent episode</th>
+              <th>Genre</th>
+              <th>Rating</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <% if @friendsPodcastsEmpty %>
+                  <tr>
+                      <td colspan="100%", style = "text-align: center;">They have not added any podcasts...
+                          <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                      </td>
+                  </tr>
+              <% else %>
+                  <% @friendsPodcasts.each do |podcast| %>
+                      <tr>
+                          <td><%= podcast.name %></td>
+                          <td><%= podcast.company %></td>
+                          <td><%= podcast.recent_episode %></td>
+                          <td><%= podcast.genre %></td>
+                          <td><%= podcast.rating %></td>
+                      </tr>
+                  <% end %>
+              <% end %>
+          </tbody>
+          </table>
+          <br/>
+
+          <!-- Games -->
+          <h3><%= @friend.name %>'s Games</h3>
+
+          <table class="table table-hover">
+          <thead>
+              <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Year</th>
+              <th>Genre</th>
+              <th>Rating</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <% if @friendsGamesEmpty %>
+                  <tr>
+                      <td colspan="100%", style = "text-align: center;">They have not added any games...
+                          <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                      </td>
+                  </tr>
+              <% else %>
+                  <% @friendsGames.each do |game| %>
+                      <tr>
+                          <td><%= game.name %></td>
+                          <td><%= game.company %></td>
+                          <td><%= game.year %></td>
+                          <td><%= game.genre %></td>
+                          <td><%= game.rating %></td>
+                      </tr>
+                  <% end %>
+              <% end %>
+
+          </tbody>
+          </table>
+
         <%= link_to 'Return', home_friends_path, class: "btn btn-outline-secondary btn-lg" %>
         <%= link_to 'Remove', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger" %>
       </div>

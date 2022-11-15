@@ -12,6 +12,20 @@ class FriendsController < ApplicationController
   # GET /friends/1 or /friends/1.json
   def show
     @friendEmail = User.where("id =?", @friend.name)
+
+    @friendsMovies = Movie.where("user_id =?", @friend.name)
+    @friendsGames = Game.where("user_id =?", @friend.name)
+    @friendsPodcasts = Podcast.where("user_id =?", @friend.name)
+    @friendsShows = TvShow.where("user_id =?", @friend.name)
+
+    @friendsMoviesEmpty = isEmpty(@friendsMovies)
+    @friendsGamesEmpty = isEmpty(@friendsGames)
+    @friendsPodcastsEmpty = isEmpty(@friendsPodcasts)
+    @friendsShowsEmpty = isEmpty(@friendsShows)
+  end
+
+  def isEmpty(record)
+    return record.empty?
   end
 
   # GET /friends/new
