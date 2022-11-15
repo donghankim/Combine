@@ -8,4 +8,5 @@ class User < ApplicationRecord
          has_many :game
          has_many :podcast
          has_many :tv_show
+         has_many :friend
 end
