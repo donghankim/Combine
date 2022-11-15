@@ -80,7 +80,6 @@
         <h1 class="display-5 fw-bold"><%= @movie.name %>:</h1><h1 class="display-5 fw-bold"><%= @movie.rating %></h1>
         <p class="col-md-8 fs-4"><%= @movie.director %></p>
         <%= link_to 'Return', root_path, class: "btn btn-outline-secondary btn-lg" %>
-        <%= link_to 'Edit Movie', edit_movie_path(@movie), class: "btn btn-outline-secondary btn-lg" %>
         <%= link_to 'Remove', @movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger" %>
       </div>
     </div>

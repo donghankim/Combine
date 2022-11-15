@@ -1,7 +1,18 @@
 <% if user_signed_in? %>
     <!-- Movie -->
+    <h3>Add Media:</h3>
+    <div class="input-group mb-3" style="width:400px;">
+      <%= form_tag home_index_path %>
+      <%= text_field_tag :query, nil, placeholder: 'Search Anything!' %>
+      <%= submit_tag "Enter" %>
+    </div>
+    <% unless @movieRes.nil? %>
+      <%= render 'media' %>
+    <% end %>
+
+    <br />
     <h3>My Movies</h3>
-    <%= link_to 'Add Movie', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
+    <%= link_to 'Add Movie Manually', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
     <table class="table table-hover">
     <thead>
         <tr>
@@ -40,7 +51,7 @@
 
     <!-- TV Shows -->
     <h3>My TV Shows</h3>
-    <%= link_to 'Add TV Show', new_tv_show_path, class: "btn btn-outline-secondary btn-sm"%>
+    <%= link_to 'Add TV Show Manually', new_tv_show_path, class: "btn btn-outline-secondary btn-sm"%>
 
     <table class="table table-hover">
     <thead>
@@ -80,7 +91,7 @@
 
     <!-- Podcasts -->
     <h3>My Podcasts</h3>
-    <%= link_to 'Add Podcast', new_podcast_path, class: "btn btn-outline-secondary btn-sm" %>
+    <%= link_to 'Add Podcast Manually', new_podcast_path, class: "btn btn-outline-secondary btn-sm" %>
 
     <table class="table table-hover">
     <thead>
@@ -117,7 +128,7 @@
 
     <!-- Games -->
     <h3>My Games</h3>
-    <%= link_to 'Add Game', new_game_path, class: "btn btn-outline-secondary btn-sm" %>
+    <%= link_to 'Add Game Manually', new_game_path, class: "btn btn-outline-secondary btn-sm" %>
 
     <table class="table table-hover">
     <thead>

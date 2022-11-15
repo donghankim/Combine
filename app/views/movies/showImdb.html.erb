@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <div class="jumbotron">
+        <h3 class="display-4"><%= @name %></h3>
+        <img class="card-img-top" src="<%= @poster %>" alt="Media Poster" style="width: 10rem;">
+        <br />
+        <br />
+        <h3>Rating: <%= @rating %></h3>
+        <h6>Year Released: <%= @year %></h6>
+        <h6>Director: <%= @director %></h6>
+        <h6>Actors: <%= @actors %></h6>
+        <h6>Genre: <%= @genre %></h6>
+        <hr class="my-4">
+        <h6>Plot</h6>
+        <p><%= @plot %></p>
+        <p class="lead">
+            <%= link_to 'Return', root_path, class: "btn btn-primary btn-lg" %>
+            <%= link_to 'Add Movie', movie_addImdb_path(:movie_id => -1, :name => @name, :director => @director, :movie_stars => @actors, :genre => @genre, :year => @year, :rating => @rating), class: "btn btn-primary btn-lg"%>
+        </p>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
