@@ -11,6 +11,26 @@ class GamesController < ApplicationController
   def show
   end
 
+  def addImdb
+  #params.require(:game).permit(:user_id, :name, :company, :year, :genre, :rating)
+    @game = current_user.game.build
+    @game.name = params[:name]
+    @game.company = params[:writer]
+    @game.year = params[:year]
+    @game.genre = params[:genre]
+    @game.rating = params[:rating]
+
+    respond_to do |format|
+      if @game.save
+        format.html { redirect_to game_url(@game), notice: "Game was successfully added." }
+        # format.json { render :show, status: :created, location: @game }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @game.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # GET /games/new
   def new
     @game = current_user.game.build

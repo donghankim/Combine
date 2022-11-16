@@ -77,8 +77,14 @@
   <body>
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold"><%= @game.name %>:</h1><h1 class="display-5 fw-bold"><%= @game.rating %></h1>
-        <p class="col-md-8 fs-4"><%= @game.company %></p>
+        <h3 class="display-5 fw-bold"><%= @game.name %></h3>
+        <hr class="my-4">
+        <h6>Rating: <%= @game.rating %></h6>
+        <h6>Year Released: <%= @game.year %></h6>
+        <h6>Company: <%= @game.company %></h6>
+        <h6>Genre: <%= @game.genre %></h6>
+        <br />
+
         <%= link_to 'Return', root_path, class: "btn btn-outline-secondary btn-lg" %>
         <%= link_to 'Edit Game', edit_game_path(@game), class: "btn btn-outline-secondary btn-lg" %>
         <%= link_to 'Remove', @game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger" %>

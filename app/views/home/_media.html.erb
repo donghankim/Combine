@@ -1,13 +1,13 @@
 
 <div class="row">
-    <% @movieRes.each do |movie| %>
+    <% @mediaData.each do |media| %>
         <div class="col-sm-2">
             <div class="card" style="width: 10rem;">
-                <img class="card-img-top" src="<%= movie["Poster"] %>" alt="Media Poster">
+                <img class="card-img-top" src="<%= media["Poster"] %>" alt="Media Poster">
                 <div class="card-body">
-                    <h6 class="card-title"><%= movie["Title"] %></h6>
+                    <h6 class="card-title"><%= media["Title"] %></h6>
 
-                    <%= link_to "Show Details", movie_showImdb_path(:movie_id => -1, :movieInfo => movie), class: "btn btn-primary btn-sm" %>
+                    <%= link_to "Show Details", showImdb_path(:mediaInfo => media), class: "btn btn-primary btn-sm" %>
                 </div>
             </div>
         </div>

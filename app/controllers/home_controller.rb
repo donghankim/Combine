@@ -29,18 +29,32 @@ class HomeController < ApplicationController
         if api_req.key?("Error")
           flash[:notice] = "Could not find \"" + params[:query] + "\" in IMDB database..."
         else
-          mediaData = []
+          @mediaData = []
           api_req['Search'].each do |data|
             id_ = data["imdbID"]
             imdbRes = fetch_imdb(id_)
             if (not imdbRes.key?("Error"))
-              mediaData.append(imdbRes)
+              @mediaData.append(imdbRes)
             end
           end
-          @movieRes = mediaData
         end
       end
     end
+  end
+
+  def showImdb
+    info = params[:mediaInfo]
+    @type = info["Type"]
+    @name = info["Title"]
+    @poster = info["Poster"]
+    @rating = info["imdbRating"]
+    @year = info["Year"]
+    @director = info["Director"]
+    @actors = info["Actors"]
+    @genre = info["Genre"]
+    @plot = info["Plot"]
+    @writer = info["Writer"]
+    render "showImdb"
   end
 
   def isEmpty(record)

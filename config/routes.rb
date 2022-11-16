@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   get 'home/recommendations'
   get 'home/friends'
 
-  get 'showImdb', to: 'movies#showImdb', as: 'movie_showImdb'
-  get 'addImdb', to: 'movies#addImdb', as: 'movie_addImdb'
-
+  get 'showImdb', to: 'home#showImdb', as: 'showImdb'
+  get 'addImdbMovie', to: 'movies#addImdb', as: 'movie_addImdb'
+  get 'addImdbSeries', to: 'tv_shows#addImdb', as: 'tv_show_addImdb'
+  get 'addImdbGame', to: 'games#addImdb', as: 'game_addImdb'
 end
