@@ -1,22 +1,25 @@
 require 'rails_helper'
+require_relative "../support/devise"
 
-describe GamesController do
+describe GamesController, type: :controller do
 
     describe 'list all games' do
+        login_user
         it 'should find and list all games' do
             get :index
-            response.should render_template('index')
+            expect(response).to redirect_to(root_path)
         end
     end
 
     describe 'show form to add a game' do
+        login_user
         it 'should show the form for user to create new game information' do
             get :new
-            response.should render_template('new')
+            expect(response).to have_http_status(:success)
         end
     end
 
-    describe 'create a game' do
+    describe 'add a new game' do
         it 'should create a game successfully' do
             # game ||= {
             #     :name => "Mario",
@@ -25,17 +28,26 @@ describe GamesController do
             #     :genre => "genre1, genre2",
             #     :rating => "10.5"
             # }
-            game = double(
-                'Game', 
+            # game = double(
+            #     'Game',
+            #     :name => "Mario",
+            #     :director => "someone",
+            #     :year => "2010",
+            #     :genre => "genre1, genre2",
+            #     :rating => "10.5"
+            # )
+            # newGame = Game.create(name: "Anything", company: "Lorem ipsum", year: "2012", genre: "g1, g2, g3", rating: 5)
+            params = {
                 :name => "Mario",
-                :director => "someone",
+                :company => "someone",
                 :year => "2010",
                 :genre => "genre1, genre2",
                 :rating => "10.5"
-            )
+            }
 
-            Game.should_receive(:create!).and_return(game)
-            post :create, :game => game
+            #Game.should_receive(:create!).and_return(game)
+            # post :create, :game_params => params
+            post :create, :game => params
             response.should redirect_to(game_path)
         end
     end
@@ -43,7 +55,7 @@ describe GamesController do
     describe 'update a game' do
         it 'should save the updated game information' do
             game = double(
-                'Game', 
+                'Game',
                 :name => "Mario",
                 :director => "someone",
                 :year => "2010",
@@ -61,7 +73,7 @@ describe GamesController do
     describe 'delete a game' do
         it 'should delete the game' do
             game = double(
-                'Game', 
+                'Game',
                 :name => "Mario",
                 :director => "someone",
                 :year => "2010",
@@ -77,7 +89,7 @@ describe GamesController do
     describe 'verify game deletion / edits' do
         it 'should pass if the user is verified' do
             game = double(
-                'Game', 
+                'Game',
                 :name => "Mario",
                 :director => "someone",
                 :year => "2010",

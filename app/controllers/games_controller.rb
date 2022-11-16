@@ -1,9 +1,10 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_game, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
   before_action :isVerified, only: [:edit, :update, :destroy]
   # GET /games or /games.json
   def index
+    redirect_to root_path
   end
 
   # GET /games/1 or /games/1.json
