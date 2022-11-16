@@ -5,7 +5,6 @@ class TvShowsController < ApplicationController
 
   # GET /tv_shows or /tv_shows.json
   def index
-    @tv_shows = TvShow.all
   end
 
   # GET /tv_shows/1 or /tv_shows/1.json

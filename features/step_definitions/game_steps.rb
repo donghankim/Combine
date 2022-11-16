@@ -1,21 +1,26 @@
 def create_game
   @new_game ||={
-            :name => "Mario",
-            :director => "someone",
-            :year => "2010",
-            :genre => "genre1, genre2",
-            :rating => "10.5"
+            :name => "Minecraft",
+            :director => "Markus Persson",
+            :year => "2009",
+            :genre => "Action, Adventure, Family, Fantasy, Romance, Sci-Fi",
+            :rating => ""
           }
 end
 
 def edit_game
   @edited_game ||={
-            :name => "Mario 2.0",
-            :director => "someone better",
+            :name => "Minecraft 2.0",
+            :director => "Markus Persson II",
             :year => "2020",
-            :genre => "genre1, genre2, genre3",
+            :genre => "Action, Adventure, Family, Fantasy, Romance, Sci-Fi, Awesomeness",
             :rating => "100.5"
           }
+end
+
+When('I search for a game') do
+  fill_in "Search Anything!", :with => "minecraft"
+  click_on "Enter"
 end
 
 When('I add a game') do
@@ -61,6 +66,7 @@ Then('I should see the edited game card page') do
 end
   
 Then('I should see the new game on my games table') do
+  create_game
   expect(page).to have_content(@new_game[:name])
   expect(page).to have_content(@new_game[:director])
   expect(page).to have_content(@new_game[:year])

@@ -4,7 +4,6 @@ class PodcastsController < ApplicationController
   before_action :isVerified, only: [:edit, :update, :destroy]
   # GET /podcasts or /podcasts.json
   def index
-    @podcasts = Podcast.all
   end
 
   # GET /podcasts/1 or /podcasts/1.json

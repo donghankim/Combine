@@ -21,7 +21,7 @@
             <% elsif @type == "series" %>
               <%= link_to 'Add TV Show', tv_show_addImdb_path(:name => @name, :director => @director, :show_stars => @actors, :genre => @genre, :seasons => @year, :rating => @rating), class: "btn btn-primary btn-lg"%>
             <% elsif @type == "game" %>
-              <%= link_to 'Add Game', game_addImdb_path(:name => @name, :writer => @writer, :genre => @genre, :year => @year, :rating => @rating), class: "btn btn-primary btn-lg"%>
+              <%= link_to 'Add Game', game_addImdb_path(:name => @name, :writer => @director, :genre => @genre, :year => @year, :rating => @rating), class: "btn btn-primary btn-lg"%>
             <% end %>
         </p>
     </div>

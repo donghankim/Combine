@@ -4,7 +4,6 @@ class GamesController < ApplicationController
   before_action :isVerified, only: [:edit, :update, :destroy]
   # GET /games or /games.json
   def index
-    @games = Game.all
   end
 
   # GET /games/1 or /games/1.json
