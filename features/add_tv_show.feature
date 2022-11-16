@@ -10,6 +10,12 @@ Feature: Add New Tv-show
       When I press "Return"
       Then I should see the new tv-show on my tv-shows table
 
+    Scenario: Add a TV-show Using IMDB
+      When I search for a tv-show
+      And I click a result
+      And I press "Add TV Show"
+      Then I should see the new tv-show on my tv-shows table
+
     Scenario: Edit a TV-show
       When I add a tv-show
       And I click on the new tv-show

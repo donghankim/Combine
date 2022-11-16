@@ -1,23 +1,28 @@
 def create_movie
   @new_movie ||={
-            :name => "Avengers",
-            :director => "someone",
-            :movie_stars => "actor1, actor2, actor3",
-            :year => "2010",
-            :genre => "genre1, genre2",
-            :rating => "10.5"
+            :name => "Harry Potter and the Deathly Hallows: Part 2",
+            :director => "David Yates",
+            :movie_stars => "Daniel Radcliffe, Emma Watson, Rupert Grint",
+            :year => "2011",
+            :genre => "Adventure, Family, Fantasy",
+            :rating => ""
            }
 end
 
 def edit_movie
   @edited_movie ||={
-            :name => "Avengers 2.0",
-            :director => "someone better",
-            :movie_stars => "actor1, actor2, actor3, actor4",
-            :year => "2020",
-            :genre => "genre1, genre2, genre3",
+            :name => "Harry Potter and the Deathly Hallows: Part 3",
+            :director => "David Yates II",
+            :movie_stars => "Daniel Radcliffe, Emma Watson, Rupert Grint, Mario",
+            :year => "2012",
+            :genre => "Adventure, Family, Fantasy, Cool",
             :rating => "100.5"
            }
+end
+
+When('I search for a movie') do
+  fill_in "Search Anything!", :with => "harry"
+  click_on "Enter"
 end
 
 When('I add a movie') do
@@ -66,6 +71,7 @@ Then('I should see the edited movie card page') do
 end
 
 Then('I should see the new movie on my movies table') do
+  create_movie
   expect(page).to have_content(@new_movie[:name])
   expect(page).to have_content(@new_movie[:director])
   expect(page).to have_content(@new_movie[:movie_stars])

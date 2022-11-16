@@ -6,7 +6,6 @@ class FriendsController < ApplicationController
 
   # GET /friends or /friends.json
   def index
-    @friends = Friend.all
   end
 
   # GET /friends/1 or /friends/1.json
@@ -54,15 +53,6 @@ class FriendsController < ApplicationController
 
   # PATCH/PUT /friends/1 or /friends/1.json
   def update
-    respond_to do |format|
-      if @friend.update(friend_params)
-        format.html { redirect_to friend_url(@friend), notice: "Friend was successfully updated." }
-        format.json { render :show, status: :ok, location: @friend }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /friends/1 or /friends/1.json
@@ -85,17 +75,12 @@ class FriendsController < ApplicationController
     @alrExists = false
     @allFriends = Friend.where("user_id =?", current_user.id)
     @allFriends.each do |f|
-    puts("YOU WANNA ADD")
-    puts(@friend.id)
-      if f.name == @friend.id
-        @alrExists = true
-        puts("YOU HAVE A FRIEND")
-        puts(f.name)
+      unless @friend.nil?
+        if f.name == @friend.id
+          @alrExists = true
+        end
       end
-      puts("ur new friend isnt")
-      puts(f.name)
     end
-    puts("DONE")
 
     if @friend.nil?
       redirect_to home_friends_path, notice: "Please add an existing user as a friend"

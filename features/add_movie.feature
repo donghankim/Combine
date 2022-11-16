@@ -10,6 +10,12 @@ Feature: Add New Movie
       When I press "Return"
       Then I should see the new movie on my movies table
 
+    Scenario: Add a Movie Using IMDB
+      When I search for a movie
+      And I click a result
+      And I press "Add Movie"
+      Then I should see the new movie on my movies table
+
     Scenario: Edit a Movie
       When I add a movie
       And I click on the new movie
