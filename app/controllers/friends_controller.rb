@@ -85,17 +85,10 @@ class FriendsController < ApplicationController
     @alrExists = false
     @allFriends = Friend.where("user_id =?", current_user.id)
     @allFriends.each do |f|
-    puts("YOU WANNA ADD")
-    puts(@friend.id)
       if f.name == @friend.id
         @alrExists = true
-        puts("YOU HAVE A FRIEND")
-        puts(f.name)
       end
-      puts("ur new friend isnt")
-      puts(f.name)
     end
-    puts("DONE")
 
     if @friend.nil?
       redirect_to home_friends_path, notice: "Please add an existing user as a friend"
