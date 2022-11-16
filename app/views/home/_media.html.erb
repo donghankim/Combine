@@ -3,7 +3,11 @@
     <% @mediaData.each do |media| %>
         <div class="col-sm-2">
             <div class="card" style="width: 10rem;">
-                <img class="card-img-top" src="<%= media["Poster"] %>" alt="Media Poster">
+                <% if media["Poster"] == "N/A" %>
+                    <%= image_tag "notfound.png", class: "card-img-top", style:"width: 10rem; height:13rem;" %>
+                <% else%>
+                    <img class="card-img-top" src="<%= media["Poster"] %>" alt="Media Poster" style="width: 10rem; height:13rem;">
+                <% end %>
                 <div class="card-body">
                     <h6 class="card-title"><%= media["Title"] %></h6>
 

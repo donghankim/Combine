@@ -1,3 +1,11 @@
+<style>
+  td,
+  tr {
+      text-align: center;
+      vertical-align: middle;
+  }
+</style>
+
 <% if user_signed_in? %>
     <!-- Movie -->
     <h3>Add Media:</h3>
@@ -13,6 +21,7 @@
     <br />
     <h3>My Movies</h3>
     <%= link_to 'Add Movie Manually', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
+  
     <table class="table table-hover">
     <thead>
         <tr>
@@ -88,7 +97,7 @@
     </tbody>
     </table>
     <br/>
-    
+
     <!-- Games -->
     <h3>My Games</h3>
     <%= link_to 'Add Game Manually', new_game_path, class: "btn btn-outline-secondary btn-sm" %>
