@@ -13,4 +13,25 @@ RSpec.describe PodcastsController, type: :controller do
             end
         end
     end
+
+    describe 'create a podcast' do
+        login_user
+
+        it "should allow user to create a podcast" do
+            params = {
+                :params => {
+                    :podcast => {
+                        :name => "Riverdale",
+                        :company => "someone",
+                        :episode => "episode one, episode two",
+                        :genre => "genre1, genre2",
+                        :rating => "10.5"
+                    }
+                }
+            }
+
+            post :create, params
+            response.should redirect_to("http://test.host/podcasts/1")
+        end
+    end
 end

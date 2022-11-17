@@ -13,4 +13,23 @@ RSpec.describe FriendsController, type: :controller do
             end
         end
     end
+
+    describe 'create a friend' do
+        login_user
+
+        it "should allow user to create a friend" do
+            params = {
+                :params => {
+                    :friend => {
+                        :email => "testsfriend@columbia.edu",
+                        :password => "test123",
+                        :password_confirmation => "test123"
+                    }
+                }
+            }
+
+            post :create, params
+            response.should redirect_to(home_friends_path)
+        end
+    end
 end

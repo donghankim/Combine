@@ -13,4 +13,26 @@ RSpec.describe MoviesController, type: :controller do
             end
         end
     end
+
+    describe 'create a movie' do
+        login_user
+
+        it "should allow user to create a movie" do
+            params = {
+                :params => {
+                    :movie => {
+                        :name => "Harry Potter and the Deathly Hallows: Part 2",
+                        :director => "David Yates",
+                        :movie_stars => "Daniel Radcliffe, Emma Watson, Rupert Grint",
+                        :year => "2011",
+                        :genre => "Adventure, Family, Fantasy",
+                        :rating => "10"
+                    }
+                }
+            }
+
+            post :create, params
+            response.should redirect_to("http://test.host/movies/1")
+        end
+    end
 end

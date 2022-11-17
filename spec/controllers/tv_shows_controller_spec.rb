@@ -13,4 +13,26 @@ RSpec.describe TvShowsController, type: :controller do
             end
         end
     end
+
+    describe 'create a tv show' do
+        login_user
+
+        it "should allow user to create a tv show" do
+            params = {
+                :params => {
+                    :tv_show => {
+                        :name => "BoJack Horseman",
+                        :director => "N/A",
+                        :show_stars => "Will Arnett, Amy Sedaris, Alison Brie",
+                        :number_seasons => "2014",
+                        :genre => "Animation, Comedy, Drama",
+                        :rating => "10"
+                    }
+                }
+            }
+
+            post :create, params
+            response.should redirect_to("http://test.host/tv_shows/1")
+        end
+    end
 end
