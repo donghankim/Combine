@@ -36,9 +36,9 @@ RSpec.describe MoviesController, type: :controller do
         end
     end
 
-    describe "show game imdb page when logged in" do
+    describe "show movie imdb page when logged in" do
         login_user
-        it "should show the game imdb page if logged in" do
+        it "should show the game movie page if logged in" do
             params = {
                 :params => {
                     :movie => {
