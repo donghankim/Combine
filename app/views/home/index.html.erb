@@ -7,7 +7,7 @@
 </style>
 
 <% if user_signed_in? %>
-    <!-- Movie -->
+    <!--
     <h3 class = "add_media"">Add Media:</h3>
     <div class="input-group mb-3" style="width:400px;">
       <%= form_tag home_index_path %>
@@ -17,7 +17,7 @@
     <% unless @mediaData.nil? %>
       <%= render 'media' %>
     <% end %>
-
+    -->
     <br />
     <h3 class = "my_movies">My Movies</h3>
     <%= link_to 'Add Movie Manually', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
