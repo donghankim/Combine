@@ -76,11 +76,11 @@ If you get an error from running bundle install, try using **sudo bundle install
 ## Cucumber Test Results
 <img src="media/cucumber_res.gif" width="425"/><img src="media/cucumber_coverage.png" width="425"/>
 
-**92% coverage**
+**92.57% coverage**
 
 ## Rspec Test Results
 <img src="media/rspec_res.png" width="425"/><img src="media/rspec_coverage.png" width="425"/>
 
-**72% coverage**
+**73.71% coverage**
 
 
