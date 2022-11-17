@@ -29,7 +29,38 @@ RSpec.describe FriendsController, type: :controller do
             }
 
             post :create, params
-            response.should redirect_to home_friends_path 
+            response.should redirect_to home_friends_path
+        end
+
+        it "should not allow user to create a friend" do
+            params = {
+                :params => {
+                    :friend => {
+                        :email => 1,
+                        :password => "test123",
+                        :password_confirmation => "test123"
+                    }
+                }
+            }
+            expect {
+                post :create, params
+            }.to change(Friend, :count).by(0)
+            response.should redirect_to home_friends_path
         end
     end
+
+    # describe "DELETE /destroy" do
+    #     login_user
+
+    #     it "destroys the requested friend" do
+    #         friend = Friend.create!({
+    #             :name => 1,
+    #             :user_id => 2,
+    #         })
+
+    #         expect {
+    #             delete friend_url(friend)
+    #         }.to change(Friend, :count).by(-1)
+    #     end
+    # end
 end
