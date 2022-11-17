@@ -96,7 +96,7 @@ class HomeController < ApplicationController
       request = Net::HTTP::Get.new(url)
       request["X-RapidAPI-Key"] = '5e123f2c8dmshc41d6e06564d61dp107f8djsn8f0e356490a4'
       request["X-RapidAPI-Host"] = 'movie-database-alternative.p.rapidapi.com'
-
+      
       response = http.request(request)
       return JSON.parse(response.body)
     end
