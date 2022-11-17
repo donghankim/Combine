@@ -13,4 +13,25 @@ RSpec.describe GamesController, type: :controller do
             end
         end
     end
+
+    describe 'create a game' do
+        login_user
+
+        it "should allow user to create a game" do
+            params = {
+                :params => {
+                    :game => {
+                        :name => "Minecraft",
+                        :director => "Markus Persson",
+                        :year => "2009",
+                        :genre => "Action, Adventure, Family, Fantasy, Romance, Sci-Fi",
+                        :rating => "10"
+                    }
+                }
+            }
+
+            post :create, params
+            response.should redirect_to("http://test.host/games/1")
+        end
+    end
 end
