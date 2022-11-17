@@ -29,7 +29,7 @@ RSpec.describe FriendsController, type: :controller do
             }
 
             post :create, params
-            response.should redirect_to(home_friends_path)
+            response.should redirect_to home_friends_path 
         end
     end
 end

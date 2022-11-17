@@ -32,7 +32,28 @@ RSpec.describe MoviesController, type: :controller do
             }
 
             post :create, params
-            response.should redirect_to("http://test.host/movies/1")
+            response.should redirect_to movie_url(1)
+        end
+    end
+
+    describe "show game imdb page when logged in" do
+        login_user
+        it "should show the game imdb page if logged in" do
+            params = {
+                :params => {
+                    :movie => {
+                        :name => "Harry Potter and the Deathly Hallows: Part 2",
+                        :director => "David Yates",
+                        :movie_stars => "Daniel Radcliffe, Emma Watson, Rupert Grint",
+                        :year => "2011",
+                        :genre => "Adventure, Family, Fantasy",
+                        :rating => "10"
+                    }
+                }
+            }
+
+            get :addImdb, params
+            response.should redirect_to root_path
         end
     end
 end
