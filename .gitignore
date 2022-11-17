@@ -3,7 +3,7 @@ temp.txt
 scraps.txt
 db/*.sqlite3
 log/*.log
-
+scripts/
 
 *.gem
 *.rbc
