@@ -13,25 +13,26 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/friends", type: :request do
-  before(:each) do
+  before(:all) do
     @user = User.create(email: 'test@test.com', password: "password", password_confirmation: "password")
     sign_in @user
   end
 
-  after(:each) do
+  after(:all) do
     sign_out @user
   end
 
   # This should return the minimal set of attributes required to create a valid
   # Friend. As you add validations to Friend, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
-
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  # let(:valid_attributes) {
+  #   skip("Add a hash of attributes valid for your model")
+  # }
+  # let(:invalid_attributes) {
+  #   skip("Add a hash of attributes invalid for your model")
+  # }
+  let(:valid_attributes) { {name: 'new_name', user_id: @user.id} }
+  let(:invalid_attributes) { {var: '10'} }
 
   describe "GET /index" do
     it "renders a successful response" do
