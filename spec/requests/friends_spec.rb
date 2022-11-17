@@ -13,7 +13,15 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/friends", type: :request do
-  
+  before(:each) do
+    @user = User.create(email: 'test@test.com', password: "password", password_confirmation: "password")
+    sign_in @user
+  end
+
+  after(:each) do
+    sign_out @user
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Friend. As you add validations to Friend, be sure to
   # adjust the attributes here as well.
@@ -77,12 +85,12 @@ RSpec.describe "/friends", type: :request do
         }.to change(Friend, :count).by(0)
       end
 
-    
+
       it "renders a successful response (i.e. to display the 'new' template)" do
         post friends_url, params: { friend: invalid_attributes }
         expect(response).to be_successful
       end
-    
+
     end
   end
 
@@ -108,13 +116,13 @@ RSpec.describe "/friends", type: :request do
     end
 
     context "with invalid parameters" do
-    
+
       it "renders a successful response (i.e. to display the 'edit' template)" do
         friend = Friend.create! valid_attributes
         patch friend_url(friend), params: { friend: invalid_attributes }
         expect(response).to be_successful
       end
-    
+
     end
   end
 

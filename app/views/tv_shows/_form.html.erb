@@ -13,32 +13,36 @@
 
   <div class="field mb-3">
     <div id="emailHelp" class="form-text">Title</div>
-    <%= form.text_field :name, class: "form-control", placeholder: "Show Title" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Show Title", :required => true %>
   </div>
 
   <div class="field mb-3">
     <div id="emailHelp" class="form-text">Director</div>
-    <%= form.text_field :director, class: "form-control", placeholder: "Director" %>
+    <%= form.text_field :director, class: "form-control", placeholder: "Director", :required => true %>
   </div>
 
   <div class="field mb-3">
     <div id="emailHelp" class="form-text">List show stars you would like to include</div>
-    <%= form.text_field :show_stars, class: "form-control", placeholder: "Show Stars" %>
+    <%= form.text_field :show_stars, class: "form-control", placeholder: "Show Stars", :required => true %>
   </div>
 
   <div class="field mb-3">
     <div id="emailHelp" class="form-text">Years</div>
-    <%= form.number_field :seasons, class: "form-control", placeholder: "Number of Seasons" %>
+    <%= form.number_field :seasons, class: "form-control", placeholder: "Number of Seasons", :required => true %>
   </div>
 
   <div class="field mb-3">
     <div id="emailHelp" class="form-text">List all relevant genres</div>
-    <%= form.text_field :genre, class: "form-control", placeholder: "Genre" %>
+    <%= form.text_field :genre, class: "form-control", placeholder: "Genre", :required => true%>
   </div>
 
   <div class="field mb-3">
     <div id="emailHelp" class="form-text">Your Rating</div>
-    <%= form.text_field :rating, class: "form-control", placeholder: "Rating" %>
+    <%= form.text_field :rating, class: "form-control", placeholder: "Rating", :required => true %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.number_field :user_id, id: :tv_show_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
 
   <div class="action">
