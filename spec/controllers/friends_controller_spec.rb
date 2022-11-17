@@ -21,31 +21,14 @@ RSpec.describe FriendsController, type: :controller do
             params = {
                 :params => {
                     :friend => {
-                        :email => "testsfriend@columbia.edu",
-                        :password => "test123",
-                        :password_confirmation => "test123"
+                        :name => "1",
+                        :user_id => "2",
                     }
                 }
             }
 
             post :create, params
-            response.should redirect_to home_friends_path
-        end
-
-        it "should not allow user to create a friend" do
-            params = {
-                :params => {
-                    :friend => {
-                        :email => 1,
-                        :password => "test123",
-                        :password_confirmation => "test123"
-                    }
-                }
-            }
-            expect {
-                post :create, params
-            }.to change(Friend, :count).by(0)
-            response.should redirect_to home_friends_path
+            response.should redirect_to "http://test.host/friends/1"
         end
     end
 
