@@ -2,12 +2,18 @@ Feature: Add New Game
     Background:
       Given user has logged in
 
-    Scenario: Add a Game
+    Scenario: Add a Game Manually
       When I press "Add Game"
       And I fill game details I want to add
       And I press "Create Game"
       Then I should see the game card page
       When I press "Return"
+      Then I should see the new game on my games table
+
+    Scenario: Add a Game Using IMDB
+      When I search for a game
+      And I click a result
+      And I press "Add Game"
       Then I should see the new game on my games table
 
     Scenario: Edit a Game

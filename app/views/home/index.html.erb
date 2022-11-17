@@ -1,7 +1,27 @@
+<style>
+  td,
+  tr {
+      text-align: center;
+      vertical-align: middle;
+  }
+</style>
+
 <% if user_signed_in? %>
     <!-- Movie -->
-    <h3>My Movies</h3>
-    <%= link_to 'Add Movie', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
+    <h3 class = "add_media"">Add Media:</h3>
+    <div class="input-group mb-3" style="width:400px;">
+      <%= form_tag home_index_path %>
+      <%= text_field_tag :query, nil, placeholder: 'Search Anything!' %>
+      <%= submit_tag "Enter" %>
+    </div>
+    <% unless @mediaData.nil? %>
+      <%= render 'media' %>
+    <% end %>
+
+    <br />
+    <h3 class = "my_movies">My Movies</h3>
+    <%= link_to 'Add Movie Manually', new_movie_path, class: "btn btn-outline-secondary btn-sm" %>
+
     <table class="table table-hover">
     <thead>
         <tr>
@@ -39,8 +59,8 @@
     <br/>
 
     <!-- TV Shows -->
-    <h3>My TV Shows</h3>
-    <%= link_to 'Add TV Show', new_tv_show_path, class: "btn btn-outline-secondary btn-sm"%>
+    <h3 class = "my_tvshows">My TV Shows</h3>
+    <%= link_to 'Add TV Show Manually', new_tv_show_path, class: "btn btn-outline-secondary btn-sm"%>
 
     <table class="table table-hover">
     <thead>
@@ -48,7 +68,7 @@
         <th>Name</th>
         <th>Director</th>
         <th>Show stars</th>
-        <th>Seasons</th>
+        <th>Year</th>
         <th>Genre</th>
         <th>Rating</th>
         </tr>
@@ -78,46 +98,9 @@
     </table>
     <br/>
 
-    <!-- Podcasts -->
-    <h3>My Podcasts</h3>
-    <%= link_to 'Add Podcast', new_podcast_path, class: "btn btn-outline-secondary btn-sm" %>
-
-    <table class="table table-hover">
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Company</th>
-        <th>Recent episode</th>
-        <th>Genre</th>
-        <th>Rating</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% if @podcastsEmpty %>
-            <tr>
-                <td colspan="100%", style = "text-align: center;">You have not added any podcasts...
-                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
-                </td>
-            </tr>
-        <% else %>
-            <% @userPodcasts.each do |podcast| %>
-                <tr>
-                    <td><%= link_to podcast.name, podcast %></td>
-                    <td><%= podcast.company %></td>
-                    <td><%= podcast.recent_episode %></td>
-                    <td><%= podcast.genre %></td>
-                    <td><%= podcast.rating %></td>
-                </tr>
-            <% end %>
-        <% end %>
-    </tbody>
-    </table>
-    <br/>
-
     <!-- Games -->
-    <h3>My Games</h3>
-    <%= link_to 'Add Game', new_game_path, class: "btn btn-outline-secondary btn-sm" %>
+    <h3 class = "my_games">My Games</h3>
+    <%= link_to 'Add Game Manually', new_game_path, class: "btn btn-outline-secondary btn-sm" %>
 
     <table class="table table-hover">
     <thead>
@@ -153,6 +136,42 @@
     </table>
     <br/>
 
+    <!-- Podcasts -->
+    <h3 class = "my_podcasts">My Podcasts</h3>
+    <%= link_to 'Add Podcast Manually', new_podcast_path, class: "btn btn-outline-secondary btn-sm" %>
+
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Recent episode</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% if @podcastsEmpty %>
+            <tr>
+                <td colspan="100%", style = "text-align: center;">You have not added any podcasts...
+                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                </td>
+            </tr>
+        <% else %>
+            <% @userPodcasts.each do |podcast| %>
+                <tr>
+                    <td><%= link_to podcast.name, podcast %></td>
+                    <td><%= podcast.company %></td>
+                    <td><%= podcast.recent_episode %></td>
+                    <td><%= podcast.genre %></td>
+                    <td><%= podcast.rating %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+    </table>
+    <br/>
 <% else %>
 
 <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">

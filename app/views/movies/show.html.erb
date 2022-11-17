@@ -77,8 +77,14 @@
   <body>
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold"><%= @movie.name %>:</h1><h1 class="display-5 fw-bold"><%= @movie.rating %></h1>
-        <p class="col-md-8 fs-4"><%= @movie.director %></p>
+        <h3 class="display-5 fw-bold"><%= @movie.name %></h3>
+        <hr class="my-4">
+        <h6>Rating: <%= @movie.rating %></h6>
+        <h6>Year Released: <%= @movie.year %></h6>
+        <h6>Director: <%= @movie.director %></h6>
+        <h6>Star Actors: <%= @movie.movie_stars %></h6>
+        <h6>Genre: <%= @movie.genre %></h6>
+        <br />
         <%= link_to 'Return', root_path, class: "btn btn-outline-secondary btn-lg" %>
         <%= link_to 'Edit Movie', edit_movie_path(@movie), class: "btn btn-outline-secondary btn-lg" %>
         <%= link_to 'Remove', @movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger" %>
@@ -86,6 +92,7 @@
     </div>
   </body>
 </html>
+
 
 
 

@@ -5,11 +5,30 @@ class TvShowsController < ApplicationController
 
   # GET /tv_shows or /tv_shows.json
   def index
-    @tv_shows = TvShow.all
   end
 
   # GET /tv_shows/1 or /tv_shows/1.json
   def show
+  end
+
+  def addImdb
+    @tv_show = current_user.tv_show.build
+    @tv_show.name = params[:name]
+    @tv_show.director = params[:director]
+    @tv_show.show_stars = params[:show_stars]
+    @tv_show.seasons = params[:seasons]
+    @tv_show.genre = params[:genre]
+    @tv_show.rating = params[:rating]
+
+    respond_to do |format|
+      if @tv_show.save
+        format.html { redirect_to root_path, notice: "Series was successfully Added."}
+        # format.json { render :show, status: :created, location: @movie }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @tv_show.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /tv_shows/new

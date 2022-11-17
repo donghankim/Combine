@@ -5,11 +5,30 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
   end
 
   # GET /movies/1 or /movies/1.json
   def show
+  end
+
+  def addImdb
+    @movie = current_user.movie.build
+    @movie.name = params[:name]
+    @movie.director = params[:director]
+    @movie.movie_stars = params[:movie_stars]
+    @movie.year = params[:year]
+    @movie.genre = params[:genre]
+    @movie.rating = params[:rating]
+
+    respond_to do |format|
+      if @movie.save
+        format.html { redirect_to root_path, notice: "Movie was successfully Added." }
+        # format.json { render :show, status: :created, location: @movie }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @movie.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /movies/new

@@ -1,14 +1,33 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_game, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
   before_action :isVerified, only: [:edit, :update, :destroy]
   # GET /games or /games.json
   def index
-    @games = Game.all
+    redirect_to root_path
   end
 
   # GET /games/1 or /games/1.json
   def show
+  end
+
+  def addImdb
+    @game = current_user.game.build
+    @game.name = params[:name]
+    @game.company = params[:writer]
+    @game.year = params[:year]
+    @game.genre = params[:genre]
+    @game.rating = params[:rating]
+
+    respond_to do |format|
+      if @game.save
+        format.html { redirect_to game_url(@game), notice: "Game was successfully added." }
+        # format.json { render :show, status: :created, location: @game }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @game.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /games/new

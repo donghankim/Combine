@@ -1,23 +1,28 @@
 def create_tv_show
   @new_tv_show ||={
-              :name => "Riverdale",
-              :director => "someone",
-              :show_stars => "actor1, actor2, actor3",
-              :number_seasons => "10",
-              :genre => "genre1, genre2",
-              :rating => "10.5"
+              :name => "BoJack Horseman",
+              :director => "N/A",
+              :show_stars => "Will Arnett, Amy Sedaris, Alison Brie",
+              :number_seasons => "2014",
+              :genre => "Animation, Comedy, Drama",
+              :rating => ""
              }
 end
 
 def edit_tv_show
   @edited_tv_show ||={
-              :name => "Riverdale 2.0",
-              :director => "someone better",
-              :show_stars => "actor1, actor2, actor3, actor4",
-              :number_seasons => "100",
-              :genre => "genre1, genre2, genre3",
-              :rating => "100.5"
+              :name => "BoJack Horseman But Better",
+              :director => "Combine Group",
+              :show_stars => "Will Arnett, Amy Sedaris, Alison Brie, Us",
+              :number_seasons => "2020",
+              :genre => "Animation, Comedy, Drama, So Dramatic",
+              :rating => "1000"
              }
+end
+
+When('I search for a tv-show') do
+  fill_in "Search Anything!", :with => "bojack"
+  click_on "Enter"
 end
 
 When('I add a tv-show') do
@@ -66,6 +71,7 @@ Then('I should see the edited tv-show card page') do
 end
   
 Then('I should see the new tv-show on my tv-shows table') do
+  create_tv_show
   expect(page).to have_content(@new_tv_show[:name])
   expect(page).to have_content(@new_tv_show[:director])
   expect(page).to have_content(@new_tv_show[:show_stars])

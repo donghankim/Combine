@@ -13,27 +13,36 @@
 
 
   <div class="field mb-3">
-    <%= form.text_field :name, class: "form-control", placeholder: "Game Title" %>
+    <div id="emailHelp" class="form-text">Title</div>
+    <%= form.text_field :name, class: "form-control", placeholder: "Game Title", :required => true %>
   </div>
 
   <div class="field mb-3">
-    <%= form.text_field :company, class: "form-control", placeholder: "Director" %>
+    <div id="emailHelp" class="form-text">Company</div>
+    <%= form.text_field :company, class: "form-control", placeholder: "Director", :required => true %>
   </div>
 
   <div class="field mb-3">
-    <%= form.number_field :year, class: "form-control", placeholder: "Year Released" %>
+    <div id="emailHelp" class="form-text">Year Released</div>
+    <%= form.number_field :year, class: "form-control", placeholder: "Year Released", :required => true %>
   </div>
 
   <div class="field mb-3">
     <div id="emailHelp" class="form-text">List all relevant genres</div>
-    <%= form.text_field :genre, class: "form-control", placeholder: "Genre" %>
+    <%= form.text_field :genre, class: "form-control", placeholder: "Genre", :required => true %>
   </div>
 
   <div class="field mb-3">
-    <%= form.text_field :rating, class: "form-control", placeholder: "Rating" %>
+    <div id="emailHelp" class="form-text">Your Rating</div>
+    <%= form.text_field :rating, class: "form-control", placeholder: "Rating", :required => true %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.number_field :user_id, id: :game_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
 
   <div class="action">
     <%= form.submit class:'btn btn-outline-secondary' %>
     <%= link_to 'Return', root_path, class: "btn btn-outline-secondary" %>
+  </div>
 <% end %>

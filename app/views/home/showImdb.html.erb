@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <div class="jumbotron">
+        <h3 class="display-4"><%= @name %></h3>
+        <img class="card-img-top" src="<%= @poster %>" alt="Media Poster" style="width: 10rem;">
+        <br />
+        <br />
+        <h3>Rating: <%= @rating %></h3>
+        <h6>Year Released: <%= @year %></h6>
+        <h6>Director: <%= @director %></h6>
+        <h6>Star Actors: <%= @actors %></h6>
+        <h6>Genre: <%= @genre %></h6>
+        <hr class="my-4">
+        <h6>Summary</h6>
+        <p><%= @plot %></p>
+        <p class="lead">
+            <%= link_to 'Return', root_path, class: "btn btn-primary btn-lg" %>
+            <% if @type == "movie" %>
+              <%= link_to 'Add Movie', movie_addImdb_path(:name => @name, :director => @director, :movie_stars => @actors, :genre => @genre, :year => @year, :rating => @rating), class: "btn btn-primary btn-lg"%>
+            <% elsif @type == "series" %>
+              <%= link_to 'Add TV Show', tv_show_addImdb_path(:name => @name, :director => @director, :show_stars => @actors, :genre => @genre, :seasons => @year, :rating => @rating), class: "btn btn-primary btn-lg"%>
+            <% elsif @type == "game" %>
+              <%= link_to 'Add Game', game_addImdb_path(:name => @name, :writer => @director, :genre => @genre, :year => @year, :rating => @rating), class: "btn btn-primary btn-lg"%>
+            <% end %>
+        </p>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+
+<div class="row">
+    <% @mediaData.each do |media| %>
+        <div class="col-sm-2">
+            <div class="card" style="width: 10rem;">
+                <% if media["Poster"] == "N/A" %>
+                    <%= image_tag "notfound.png", class: "card-img-top", style:"width: 10rem; height:13rem;" %>
+                <% else%>
+                    <img class="card-img-top" src="<%= media["Poster"] %>" alt="Media Poster" style="width: 10rem; height:13rem;">
+                <% end %>
+                <div class="card-body">
+                    <h6 class="card-title"><%= media["Title"] %></h6>
+
+                    <%= link_to "Show Details", showImdb_path(:mediaInfo => media), class: "btn btn-primary btn-sm" %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+
