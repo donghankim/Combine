@@ -12,7 +12,6 @@ class GamesController < ApplicationController
   end
 
   def addImdb
-  #params.require(:game).permit(:user_id, :name, :company, :year, :genre, :rating)
     @game = current_user.game.build
     @game.name = params[:name]
     @game.company = params[:writer]
