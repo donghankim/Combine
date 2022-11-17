@@ -1,5 +1,4 @@
 .DS_Store
-/log/*.log
 temp.txt
 scraps.txt
 db/*.sqlite3

@@ -13,7 +13,7 @@ RSpec.describe MoviesController, type: :controller do
             end
         end
     end
-    
+
     describe 'create a movie' do
         login_user
 

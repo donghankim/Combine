@@ -12,7 +12,7 @@ require 'bundler'
 Bundler.setup
 
 require 'cucumber/rails'
-require_relative Rails.root.join 'spec/support/factories_helper'
+require_relative Rails.root.join 'spec/factories_helper'
 require 'rspec/core'
 # frozen_string_literal: true
 
