@@ -31,7 +31,7 @@ RSpec.describe PodcastsController, type: :controller do
             }
 
             post :create, params
-            response.should redirect_to("http://test.host/podcasts/1")
+            response.should redirect_to podcast_url(1)
         end
     end
 end

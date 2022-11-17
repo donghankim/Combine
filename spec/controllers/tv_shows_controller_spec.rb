@@ -32,7 +32,28 @@ RSpec.describe TvShowsController, type: :controller do
             }
 
             post :create, params
-            response.should redirect_to("http://test.host/tv_shows/1")
+            response.should redirect_to tv_show_url(1)
+        end
+    end
+
+    describe "show game imdb page when logged in" do
+        login_user
+        it "should show the game imdb page if logged in" do
+            params = {
+                :params => {
+                    :tv_show => {
+                        :name => "BoJack Horseman",
+                        :director => "N/A",
+                        :show_stars => "Will Arnett, Amy Sedaris, Alison Brie",
+                        :number_seasons => "2014",
+                        :genre => "Animation, Comedy, Drama",
+                        :rating => "10"
+                    }
+                }
+            }
+
+            get :addImdb, params
+            response.should redirect_to root_path
         end
     end
 end

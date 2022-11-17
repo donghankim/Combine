@@ -26,9 +26,9 @@ RSpec.describe HomeController, type: :controller do
         end
     end
 
-    describe "show media page when logged in" do
+    describe "show Imdb page when logged in" do
         login_user
-        it "should show the friend page if logged in" do
+        it "should show the Imdb page if logged in" do
             params = {
                 :params => {
                     :mediaInfo => {

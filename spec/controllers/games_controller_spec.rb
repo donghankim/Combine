@@ -31,7 +31,27 @@ RSpec.describe GamesController, type: :controller do
             }
 
             post :create, params
-            response.should redirect_to("http://test.host/games/1")
+            response.should redirect_to game_url(1)
+        end
+    end
+
+    describe "show game imdb page when logged in" do
+        login_user
+        it "should show the game imdb page if logged in" do
+            params = {
+                :params => {
+                    :game => {
+                        :name => "Minecraft",
+                        :director => "Markus Persson",
+                        :year => "2009",
+                        :genre => "Action, Adventure, Family, Fantasy, Romance, Sci-Fi",
+                        :rating => ""
+                    }
+                }
+            }
+
+            get :addImdb, params
+            response.should redirect_to game_url(1)
         end
     end
 end
