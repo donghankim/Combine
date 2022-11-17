@@ -9,6 +9,16 @@ RSpec.describe HomeController, type: :controller do
             get :index
             response.should render_template('index')
         end
+
+        it "should process search queries" do
+            params = {
+                :params => {
+                    :query => "hey"
+                }
+            }
+
+            get :index, params
+        end
     end
 
     describe "show friend page when logged in" do
