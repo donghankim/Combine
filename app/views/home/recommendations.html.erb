@@ -1,3 +1,35 @@
 <h1>Recommendations</h1>
-<p>Where user content recommendations will show</p>
-<p>Not Complete.</p>
+<p>Recommendations based on what your friends have seen will be shown below!</p>
+
+<tbody>
+    <% if @friendsEmpty %>
+        <tr>
+            <td colspan="100%", style = "text-align: center;">You have not added any friends so we cant recommend anything...
+                <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+            </td>
+        </tr>
+    <% else %>
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h3 class="display-5 fw-bold"><%= @recommendation.name %></h3>
+                <hr class="my-4">
+                <h6>Friends that have seen this movie: 
+                    <% @recommendedBy.each_with_index do |hasSeen, index| %> 
+                        <% if index == @recommendedBy.size - 1 %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>
+                        <% else %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>, 
+                        <% end %>
+                    <% end %>
+                </h6>
+                <h6>Rating: <%= @recommendation.rating %></h6>
+                <h6>Year Released: <%= @recommendation.year %></h6>
+                <h6>Director: <%= @recommendation.director %></h6>
+                <h6>Star Actors: <%= @recommendation.movie_stars %></h6>
+                <h6>Genre: <%= @recommendation.genre %></h6>
+            </div>
+        </div>
+    <% end %>
+</tbody>
+
+</table>
