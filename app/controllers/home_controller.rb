@@ -89,65 +89,107 @@ class HomeController < ApplicationController
 
       @friendsEmpty = isEmpty(@userFriends)
       if @friendsEmpty == false
-        puts("STARTINGGGGGgg")
         #keep track of how many times each genre is applicable
-        @genres = Hash.new(0)
+        @movieGenres = Hash.new(0)
+        @showGenres = Hash.new(0)
+
         #go through each friend
         @userFriends.each do |friend|
-          puts("LOOKING AT FRIENDS")
-          puts(friend.name)
           #go through each piece of media
           Movie.where("user_id =?", friend.name).each do |movie|
-            puts("LOOKING AT MOVIES")
-            puts(movie.name)
             @genresArray = movie.genre.split
             #add each genre to the hash
             @genresArray.each do |genre|
               #ensure there are no commas
               genre.delete! ','
-              puts("NEW GENRE BEING ADDED")
-              puts(genre)
-              @genres[genre] = @genres[genre] + 1
-              puts("THE GENRE NOW HAS THIS MANY ENTRIES")
-              puts @genres[genre]
+              @movieGenres[genre] = @movieGenres[genre] + 1
+            end
+          end
+
+          TvShow.where("user_id =?", friend.name).each do |show|
+            @genresArray = show.genre.split
+            #add each genre to the hash
+            @genresArray.each do |genre|
+              #ensure there are no commas
+              genre.delete! ','
+              @showGenres[genre] = @showGenres[genre] + 1
             end
           end
         end
-        #the hash is created and the most popular genre stored below
-        @mostPopularGenre = @genres.max_by{|k,v| v}.first
-        puts("MOST POP GENRE IS")
-        puts(@mostPopularGenre)
-          
-        #go through every friend and make list of every item seen with that genre
-        @applicableMedia = Array.new
+        
+        #MOVIES
+        #if no friends have seen a movie, dont recommend anything
+        @moviesEmpty = false
 
-        @userFriends.each do |friend|
-          Movie.where("user_id =?", friend.name).each do |movie|
-            @genresArray = movie.genre.split
-            @genresArray.each do |genre|
-              genre.delete! ','
-              if genre == @mostPopularGenre
-                @applicableMedia.push movie
-                puts("THIS WAS A MATCH")
-                puts movie.name
+        if @movieGenres.empty?()
+          @moviesEmpty = true
+        
+        else
+          #the hash is created and the most popular genre stored below
+          @mostPopularGenre = @movieGenres.max_by{|k,v| v}.first
+            
+          #go through every friend and make list of every item seen with that genre
+          @applicableMedia = Array.new
+
+          @userFriends.each do |friend|
+            Movie.where("user_id =?", friend.name).each do |movie|
+              @genresArray = movie.genre.split
+              @genresArray.each do |genre|
+                genre.delete! ','
+                if genre == @mostPopularGenre
+                  @applicableMedia.push movie
+                end
               end
             end
           end
+
+          @movieRecommendation = @applicableMedia.sample
+
+          #who has seen this and is friends with the user
+          @movieRecommendedBy = Array.new
+          Movie.where("name =?", @movieRecommendation.name).each do |hasSeen|
+            @poss = User.where("id =?", hasSeen.user_id).first
+            if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
+              @movieRecommendedBy.push @poss
+            end
+          end
         end
-        #applicableMedia should be filled in
-        puts("WE ARE CHOOSING FROM")
-        puts @applicableMedia
 
-        @recommendation = @applicableMedia.sample
-        puts("WE CHOSE")
-        puts @recommendation.name
+        #SHOWS
+        #if no friends have seen a movie, dont recommend anything
+        @moviesEmpty = false
 
-        #who has seen this and is friends with the user
-        @recommendedBy = Array.new
-        Movie.where("name =?", @recommendation.name).each do |hasSeen|
-          @poss = User.where("id =?", hasSeen.user_id).first
-          if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
-            @recommendedBy.push @poss
+        if @movieGenres.empty?()
+          @moviesEmpty = true
+        
+        else
+          #the hash is created and the most popular genre stored below
+          @mostPopularGenre = @showGenres.max_by{|k,v| v}.first
+            
+          #go through every friend and make list of every item seen with that genre
+          @applicableMedia = Array.new
+
+          @userFriends.each do |friend|
+            TvShow.where("user_id =?", friend.name).each do |show|
+              @genresArray = show.genre.split
+              @genresArray.each do |genre|
+                genre.delete! ','
+                if genre == @mostPopularGenre
+                  @applicableMedia.push show
+                end
+              end
+            end
+          end
+
+          @showRecommendation = @applicableMedia.sample
+
+          #who has seen this and is friends with the user
+          @showRecommendedBy = Array.new
+          TvShow.where("name =?", @showRecommendation.name).each do |hasSeen|
+            @poss = User.where("id =?", hasSeen.user_id).first
+            if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
+              @showRecommendedBy.push @poss
+            end
           end
         end
       end

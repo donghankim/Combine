@@ -9,26 +9,65 @@
             </td>
         </tr>
     <% else %>
-        <div class="p-5 mb-4 bg-light rounded-3">
-            <div class="container-fluid py-5">
-                <h3 class="display-5 fw-bold"><%= @recommendation.name %></h3>
-                <hr class="my-4">
-                <h6>Friends that have seen this movie: 
-                    <% @recommendedBy.each_with_index do |hasSeen, index| %> 
-                        <% if index == @recommendedBy.size - 1 %>
-                            <%= User.where("id =?", hasSeen.id).first.email %>
-                        <% else %>
-                            <%= User.where("id =?", hasSeen.id).first.email %>, 
+        <h2>Movie Recommendation</h2>
+        <% if @moviesEmpty %>
+            <tr>
+                <td colspan="100%", style = "text-align: center;">Youre friends have not added any movies so we cant recommend anything...
+                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                </td>
+            </tr>
+        <% else %>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h3 class="display-5 fw-bold"><%= @movieRecommendation.name %></h3>
+                    <hr class="my-4">
+                    <h6>Friends that have seen this movie: 
+                        <% @movieRecommendedBy.each_with_index do |hasSeen, index| %> 
+                            <% if index == @movieRecommendedBy.size - 1 %>
+                                <%= User.where("id =?", hasSeen.id).first.email %>
+                            <% else %>
+                                <%= User.where("id =?", hasSeen.id).first.email %>, 
+                            <% end %>
                         <% end %>
-                    <% end %>
-                </h6>
-                <h6>Rating: <%= @recommendation.rating %></h6>
-                <h6>Year Released: <%= @recommendation.year %></h6>
-                <h6>Director: <%= @recommendation.director %></h6>
-                <h6>Star Actors: <%= @recommendation.movie_stars %></h6>
-                <h6>Genre: <%= @recommendation.genre %></h6>
+                    </h6>
+                    <h6>Rating: <%= @movieRecommendation.rating %></h6>
+                    <h6>Year Released: <%= @movieRecommendation.year %></h6>
+                    <h6>Director: <%= @movieRecommendation.director %></h6>
+                    <h6>Star Actors: <%= @movieRecommendation.movie_stars %></h6>
+                    <h6>Genre: <%= @movieRecommendation.genre %></h6>
+                </div>
             </div>
-        </div>
+        <% end %>
+
+        <h2>TV Show Recommendation</h2>
+        <% if @showsEmpty %>
+            <tr>
+                <td colspan="100%", style = "text-align: center;">Youre friends have not added any shows so we cant recommend anything...
+                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                </td>
+            </tr>
+        <% else %>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h3 class="display-5 fw-bold"><%= @showRecommendation.name %></h3>
+                    <hr class="my-4">
+                    <h6>Friends that have seen this show: 
+                        <% @showRecommendedBy.each_with_index do |hasSeen, index| %> 
+                            <% if index == @showRecommendedBy.size - 1 %>
+                                <%= User.where("id =?", hasSeen.id).first.email %>
+                            <% else %>
+                                <%= User.where("id =?", hasSeen.id).first.email %>, 
+                            <% end %>
+                        <% end %>
+                    </h6>
+                    <h6>Rating: <%= @showRecommendation.rating %></h6>
+                    <h6>Director: <%= @showRecommendation.director %></h6>
+                    <h6>Release Year: <%= @showRecommendation.seasons %></h6>
+                    <h6>Star Actors: <%= @showRecommendation.show_stars %></h6>
+                    <h6>Genre: <%= @showRecommendation.genre %></h6>
+                </div>
+            </div>
+        <% end %>
     <% end %>
 </tbody>
 
