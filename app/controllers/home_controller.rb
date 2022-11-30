@@ -93,6 +93,7 @@ class HomeController < ApplicationController
         @movieGenres = Hash.new(0)
         @showGenres = Hash.new(0)
         @gameGenres = Hash.new(0)
+        @podcastGenres = Hash.new(0)
 
         #go through each friend
         @userFriends.each do |friend|
@@ -109,9 +110,7 @@ class HomeController < ApplicationController
 
           TvShow.where("user_id =?", friend.name).each do |show|
             @genresArray = show.genre.split
-            #add each genre to the hash
             @genresArray.each do |genre|
-              #ensure there are no commas
               genre.delete! ','
               @showGenres[genre] = @showGenres[genre] + 1
             end
@@ -119,11 +118,17 @@ class HomeController < ApplicationController
 
           Game.where("user_id =?", friend.name).each do |game|
             @genresArray = game.genre.split
-            #add each genre to the hash
             @genresArray.each do |genre|
-              #ensure there are no commas
               genre.delete! ','
               @gameGenres[genre] = @gameGenres[genre] + 1
+            end
+          end
+
+          Podcast.where("user_id =?", friend.name).each do |podcast|
+            @genresArray = podcast.genre.split
+            @genresArray.each do |genre|
+              genre.delete! ','
+              @podcastGenres[genre] = @podcastGenres[genre] + 1
             end
           end
         end
@@ -238,6 +243,44 @@ class HomeController < ApplicationController
             @poss = User.where("id =?", hasSeen.user_id).first
             if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
               @gameRecommendedBy.push @poss
+            end
+          end
+        end
+
+        #PODCASTS
+        #if no friends have seen a podcast, dont recommend anything
+        @podcastsEmpty = false
+
+        if @podcastGenres.empty?()
+          @podcastsEmpty = true
+        
+        else
+          #the hash is created and the most popular genre stored below
+          @mostPopularGenre = @podcastGenres.max_by{|k,v| v}.first
+            
+          #go through every friend and make list of every item seen with that genre
+          @applicableMedia = Array.new
+
+          @userFriends.each do |friend|
+            Podcast.where("user_id =?", friend.name).each do |podcast|
+              @genresArray = podcast.genre.split
+              @genresArray.each do |genre|
+                genre.delete! ','
+                if genre == @mostPopularGenre
+                  @applicableMedia.push podcast
+                end
+              end
+            end
+          end
+
+          @podcastRecommendation = @applicableMedia.sample
+
+          #who has seen this and is friends with the user
+          @podcastRecommendedBy = Array.new
+          Podcast.where("name =?", @podcastRecommendation.name).each do |hasSeen|
+            @poss = User.where("id =?", hasSeen.user_id).first
+            if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
+              @podcastRecommendedBy.push @poss
             end
           end
         end
