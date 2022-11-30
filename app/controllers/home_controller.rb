@@ -92,6 +92,7 @@ class HomeController < ApplicationController
         #keep track of how many times each genre is applicable
         @movieGenres = Hash.new(0)
         @showGenres = Hash.new(0)
+        @gameGenres = Hash.new(0)
 
         #go through each friend
         @userFriends.each do |friend|
@@ -113,6 +114,16 @@ class HomeController < ApplicationController
               #ensure there are no commas
               genre.delete! ','
               @showGenres[genre] = @showGenres[genre] + 1
+            end
+          end
+
+          Game.where("user_id =?", friend.name).each do |game|
+            @genresArray = game.genre.split
+            #add each genre to the hash
+            @genresArray.each do |genre|
+              #ensure there are no commas
+              genre.delete! ','
+              @gameGenres[genre] = @gameGenres[genre] + 1
             end
           end
         end
@@ -156,11 +167,11 @@ class HomeController < ApplicationController
         end
 
         #SHOWS
-        #if no friends have seen a movie, dont recommend anything
-        @moviesEmpty = false
+        #if no friends have seen a game, dont recommend anything
+        @showsEmpty = false
 
-        if @movieGenres.empty?()
-          @moviesEmpty = true
+        if @showGenres.empty?()
+          @showsEmpty = true
         
         else
           #the hash is created and the most popular genre stored below
@@ -192,6 +203,45 @@ class HomeController < ApplicationController
             end
           end
         end
+
+        #GAMES
+        #if no friends have seen a game, dont recommend anything
+        @gamesEmpty = false
+
+        if @gameGenres.empty?()
+          @gamesEmpty = true
+        
+        else
+          #the hash is created and the most popular genre stored below
+          @mostPopularGenre = @gameGenres.max_by{|k,v| v}.first
+            
+          #go through every friend and make list of every item seen with that genre
+          @applicableMedia = Array.new
+
+          @userFriends.each do |friend|
+            Game.where("user_id =?", friend.name).each do |game|
+              @genresArray = game.genre.split
+              @genresArray.each do |genre|
+                genre.delete! ','
+                if genre == @mostPopularGenre
+                  @applicableMedia.push game
+                end
+              end
+            end
+          end
+
+          @gameRecommendation = @applicableMedia.sample
+
+          #who has seen this and is friends with the user
+          @gameRecommendedBy = Array.new
+          Game.where("name =?", @gameRecommendation.name).each do |hasSeen|
+            @poss = User.where("id =?", hasSeen.user_id).first
+            if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
+              @gameRecommendedBy.push @poss
+            end
+          end
+        end
+
       end
     end
   end

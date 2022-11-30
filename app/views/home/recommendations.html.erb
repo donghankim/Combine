@@ -68,6 +68,36 @@
                 </div>
             </div>
         <% end %>
+
+        <h2>Game Recommendation</h2>
+        <% if @gamesEmpty %>
+            <tr>
+                <td colspan="100%", style = "text-align: center;">Youre friends have not added any games so we cant recommend anything...
+                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+                </td>
+            </tr>
+        <% else %>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h3 class="display-5 fw-bold"><%= @gameRecommendation.name %></h3>
+                    <hr class="my-4">
+                    <h6>Friends that have seen this game: 
+                        <% @gameRecommendedBy.each_with_index do |hasSeen, index| %> 
+                            <% if index == @gameRecommendedBy.size - 1 %>
+                                <%= User.where("id =?", hasSeen.id).first.email %>
+                            <% else %>
+                                <%= User.where("id =?", hasSeen.id).first.email %>, 
+                            <% end %>
+                        <% end %>
+                    </h6>
+                    <h6>Rating: <%= @gameRecommendation.rating %></h6>
+                    <h6>Year Released: <%= @gameRecommendation.year %></h6>
+                    <h6>Company: <%= @gameRecommendation.company %></h6>
+                    <h6>Genre: <%= @gameRecommendation.genre %></h6>
+                </div>
+            </div>
+        <% end %>
+
     <% end %>
 </tbody>
 
