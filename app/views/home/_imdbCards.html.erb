@@ -1,0 +1,43 @@
+<% @mediaData.each do |media| %>
+    <div class="col">
+        <div class="card mb-3 h-100" style="width: calc((100% - 100px) / 3;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <% if media["Poster"] == "N/A" %>
+                        <%= image_tag "notfound.png", class: "card-img-top img-fluid rounded-start" %>
+                    <% else %>
+                        <img class="card-img-top" src="<%= media["Poster"] %>" alt="Media Poster">
+                    <% end %>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="card-title"><%= media["Title"] %></h6>
+                        <div class = "overflow-scroll"  style = "max-height: 100px">
+                            <p class="card-text overflow-auto"><%= media["Plot"] %></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <%= link_to "Show Details", showImdb_path(:mediaInfo => media), class: "btn btn-sm btn-outline-secondary" %>
+                            <% if media["Type"] == "movie" %>
+                                <%= link_to 'Add Movie', movie_addImdb_path(:name => media["Title"], :director => media["Director"], :movie_stars => media["Actors"], :genre => media["Genre"], :year => media["Year"], :rating => media["imdbRating"]), class: "btn btn-sm btn-outline-secondary"%>
+                            <% elsif media["Type"] == "series" %>
+                                <%= link_to 'Add TV Show', tv_show_addImdb_path(:name => media["Title"], :director => media["Director"], :show_stars => media["Actors"], :genre => media["Genre"], :seasons => media["Year"], :rating => media["imdbRating"]), class: "btn btn-sm btn-outline-secondary"%>
+                            <% elsif media["Type"] == "game" %>
+                                <%= link_to 'Add Game', game_addImdb_path(:name => media["Title"], :writer => media["Director"], :genre => media["Genre"], :year => media["Year"], :rating => media["imdbRating"]), class: "btn btn-sm btn-outline-secondary"%>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+

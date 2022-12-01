@@ -6,23 +6,7 @@ require 'openssl'
 
 class HomeController < ApplicationController
   def index
-    @moviesEmpty = false
-    @gamesEmpty = false
-    @podcastsEmpty = false
-    @showsEmpty = false
-
     if user_signed_in?
-      @userMovies = Movie.where("user_id =?", current_user.id)
-      @userGames = Game.where("user_id =?", current_user.id)
-      @userPodcasts = Podcast.where("user_id =?", current_user.id)
-      @userShows = TvShow.where("user_id =?", current_user.id)
-      @userFriends = Friend.where("user_id =?", current_user.id)
-
-      @moviesEmpty = isEmpty(@userMovies)
-      @gamesEmpty = isEmpty(@userGames)
-      @podcastsEmpty = isEmpty(@userPodcasts)
-      @showsEmpty = isEmpty(@userShows)
-
       # process any search queries
       unless params[:query].nil?
         api_req = fetch_movie(params[:query])
@@ -39,6 +23,31 @@ class HomeController < ApplicationController
           end
         end
       end
+    end
+  end
+
+  def media
+    if !user_signed_in?
+      flash[:notice] = "You need to log in first!"
+      redirect_to new_user_session_path
+    end
+    
+    @moviesEmpty = false
+    @gamesEmpty = false
+    @podcastsEmpty = false
+    @showsEmpty = false
+
+    if user_signed_in?
+      @userMovies = Movie.where("user_id =?", current_user.id)
+      @userGames = Game.where("user_id =?", current_user.id)
+      @userPodcasts = Podcast.where("user_id =?", current_user.id)
+      @userShows = TvShow.where("user_id =?", current_user.id)
+      @userFriends = Friend.where("user_id =?", current_user.id)
+
+      @moviesEmpty = isEmpty(@userMovies)
+      @gamesEmpty = isEmpty(@userGames)
+      @podcastsEmpty = isEmpty(@userPodcasts)
+      @showsEmpty = isEmpty(@userShows)
     end
   end
 
@@ -132,18 +141,18 @@ class HomeController < ApplicationController
             end
           end
         end
-        
+
         #MOVIES
         #if no friends have seen a movie, dont recommend anything
         @moviesEmpty = false
 
         if @movieGenres.empty?()
           @moviesEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @movieGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 
@@ -177,11 +186,11 @@ class HomeController < ApplicationController
 
         if @showGenres.empty?()
           @showsEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @showGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 
@@ -215,11 +224,11 @@ class HomeController < ApplicationController
 
         if @gameGenres.empty?()
           @gamesEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @gameGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 
@@ -253,11 +262,11 @@ class HomeController < ApplicationController
 
         if @podcastGenres.empty?()
           @podcastsEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @podcastGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 
@@ -287,6 +296,10 @@ class HomeController < ApplicationController
 
       end
     end
+  end
+
+  # for css/bootstrap testing purposes
+  def test
   end
 
   private

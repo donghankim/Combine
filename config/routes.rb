@@ -13,9 +13,12 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/recommendations'
   get 'home/friends'
+  get 'home/test'
+  get 'home/media'
 
   get 'showImdb', to: 'home#showImdb', as: 'showImdb'
   get 'addImdbMovie', to: 'movies#addImdb', as: 'movie_addImdb'
   get 'addImdbSeries', to: 'tv_shows#addImdb', as: 'tv_show_addImdb'
   get 'addImdbGame', to: 'games#addImdb', as: 'game_addImdb'
 end
+
