@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   resources :friends
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#index'
-
-  post 'home/index'
   get 'home/index'
+
+  get 'home/search'
+  post 'home/search'
+
   get 'home/about'
   get 'home/recommendations'
   get 'home/friends'
@@ -21,4 +23,5 @@ Rails.application.routes.draw do
   get 'addImdbSeries', to: 'tv_shows#addImdb', as: 'tv_show_addImdb'
   get 'addImdbGame', to: 'games#addImdb', as: 'game_addImdb'
 end
+
 

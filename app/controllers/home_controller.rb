@@ -7,19 +7,22 @@ require 'openssl'
 class HomeController < ApplicationController
   def index
     if user_signed_in?
-      # process any search queries
-      unless params[:query].nil?
-        api_req = fetch_movie(params[:query])
-        if api_req.key?("Error")
-          flash[:notice] = "Could not find \"" + params[:query] + "\" in IMDB database..."
-        else
-          @mediaData = []
-          api_req['Search'].each do |data|
-            id_ = data["imdbID"]
-            imdbRes = fetch_imdb(id_)
-            if (not imdbRes.key?("Error"))
-              @mediaData.append(imdbRes)
-            end
+      redirect_to home_search_path
+    end
+  end
+
+  def search
+    unless params[:query].nil?
+      api_req = fetch_movie(params[:query])
+      if api_req.key?("Error")
+        flash[:notice] = "Could not find \"" + params[:query] + "\" in IMDB database..."
+      else
+        @mediaData = []
+        api_req['Search'].each do |data|
+          id_ = data["imdbID"]
+          imdbRes = fetch_imdb(id_)
+          if (not imdbRes.key?("Error"))
+            @mediaData.append(imdbRes)
           end
         end
       end
@@ -31,7 +34,7 @@ class HomeController < ApplicationController
       flash[:notice] = "You need to log in first!"
       redirect_to new_user_session_path
     end
-    
+
     @moviesEmpty = false
     @gamesEmpty = false
     @podcastsEmpty = false

@@ -8,10 +8,19 @@
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Powered by RapidAPI, our service allows you to search and share movies, tv series, games, and podcasts directly from IMDB's database!</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <%= form_tag home_index_path %>
+          <%= form_tag home_search_path %>
           <%= text_field_tag :query, nil, placeholder: 'Search Anything!' %>
           <%= submit_tag "Search" %>
       </div>
     </div>
 </div>
 
+<% unless @mediaData.nil? %>
+  <div class="album py-5">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <%= render 'imdbCards' %>
+      </div>
+    </div>
+  </div>
+<% end %>
