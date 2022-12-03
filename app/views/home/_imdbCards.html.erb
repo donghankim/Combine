@@ -19,12 +19,37 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <%= link_to "Show Details", showImdb_path(:mediaInfo => media), class: "btn btn-sm btn-outline-secondary" %>
+
                             <% if media["Type"] == "movie" %>
-                                <%= link_to 'Add Movie', movie_addImdb_path(:name => media["Title"], :director => media["Director"], :movie_stars => media["Actors"], :genre => media["Genre"], :year => media["Year"], :rating => media["imdbRating"]), class: "btn btn-sm btn-outline-secondary"%>
+                                <%= link_to 'Add Movie', movie_addImdb_path(
+                                    :name => media["Title"],
+                                    :director => media["Director"],
+                                    :movie_stars => media["Actors"],
+                                    :genre => media["Genre"],
+                                    :year => media["Year"],
+                                    :rating => media["imdbRating"],
+                                    :summary => media["Plot"],
+                                    :poster => media["Poster"]),
+                                 class: "btn btn-sm btn-outline-secondary" %>
+
                             <% elsif media["Type"] == "series" %>
-                                <%= link_to 'Add TV Show', tv_show_addImdb_path(:name => media["Title"], :director => media["Director"], :show_stars => media["Actors"], :genre => media["Genre"], :seasons => media["Year"], :rating => media["imdbRating"]), class: "btn btn-sm btn-outline-secondary"%>
+                                <%= link_to 'Add TV Show', tv_show_addImdb_path(
+                                    :name => media["Title"],
+                                    :director => media["Director"],
+                                    :show_stars => media["Actors"],
+                                    :genre => media["Genre"],
+                                    :seasons => media["Year"],
+                                    :rating => media["imdbRating"]),
+                                 class: "btn btn-sm btn-outline-secondary" %>
+
                             <% elsif media["Type"] == "game" %>
-                                <%= link_to 'Add Game', game_addImdb_path(:name => media["Title"], :writer => media["Director"], :genre => media["Genre"], :year => media["Year"], :rating => media["imdbRating"]), class: "btn btn-sm btn-outline-secondary"%>
+                                <%= link_to 'Add Game', game_addImdb_path(
+                                    :name => media["Title"],
+                                    :writer => media["Director"],
+                                    :genre => media["Genre"],
+                                    :year => media["Year"],
+                                    :rating => media["imdbRating"]),
+                                    class: "btn btn-sm btn-outline-secondary" %>
                             <% end %>
                         </div>
                     </div>

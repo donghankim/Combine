@@ -19,6 +19,8 @@ class MoviesController < ApplicationController
     @movie.year = params[:year]
     @movie.genre = params[:genre]
     @movie.rating = params[:rating]
+    @movie.summary = params[:summary]
+    @movie.poster_url = params[:poster]
 
     respond_to do |format|
       if @movie.save
@@ -91,6 +93,6 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:name, :director, :movie_stars, :year, :genre, :rating, :user_id)
+      params.require(:movie).permit(:name, :director, :movie_stars, :year, :genre, :rating, :summary, :poster, :user_id)
     end
 end

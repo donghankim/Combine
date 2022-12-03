@@ -1,32 +1,16 @@
 <p>For testing purposes</p>
 
 <h4>You have 10 Contents saved</h4>
-<form class="form-inline justify-content-center">
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
-    <label class="form-check-label" for="inlineCheckbox1">All</label>
-  </div>
+<%= form_with url: home_test_path, method: :get do |form| %>
+  <% @all_media.each do |type| %>
+    <div class="form-check  form-check-inline">
+      <%= form.label "#{type}", class: 'form-check-label' %>
+      <%= form.check_box "#{type}", checked: @media_to_show.include?(type), class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <br />
+  <br />
+  <%= form.submit 'Filter', class: 'btn btn-primary btn-md' %>
+<% end %>
 
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
-    <label class="form-check-label" for="inlineCheckbox1">Movies</label>
-  </div>
 
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
-    <label class="form-check-label" for="inlineCheckbox2">TV Series</label>
-  </div>
-
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
-    <label class="form-check-label" for="inlineCheckbox3">Games</label>
-  </div>
-
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
-    <label class="form-check-label" for="inlineCheckbox3">Podcasts</label>
-  </div>
-  <button type="submit" class="btn btn-primary btn-md">
-     <%= link_to 'Filter',  root_path %>
-  </button>
-</form>

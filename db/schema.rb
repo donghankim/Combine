@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_205251) do
+ActiveRecord::Schema.define(version: 2022_12_03_221608) do
 
   create_table "friends", force: :cascade do |t|
     t.integer "name"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_11_14_205251) do
     t.string "company"
     t.integer "year"
     t.string "genre"
-    t.float "rating"
+    t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_games_on_user_id"
@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2022_11_14_205251) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "fieldname"
+    t.string "poster_url"
+    t.string "summary"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 

@@ -2,8 +2,6 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-# series, movie, game
-
 class HomeController < ApplicationController
   def index
     if user_signed_in?
@@ -303,6 +301,13 @@ class HomeController < ApplicationController
 
   # for css/bootstrap testing purposes
   def test
+    @all_media = ["Movies", "TV Series", "Games", "Podcasts"]
+    if params["commit"] == "Filter"
+      @media_to_show = params.select {|k, v| v == "1"}.keys
+    else
+      @media_to_show = @all_media
+    end
+
   end
 
   private
