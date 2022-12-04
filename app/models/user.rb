@@ -9,4 +9,5 @@ class User < ApplicationRecord
          has_many :podcast
          has_many :tv_show
          has_many :friend
+         has_many :media
 end

@@ -33,26 +33,25 @@ class HomeController < ApplicationController
       redirect_to new_user_session_path
     end
 
-    @moviesEmpty = false
-    @gamesEmpty = false
-    @podcastsEmpty = false
-    @showsEmpty = false
+    @all_types = ["movie", "series", "game", "podcast"]
+    @selected_types = @all_types
+    @empty = false
+    if params["commit"] == "Filter"
+      @selected_types = params.select {|k, v| v == "1"}.keys
+    end
 
     if user_signed_in?
-      @userMovies = Movie.where("user_id =?", current_user.id)
-      @userGames = Game.where("user_id =?", current_user.id)
-      @userPodcasts = Podcast.where("user_id =?", current_user.id)
-      @userShows = TvShow.where("user_id =?", current_user.id)
-      @userFriends = Friend.where("user_id =?", current_user.id)
-
-      @moviesEmpty = isEmpty(@userMovies)
-      @gamesEmpty = isEmpty(@userGames)
-      @podcastsEmpty = isEmpty(@userPodcasts)
-      @showsEmpty = isEmpty(@userShows)
+      @userMedia = Medium.where("user_id =?", current_user.id)
+      @media_to_show = []
+      @userMedia.each do |m|
+        if @selected_types.include? m[:media_type]
+          @media_to_show.append(m)
+        end
+      end
     end
   end
 
-  def showImdb
+  def showDetails
     info = params[:mediaInfo]
     @type = info["Type"]
     @name = info["Title"]
@@ -64,7 +63,7 @@ class HomeController < ApplicationController
     @genre = info["Genre"]
     @plot = info["Plot"]
     @writer = info["Writer"]
-    render "showImdb"
+    @imdb_id = info["imdbID"]
   end
 
   def isEmpty(record)
@@ -297,17 +296,6 @@ class HomeController < ApplicationController
 
       end
     end
-  end
-
-  # for css/bootstrap testing purposes
-  def test
-    @all_media = ["Movies", "TV Series", "Games", "Podcasts"]
-    if params["commit"] == "Filter"
-      @media_to_show = params.select {|k, v| v == "1"}.keys
-    else
-      @media_to_show = @all_media
-    end
-
   end
 
   private
