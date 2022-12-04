@@ -2,47 +2,56 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-# series, movie, game
-
 class HomeController < ApplicationController
   def index
-    @moviesEmpty = false
-    @gamesEmpty = false
-    @podcastsEmpty = false
-    @showsEmpty = false
-
     if user_signed_in?
-      @userMovies = Movie.where("user_id =?", current_user.id)
-      @userGames = Game.where("user_id =?", current_user.id)
-      @userPodcasts = Podcast.where("user_id =?", current_user.id)
-      @userShows = TvShow.where("user_id =?", current_user.id)
-      @userFriends = Friend.where("user_id =?", current_user.id)
+      redirect_to home_search_path
+    end
+  end
 
-      @moviesEmpty = isEmpty(@userMovies)
-      @gamesEmpty = isEmpty(@userGames)
-      @podcastsEmpty = isEmpty(@userPodcasts)
-      @showsEmpty = isEmpty(@userShows)
-
-      # process any search queries
-      unless params[:query].nil?
-        api_req = fetch_movie(params[:query])
-        if api_req.key?("Error")
-          flash[:notice] = "Could not find \"" + params[:query] + "\" in IMDB database..."
-        else
-          @mediaData = []
-          api_req['Search'].each do |data|
-            id_ = data["imdbID"]
-            imdbRes = fetch_imdb(id_)
-            if (not imdbRes.key?("Error"))
-              @mediaData.append(imdbRes)
-            end
+  def search
+    unless params[:query].nil?
+      api_req = fetch_movie(params[:query])
+      if api_req.key?("Error")
+        flash[:notice] = "Could not find \"" + params[:query] + "\" in IMDB database..."
+      else
+        @mediaData = []
+        api_req['Search'].each do |data|
+          id_ = data["imdbID"]
+          imdbRes = fetch_imdb(id_)
+          if (not imdbRes.key?("Error"))
+            @mediaData.append(imdbRes)
           end
         end
       end
     end
   end
 
-  def showImdb
+  def media
+    if !user_signed_in?
+      flash[:notice] = "You need to log in first!"
+      redirect_to new_user_session_path
+    end
+
+    @all_types = ["movie", "series", "game", "podcast"]
+    @selected_types = @all_types
+    @empty = false
+    if params["commit"] == "Filter"
+      @selected_types = params.select {|k, v| v == "1"}.keys
+    end
+
+    if user_signed_in?
+      @userMedia = Medium.where("user_id =?", current_user.id)
+      @media_to_show = []
+      @userMedia.each do |m|
+        if @selected_types.include? m[:media_type]
+          @media_to_show.append(m)
+        end
+      end
+    end
+  end
+
+  def showDetails
     info = params[:mediaInfo]
     @type = info["Type"]
     @name = info["Title"]
@@ -54,7 +63,7 @@ class HomeController < ApplicationController
     @genre = info["Genre"]
     @plot = info["Plot"]
     @writer = info["Writer"]
-    render "showImdb"
+    @imdb_id = info["imdbID"]
   end
 
   def isEmpty(record)
@@ -132,18 +141,18 @@ class HomeController < ApplicationController
             end
           end
         end
-        
+
         #MOVIES
         #if no friends have seen a movie, dont recommend anything
         @moviesEmpty = false
 
         if @movieGenres.empty?()
           @moviesEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @movieGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 
@@ -177,11 +186,11 @@ class HomeController < ApplicationController
 
         if @showGenres.empty?()
           @showsEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @showGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 
@@ -215,11 +224,11 @@ class HomeController < ApplicationController
 
         if @gameGenres.empty?()
           @gamesEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @gameGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 
@@ -253,11 +262,11 @@ class HomeController < ApplicationController
 
         if @podcastGenres.empty?()
           @podcastsEmpty = true
-        
+
         else
           #the hash is created and the most popular genre stored below
           @mostPopularGenre = @podcastGenres.max_by{|k,v| v}.first
-            
+
           #go through every friend and make list of every item seen with that genre
           @applicableMedia = Array.new
 

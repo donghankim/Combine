@@ -14,11 +14,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+    <!-- custom link css style -->
+    <style>
+      li.cool {
+        background-image: linear-gradient(
+          to right,
+          #54b3d6,
+          #54b3d6 50%,
+          #000 50%
+        );
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+      }
+
+      li.cool:before {
+        content: '';
+        background: #54b3d6;
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      li.cool:hover {
+      background-position: 0;
+      }
+
+      li.cool:hover::before {
+        width:100%;
+      }
+
+      li.cool:active{
+        color: #C0F0FC;
+      }
+    </style>
   </head>
 
-  <body>
+  <body class = "d-flex flex-column min-vh-100">
     <%= render 'layouts/header' %>
-    <div class = "container" >
+    <div class = "container">
       <% if notice %>
           <%= render 'layouts/alerts'%>
       <% end %>
