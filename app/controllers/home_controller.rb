@@ -15,14 +15,15 @@ class HomeController < ApplicationController
       if api_req.key?("Error")
         flash[:notice] = "Could not find \"" + params[:query] + "\" in IMDB database..."
       else
-        @mediaData = []
+        @imdbResData = []
         api_req['Search'].each do |data|
           id_ = data["imdbID"]
           imdbRes = fetch_imdb(id_)
           if (not imdbRes.key?("Error"))
-            @mediaData.append(imdbRes)
+            @imdbResData.append(imdbRes)
           end
         end
+        # session[:imdbRes] = imdbResData
       end
     end
   end
