@@ -43,7 +43,7 @@ class HomeController < ApplicationController
     end
 
     if user_signed_in?
-      @userMedia = Medium.where("user_id =?", current_user.id)
+      @userMedia = Medium.where(user_id: current_user.id)
       @media_to_show = []
       @userMedia.each do |m|
         if @selected_types.include? m[:media_type]
