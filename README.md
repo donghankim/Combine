@@ -1,4 +1,4 @@
-# [Group 29] Combine: [Heroku Application Link](https://combine29.herokuapp.com/)
+# [Group 29] Combine: [Heroku Application Link](https://group29-combine.herokuapp.com/)
 
 * Jade Kaleel jik2124
 * Donghan Kim dk3245
