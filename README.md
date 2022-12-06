@@ -4,12 +4,6 @@
 * Donghan Kim dk3245
 * Elia Lejzerowicz eel2157
 
-## Message From The Team
-We would like to inform the TA's that one of our group member did not communicate his decision to leave our team. As a result, we were a little blindsided by the amount of work we had to do for this iteration...
-
-For proj-iter1, we were deducted points for failing cucumber tests when the tests were working well on our local machines. For that reason we have uploaded image proof to showcase our cucumber and rspec test results. If your results don't match ours, please give us a chance to explain.
-Thank you for your assistance.
-
 ## Software Requirements
 * Ruby Version: 2.6.6
 * Rails Version: 6.1.7
@@ -43,13 +37,12 @@ brew install sqlite3
 brew install postgresql
 ```
 
-## Application Local Development
+## Local Development
 The following are instructions to run this application on your local machine
 ```sh
 # cloning the repository
 git clone https://github.com/donghankim/Combine.git
 cd Combine
-git checkout proj-iter1
 
 # install up gems
 rm Gemfile.lock
@@ -73,14 +66,23 @@ rspec
 ```
 If you get an error from running bundle install, try using **sudo bundle install**. This is not recommended, but will solve any permission errors you encounter.
 
-## Cucumber Test Results
-<img src="media/cucumber_res.gif" width="425"/><img src="media/cucumber_coverage.png" width="425"/>
+## Heroku Helper
+Application is hosted using Heroku eco dynos and mini Heroku Postgres DB.
+```sh
+# set heroku app stack version
+$ heroku stack:set heroku-20
 
-**92.57% coverage**
+# to add heroku remote url
+$ git remote add heroku https://git.heroku.com/app.git
 
-## Rspec Test Results
-<img src="media/rspec_res.png" width="425"/><img src="media/rspec_coverage.png" width="425"/>
+# upload code to heroku server
+$ git push heroku main
 
-**73.71% coverage**
+# clean heroku (postgres) db and populate seed data if needed
+$ heroku restart; heroku pg:reset DATABASE --confirm group29-combine; heroku run rake db:migrate
+$ heroku run rake db:seed
 
+# view heoku server logs (tail)
+$ heroku logs -t
+```
 

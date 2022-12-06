@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_06_030040) do
+ActiveRecord::Schema.define(version: 2022_12_06_033432) do
 
   create_table "friends", force: :cascade do |t|
     t.integer "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_12_06_030040) do
   end
 
   create_table "media", force: :cascade do |t|
-    t.string "user_id"
+    t.integer "user_id"
     t.string "imdb_id"
     t.string "title"
     t.string "director"

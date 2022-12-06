@@ -38,7 +38,6 @@ class HomeController < ApplicationController
 
     @all_types = ["movie", "series", "game", "podcast"]
     @selected_types = @all_types
-    @empty = false
     if params["commit"] == "Filter"
       @selected_types = params.select {|k, v| v == "1"}.keys
     end
