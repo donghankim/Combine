@@ -18,8 +18,7 @@ class MediaController < ApplicationController
 
   def createImdb
     # check to see if imdb data already exists
-
-    if Medium.where(user_id: current_user.id, imdb_id: params[:imdb_id]).length > 0
+    if Medium.where(user_id: params[:user_id].to_i, imdb_id: params[:imdb_id]).length > 0
       flash[:notice] = params[:title] + " already exists..."
       redirect_to home_media_path
     else
