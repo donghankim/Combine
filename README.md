@@ -92,5 +92,8 @@ $ heroku run rake db:seed
 
 # view heoku server logs (tail)
 $ heroku logs -t
+
+# access postgres db (\q to quit)
+$ heroku pg:psql
 ```
 
