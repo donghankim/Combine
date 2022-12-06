@@ -7,17 +7,20 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><%= link_to 'Home', root_path, class: "nav-link px-2 link-dark my_link" %></li>
-        <li><%= link_to 'Recommendations', home_recommendations_path, class: "nav-link px-2 link-dark my_link" %></li>
-        <li><%= link_to 'Friends', home_friends_path, class: "nav-link px-2 link-dark my_link" %></li>
-        <li><%= link_to 'About', home_about_path, class: "nav-link px-2 link-dark my_link" %></li>
+        <% if user_signed_in? %>
+          <li class = "cool"><%= link_to 'Search', root_path, class: "nav-link px-2 link-dark my_link" %></li>
+        <% end %>
+        <li class = "cool"><%= link_to 'My Media', home_media_path, class: "nav-link px-2 link-dark my_link" %></li>
+        <li class = "cool"><%= link_to 'Recommendations', home_recommendations_path, class: "nav-link px-2 link-dark my_link" %></li>
+        <li class = "cool"><%= link_to 'Friends', home_friends_path, class: "nav-link px-2 link-dark my_link" %></li>
+        <li class = "cool"><%= link_to 'About', home_about_path, class: "nav-link px-2 link-dark my_link" %></li>
       </ul>
 
       <div class="col-md-3 text-end">
         <% if user_signed_in? %>
           <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-outline-primary me-2" %>
           <%= link_to 'Sign Out', destroy_user_session_path,  method: :delete, class: "btn btn-primary" %>
-        <% end%>
+        <% end %>
       </div>
     </header>
   </div>

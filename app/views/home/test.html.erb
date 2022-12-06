@@ -1,0 +1,22 @@
+<p>For testing purposes</p>
+
+<h4>You have 10 Contents saved</h4>
+<%= form_with url: home_test_path, method: :get do |form| %>
+  <% @all_media.each do |type| %>
+    <div class="form-check  form-check-inline">
+      <%= form.label "#{type}", class: 'form-check-label' %>
+      <%= form.check_box "#{type}", checked: @media_to_show.include?(type), class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <br />
+  <br />
+  <%= form.submit 'Filter', class: 'btn btn-primary btn-md' %>
+<% end %>
+
+
+<select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
