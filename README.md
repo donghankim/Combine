@@ -1,8 +1,17 @@
-# [Group 29]: Combine! [Heroku Link](https://group29-combine.herokuapp.com/)
+# [Group 29] Combine: <a href="https://group29-combine.herokuapp.com/" target="_blank">Heroku Application Link</a>
+
 
 * Jade Kaleel jik2124
 * Donghan Kim dk3245
 * Elia Lejzerowicz eel2157
+
+## TODO:
+All main functionalities have been implemented and tested. A few bugs and some design changes will be addressed before the final submission (proj-launch)
+* Fix MySQL and Postgres DB field type incompatibility issue -> look at createImdb function and difference between params and current_user.id
+* Update form template (design)
+* Add additional flash message colors
+* Change freinds table view
+* Convert recommendation view into card design
 
 ## Software Requirements
 * Ruby Version: 2.6.6
