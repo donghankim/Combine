@@ -1,4 +1,4 @@
-# [Group 29] Combine: <a href="https://group29-combine.herokuapp.com/" target="_blank">Heroku Application Link</a>
+# [Group 29] Combine: <a href="https://https://combine29.herokuapp.com/" target="_blank">Heroku Application Link</a>
 
 * Jade Kaleel jik2124
 * Donghan Kim dk3245
@@ -89,6 +89,9 @@ $ git push heroku main
 # clean heroku (postgres) db and populate seed data if needed
 $ heroku restart; heroku pg:reset DATABASE --confirm group29-combine; heroku run rake db:migrate
 $ heroku run rake db:seed
+
+# when migrations dont exist (build db from schema)
+$ heroku run rails db:schema:load
 
 # view heoku server logs (tail)
 $ heroku logs -t
