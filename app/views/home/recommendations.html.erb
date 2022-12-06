@@ -19,7 +19,7 @@
         <% else %>
             <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @movieRecommendation.name %></h3>
+                    <h3 class="display-5 fw-bold"><%= @movieRecommendation.title %></h3>
                     <hr class="my-4">
                     <h6>Friends that have seen this movie: 
                         <% @movieRecommendedBy.each_with_index do |hasSeen, index| %> 
@@ -31,9 +31,7 @@
                         <% end %>
                     </h6>
                     <h6>Rating: <%= @movieRecommendation.rating %></h6>
-                    <h6>Year Released: <%= @movieRecommendation.year %></h6>
                     <h6>Director: <%= @movieRecommendation.director %></h6>
-                    <h6>Star Actors: <%= @movieRecommendation.movie_stars %></h6>
                     <h6>Genre: <%= @movieRecommendation.genre %></h6>
                 </div>
             </div>
@@ -49,7 +47,7 @@
         <% else %>
             <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @showRecommendation.name %></h3>
+                    <h3 class="display-5 fw-bold"><%= @showRecommendation.title %></h3>
                     <hr class="my-4">
                     <h6>Friends that have seen this show: 
                         <% @showRecommendedBy.each_with_index do |hasSeen, index| %> 
@@ -62,8 +60,6 @@
                     </h6>
                     <h6>Rating: <%= @showRecommendation.rating %></h6>
                     <h6>Director: <%= @showRecommendation.director %></h6>
-                    <h6>Release Year: <%= @showRecommendation.seasons %></h6>
-                    <h6>Star Actors: <%= @showRecommendation.show_stars %></h6>
                     <h6>Genre: <%= @showRecommendation.genre %></h6>
                 </div>
             </div>
@@ -79,7 +75,7 @@
         <% else %>
             <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @gameRecommendation.name %></h3>
+                    <h3 class="display-5 fw-bold"><%= @gameRecommendation.title %></h3>
                     <hr class="my-4">
                     <h6>Friends that have seen this game: 
                         <% @gameRecommendedBy.each_with_index do |hasSeen, index| %> 
@@ -91,8 +87,7 @@
                         <% end %>
                     </h6>
                     <h6>Rating: <%= @gameRecommendation.rating %></h6>
-                    <h6>Year Released: <%= @gameRecommendation.year %></h6>
-                    <h6>Company: <%= @gameRecommendation.company %></h6>
+                    <h6>Company: <%= @gameRecommendation.director %></h6>
                     <h6>Genre: <%= @gameRecommendation.genre %></h6>
                 </div>
             </div>
@@ -108,7 +103,7 @@
         <% else %>
             <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @podcastRecommendation.name %></h3>
+                    <h3 class="display-5 fw-bold"><%= @podcastRecommendation.title %></h3>
                     <hr class="my-4">
                     <h6>Friends that have heard this podcast: 
                         <% @podcastRecommendedBy.each_with_index do |hasSeen, index| %> 
@@ -120,8 +115,7 @@
                         <% end %>
                     </h6>
                     <h6>Rating: <%= @podcastRecommendation.rating %></h6>
-                    <h6>Company: <%= @podcastRecommendation.company %></h6>
-                    <h6>Recent Episode: <%= @podcastRecommendation.recent_episode %></h6>
+                    <h6>Company: <%= @podcastRecommendation.director %></h6>
                     <h6>Genre: <%= @podcastRecommendation.genre %></h6>
                 </div>
             </div>
