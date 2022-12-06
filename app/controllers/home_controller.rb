@@ -2,6 +2,8 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
+# TODO: Fix session problem
+
 class HomeController < ApplicationController
   def index
     if user_signed_in?
