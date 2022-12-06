@@ -107,7 +107,7 @@ class HomeController < ApplicationController
         #go through each friend
         @userFriends.each do |friend|
           #go through each piece of media
-          Movie.where("user_id =?", friend.name).each do |movie|
+          Medium.where("media_type =?", "movie").where("user_id =?", friend.name).each do |movie|
             @genresArray = movie.genre.split
             #add each genre to the hash
             @genresArray.each do |genre|
@@ -117,7 +117,7 @@ class HomeController < ApplicationController
             end
           end
 
-          TvShow.where("user_id =?", friend.name).each do |show|
+          Medium.where("media_type =?", "series").where("user_id =?", friend.name).each do |show|
             @genresArray = show.genre.split
             @genresArray.each do |genre|
               genre.delete! ','
@@ -125,7 +125,7 @@ class HomeController < ApplicationController
             end
           end
 
-          Game.where("user_id =?", friend.name).each do |game|
+          Medium.where("media_type =?", "game").where("user_id =?", friend.name).each do |game|
             @genresArray = game.genre.split
             @genresArray.each do |genre|
               genre.delete! ','
@@ -133,7 +133,7 @@ class HomeController < ApplicationController
             end
           end
 
-          Podcast.where("user_id =?", friend.name).each do |podcast|
+          Medium.where("media_type =?", "podcast").where("user_id =?", friend.name).each do |podcast|
             @genresArray = podcast.genre.split
             @genresArray.each do |genre|
               genre.delete! ','
@@ -157,7 +157,7 @@ class HomeController < ApplicationController
           @applicableMedia = Array.new
 
           @userFriends.each do |friend|
-            Movie.where("user_id =?", friend.name).each do |movie|
+            Medium.where("media_type =?", "movie").where("user_id =?", friend.name).each do |movie|
               @genresArray = movie.genre.split
               @genresArray.each do |genre|
                 genre.delete! ','
@@ -172,8 +172,12 @@ class HomeController < ApplicationController
 
           #who has seen this and is friends with the user
           @movieRecommendedBy = Array.new
-          Movie.where("name =?", @movieRecommendation.name).each do |hasSeen|
+          Medium.where("media_type =?", "movie").where("title =?", @movieRecommendation.title).each do |hasSeen|
             @poss = User.where("id =?", hasSeen.user_id).first
+            puts "HIIIIIIIIIII!!!"
+            puts @movieRecommendation.title
+            puts hasSeen.user_id
+            puts @poss.id
             if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
               @movieRecommendedBy.push @poss
             end
@@ -195,7 +199,7 @@ class HomeController < ApplicationController
           @applicableMedia = Array.new
 
           @userFriends.each do |friend|
-            TvShow.where("user_id =?", friend.name).each do |show|
+            Medium.where("media_type =?", "series").where("user_id =?", friend.name).each do |show|
               @genresArray = show.genre.split
               @genresArray.each do |genre|
                 genre.delete! ','
@@ -210,7 +214,7 @@ class HomeController < ApplicationController
 
           #who has seen this and is friends with the user
           @showRecommendedBy = Array.new
-          TvShow.where("name =?", @showRecommendation.name).each do |hasSeen|
+          Medium.where("media_type =?", "series").where("title =?", @showRecommendation.title).each do |hasSeen|
             @poss = User.where("id =?", hasSeen.user_id).first
             if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
               @showRecommendedBy.push @poss
@@ -233,7 +237,7 @@ class HomeController < ApplicationController
           @applicableMedia = Array.new
 
           @userFriends.each do |friend|
-            Game.where("user_id =?", friend.name).each do |game|
+            Medium.where("media_type =?", "game").where("user_id =?", friend.name).each do |game|
               @genresArray = game.genre.split
               @genresArray.each do |genre|
                 genre.delete! ','
@@ -248,7 +252,7 @@ class HomeController < ApplicationController
 
           #who has seen this and is friends with the user
           @gameRecommendedBy = Array.new
-          Game.where("name =?", @gameRecommendation.name).each do |hasSeen|
+          Medium.where("media_type =?", "game").where("title =?", @gameRecommendation.title).each do |hasSeen|
             @poss = User.where("id =?", hasSeen.user_id).first
             if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
               @gameRecommendedBy.push @poss
@@ -271,7 +275,7 @@ class HomeController < ApplicationController
           @applicableMedia = Array.new
 
           @userFriends.each do |friend|
-            Podcast.where("user_id =?", friend.name).each do |podcast|
+            Medium.where("media_type =?", "podcast").where("user_id =?", friend.name).each do |podcast|
               @genresArray = podcast.genre.split
               @genresArray.each do |genre|
                 genre.delete! ','
@@ -286,7 +290,7 @@ class HomeController < ApplicationController
 
           #who has seen this and is friends with the user
           @podcastRecommendedBy = Array.new
-          Podcast.where("name =?", @podcastRecommendation.name).each do |hasSeen|
+          Medium.where("media_type =?", "podcast").where("title =?", @podcastRecommendation.title).each do |hasSeen|
             @poss = User.where("id =?", hasSeen.user_id).first
             if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
               @podcastRecommendedBy.push @poss

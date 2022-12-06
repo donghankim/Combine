@@ -12,10 +12,10 @@ class FriendsController < ApplicationController
   def show
     @friendEmail = User.where("id =?", @friend.name)
 
-    @friendsMovies = Movie.where("user_id =?", @friend.name)
-    @friendsGames = Game.where("user_id =?", @friend.name)
-    @friendsPodcasts = Podcast.where("user_id =?", @friend.name)
-    @friendsShows = TvShow.where("user_id =?", @friend.name)
+    @friendsMovies = Medium.where("media_type =?", "movie").where("user_id =?", @friend.name)
+    @friendsGames = Medium.where("media_type =?", "game").where("user_id =?", @friend.name)
+    @friendsPodcasts = Medium.where("media_type =?", "podcast").where("user_id =?", @friend.name)
+    @friendsShows = Medium.where("media_type =?", "series").where("user_id =?", @friend.name)
 
     @friendsMoviesEmpty = isEmpty(@friendsMovies)
     @friendsGamesEmpty = isEmpty(@friendsGames)
