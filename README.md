@@ -1,14 +1,8 @@
-# [Group 29]: Combine! [Heroku Link](https://group29-combine.herokuapp.com/)
+# [Group 29] Combine: [Heroku Application Link](https://https://combine29.herokuapp.com/)
 
 * Jade Kaleel jik2124
 * Donghan Kim dk3245
 * Elia Lejzerowicz eel2157
-
-## Message From The Team
-We would like to inform the TA's that one of our group member did not communicate his decision to leave our team. As a result, we were a little blindsided by the amount of work we had to do for this iteration...
-
-For proj-iter1, we were deducted points for failing cucumber tests when the tests were working well on our local machines. For that reason we have uploaded image proof to showcase our cucumber and rspec test results. If your results don't match ours, please give us a chance to explain.
-Thank you for your assistance.
 
 ## Software Requirements
 * Ruby Version: 2.6.6
