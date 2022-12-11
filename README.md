@@ -23,7 +23,6 @@ All main functionalities have been implemented and tested. A few bugs and some d
 
 ## Software Installations Guide
 ALL packages were installed using homebrew. These steps will work on **M1/M2 macbooks**. However, for other mac variants some of these steps might not work at once.
-
 ```sh
 # install rbenv and ruby-build
 brew install rbenv ruby-build
@@ -44,6 +43,7 @@ brew install sqlite3
 # install postrgesql
 brew install postgresql
 ```
+If this doesnt work, checkout <a href="https://gorails.com/setup/macos/12-monterey" target="_blank">ruby^rails install guide</a>
 
 ## Local Development
 The following are instructions to run this application on your local machine
@@ -57,7 +57,7 @@ rm Gemfile.lock
 bundle install
 
 # set up local database
-rake db:migrate
+rails db:migrate
 
 # start server on localhost:3000
 rails server
@@ -87,16 +87,16 @@ $ git remote add heroku https://git.heroku.com/app.git
 $ git push heroku main
 
 # clean heroku (postgres) db and populate seed data if needed
-$ heroku restart; heroku pg:reset DATABASE --confirm group29-combine; heroku run rake db:migrate
-$ heroku run rake db:seed
+$ heroku restart; heroku pg:reset DATABASE --confirm group29-combine; heroku run rails db:migrate
+$ heroku run rails db:seed
 
-# when migrations dont exist (build db from schema)
+# without migrations (build db from schema)
 $ heroku run rails db:schema:load
 
 # view heoku server logs (tail)
 $ heroku logs -t
 
-# access postgres db (\q to quit)
+# access postgres (\q to quit)
 $ heroku pg:psql
 ```
 
