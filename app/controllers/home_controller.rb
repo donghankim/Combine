@@ -73,22 +73,6 @@ class HomeController < ApplicationController
     return record.empty?
   end
 
-  def friends
-    if !user_signed_in?
-      flash[:notice] = "You need to log in first!"
-      redirect_to new_user_session_path
-    end
-
-    @friendsEmpty = false
-
-    if user_signed_in?
-      @userFriends = Friend.where("user_id =?", current_user.id)
-      @users = User.where("id !=?", 0)
-
-      @friendsEmpty = isEmpty(@userFriends)
-    end
-  end
-
   def recommendations
     if !user_signed_in?
       flash[:notice] = "You need to log in first!"

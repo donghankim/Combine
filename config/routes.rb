@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :friends
   resources :media
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -17,6 +16,11 @@ Rails.application.routes.draw do
 
   get 'createImdb', to: 'media#createImdb', as: 'createImdb'
   get 'showDetails', to: 'home#showDetails', as: 'showDetails'
+
+  # for friends
+  get 'friends/', to: 'friends#index', as: 'friends'
+  post 'friends/', to: 'friends#index', as: 'friendsSearch'
+  post 'addFriend/', to: 'friends#addFriend', as: 'addFriend'
 end
 
 

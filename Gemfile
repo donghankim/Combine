@@ -10,26 +10,24 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'levenshtein', '~> 0.2.2'
 gem 'activerecord-session_store'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-
-group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'capybara', '>= 3.26'
+  gem 'selenium-webdriver', '>= 4.0.0.rc1'
+  gem 'webdrivers'
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'sqlite3', '~> 1.4'
-end
-
-group :test do
-  gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver', '>= 4.0.0.rc1'
-  gem 'webdrivers'
 end
 
 group :production do

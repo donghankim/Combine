@@ -1,3 +1,5 @@
+require 'levenshtein'
+
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
@@ -6,6 +8,54 @@ class FriendsController < ApplicationController
 
   # GET /friends or /friends.json
   def index
+    if !user_signed_in?
+      flash[:notice] = "You need to log in first!"
+      redirect_to new_user_session_path
+    end
+
+    @friend_email = []
+    if user_signed_in?
+      friends = Friend.where(user_id: current_user.id)
+      friends.each do |f|
+        friend_info = User.find_by_id(f)
+        @friend_email.append(friend_info.email)
+      end
+    end
+
+    @potential_friends = []
+    unless params[:friend_email].nil?
+      all_users = User.all
+      token = params[:friend_email]
+      if @friend_email.include?(token)
+        flash[:notice] = params[:friend_email] + " is already a friend!"
+      else
+        all_users.each do |user|
+          if Levenshtein.normalized_distance token, user.email < 0.15
+            @potential_friends.append([user.email, user.id])
+          end
+        end
+
+        if @potential_friends.length == 0
+          flash[:notice] = "Could not find " + params[:friend_email]
+        end
+      end
+    end
+  end
+
+  # post
+  def addFriend
+    @friend = Friend.new
+    @friend.user_id = current_user.id
+    @friend.name = params[:friend_id]
+
+    respond_to do |format|
+      if @friend.save
+        format.html { redirect_to friends_path, notice: "Friend was successfully created." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @friend.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /friends/1 or /friends/1.json

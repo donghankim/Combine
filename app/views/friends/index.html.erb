@@ -1,0 +1,56 @@
+<style>
+  td,
+  tr {
+      text-align: center;
+      vertical-align: middle;
+  }
+</style>
+
+
+<h4>Add Friends</h4>
+<%= form_tag friendsSearch_path %>
+<%= text_field_tag :friend_email, nil, placeholder: 'Friend Email' %>
+<%= submit_tag "Search" %>
+<br />
+<br />
+
+
+<% if @potential_friends.length > 0 %>
+    <h6>Showing <%= @potential_friends.length %> potential results:</h6>
+    <table class="table table-hover table-bordered" style="width:30%">
+        <tbody>
+        <% @potential_friends.each do |user| %>
+            <tr>
+                <th><%= user[0] %></th>
+                <th><%= button_to 'Add Friend', addFriend_path(friend_id: user[1])%></th>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+<% end %>
+<br />
+<br />
+
+<h4>My Friends</h4>
+<% if @friend_email.length == 0 %>
+    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+<% else %>
+    <table class="table table-hover table-bordered" style="width:25%">
+        <thead>
+            <tr>
+            <th>Email</th>
+            <th>Profile</th>
+            <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @friend_email.each do |email| %>
+            <tr>
+                <td><%= email %></td>
+                <td>link</td>
+                <td>Remove</td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+<% end %>
