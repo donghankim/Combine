@@ -20,7 +20,6 @@ class FriendsController < ApplicationController
       end
     end
 
-
     @friend_search = []
     unless params[:friend_email].nil?
       all_users = User.all
@@ -61,36 +60,9 @@ class FriendsController < ApplicationController
 
   # GET /friends/1 or /friends/1.json
   def show
-    @friendEmail = User.where("id =?", @friend.name)
-
-    @friendsMovies = Medium.where("media_type =?", "movie").where("user_id =?", @friend.name)
-    @friendsGames = Medium.where("media_type =?", "game").where("user_id =?", @friend.name)
-    @friendsPodcasts = Medium.where("media_type =?", "podcast").where("user_id =?", @friend.name)
-    @friendsShows = Medium.where("media_type =?", "series").where("user_id =?", @friend.name)
-
-    @friendsMoviesEmpty = isEmpty(@friendsMovies)
-    @friendsGamesEmpty = isEmpty(@friendsGames)
-    @friendsPodcastsEmpty = isEmpty(@friendsPodcasts)
-    @friendsShowsEmpty = isEmpty(@friendsShows)
-  end
-
-  def isEmpty(record)
-    return record.empty?
-  end
-
-  # POST /friends or /friends.json
-  def create
-    @friend = current_user.friend.build(friend_params)
-
-    respond_to do |format|
-      if @friend.save
-        format.html { redirect_to friend_url(@friend), notice: "Friend was successfully created." }
-        format.json { render :show, status: :created, location: @friend }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
-      end
-    end
+    uid = params[:friend_uid]
+    @friendEmail = User.find_by_id(uid).email
+    @media_to_show = Medium.where(user_id: uid)
   end
 
   # DELETE /friends/1 or /friends/1.json

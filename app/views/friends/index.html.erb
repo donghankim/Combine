@@ -14,7 +14,6 @@
 <br />
 <br />
 
-
 <% if @friend_search.length > 0 %>
     <h6>Showing <%= @friend_search.length %> potential results:</h6>
     <table class="table table-hover table-bordered" style="width:30%">
@@ -29,8 +28,6 @@
     </table>
 <% end %>
 <br />
-<br />
-
 <h4>My Friends</h4>
 <% if @myfriends.length == 0 %>
     <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
@@ -44,11 +41,11 @@
             </tr>
         </thead>
         <tbody>
-        <% @myfriends.each do |friend| %>
+        <% @myfriends.each do |ff| %>
             <tr>
-                <td><%= User.find_by_id(friend[1]).email %></td>
-                <td><%= link_to 'Profile', showFriend_path(friend[1]) %></td>
-                <td><%= link_to 'Remove', removeFriend_path(friend[0]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= User.find_by_id(ff[1]).email %></td>
+                <td><%= link_to 'Profile', showFriend_path(:id => ff[0], :friend_uid => ff[1]) %></td>
+                <td><%= link_to 'Remove', removeFriend_path(ff[0]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
         <% end %>
         </tbody>

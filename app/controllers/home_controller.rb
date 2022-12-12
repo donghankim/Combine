@@ -161,10 +161,6 @@ class HomeController < ApplicationController
           @movieRecommendedBy = Array.new
           Medium.where("media_type =?", "movie").where("title =?", @movieRecommendation.title).each do |hasSeen|
             @poss = User.where("id =?", hasSeen.user_id).first
-            puts "HIIIIIIIIIII!!!"
-            puts @movieRecommendation.title
-            puts hasSeen.user_id
-            puts @poss.id
             if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
               @movieRecommendedBy.push @poss
             end
