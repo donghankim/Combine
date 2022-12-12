@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :media
+  # resources :friends
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#index'
@@ -11,16 +13,16 @@ Rails.application.routes.draw do
 
   get 'home/about'
   get 'home/recommendations'
-  get 'home/friends'
   get 'home/media'
 
   get 'createImdb', to: 'media#createImdb', as: 'createImdb'
   get 'showDetails', to: 'home#showDetails', as: 'showDetails'
 
   # for friends
-  get 'friends/', to: 'friends#index', as: 'friends'
-  post 'friends/', to: 'friends#index', as: 'friendsSearch'
-  post 'addFriend/', to: 'friends#addFriend', as: 'addFriend'
+  get 'friends', to: 'friends#index', as: 'friends'
+  get 'addFriend', to: 'friends#addFriend', as: 'addFriend'
+  post 'friends', to: 'friends#index', as: 'friendsSearch'
+  get '/friend/:id(.:format)', to: 'friends#show', as: 'showFriend'
+  delete '/friend/:id(.:format)', to: 'friends#destroy', as: 'removeFriend'
+
 end
-
-
