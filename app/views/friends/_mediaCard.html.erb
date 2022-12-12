@@ -5,8 +5,10 @@
                 <div class="col-md-4">
                     <% if media["poster_url"] == "N/A" %>
                         <%= image_tag "notfound.png", class: "card-img-top img-fluid rounded-start" %>
+                        <p style="text-align:center; margin-top: 10px; color:#717171;"><%= media['media_type'] %></p>
                     <% else %>
                         <img class="card-img-top" src="<%= media["poster_url"] %>" alt="Media Poster">
+                        <p style="text-align:center; margin-top: 10px; color:#717171;"><%= media['media_type'] %></p>
                     <% end %>
                 </div>
                 <div class="col-md-8">
@@ -14,11 +16,6 @@
                         <h6 class="card-title"><%= media["title"] %></h6>
                         <div class = "overflow-scroll"  style = "max-height: 100px">
                             <p class="card-text overflow-auto"><%= media["summary"] %></p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <%= link_to 'Remove', media, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
                         </div>
                     </div>
                 </div>

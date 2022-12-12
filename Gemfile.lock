@@ -47,12 +47,6 @@ GEM
     activerecord (6.1.7)
       activemodel (= 6.1.7)
       activesupport (= 6.1.7)
-    activerecord-session_store (2.0.0)
-      actionpack (>= 5.2.4.1)
-      activerecord (>= 5.2.4.1)
-      multi_json (~> 1.11, >= 1.11.2)
-      rack (>= 2.0.8, < 3)
-      railties (>= 5.2.4.1)
     activestorage (6.1.7)
       actionpack (= 6.1.7)
       activejob (= 6.1.7)
@@ -131,7 +125,9 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     erubi (1.11.0)
+    excon (0.95.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -142,6 +138,7 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    ipaddr (1.2.2)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -164,12 +161,13 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.6.0)
-    multi_json (1.15.0)
     multi_test (1.1.0)
     nio4r (2.5.8)
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    openssl (2.1.2)
+      ipaddr
     orm_adapter (0.5.0)
     pg (1.4.4)
     public_suffix (5.0.0)
@@ -251,6 +249,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    simplecov (0.21.2)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     spring (3.1.1)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -270,6 +274,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    uri (0.12.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -298,17 +303,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-session_store
   bootsnap (>= 1.4.4)
   byebug
-  capybara (>= 3.26)
   cucumber-rails
   database_cleaner
   devise (~> 4.8, >= 4.8.1)
+  excon
   factory_bot_rails
   jbuilder (~> 2.7)
   levenshtein (~> 0.2.2)
   listen (~> 3.3)
+  openssl
   pg (~> 1.4, >= 1.4.4)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -316,10 +321,12 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
+  simplecov (~> 0.21.2)
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
+  uri (~> 0.12.0)
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
