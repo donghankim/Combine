@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_04_093132) do
+ActiveRecord::Schema.define(version: 2022_12_06_033432) do
 
   create_table "friends", force: :cascade do |t|
     t.integer "name"
@@ -20,15 +20,15 @@ ActiveRecord::Schema.define(version: 2022_12_04_093132) do
   end
 
   create_table "media", force: :cascade do |t|
-    t.string "user_id"
+    t.integer "user_id"
     t.string "imdb_id"
-    t.string "media_type"
     t.string "title"
     t.string "director"
     t.string "genre"
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "media_type"
     t.string "poster_url"
     t.string "summary"
     t.index ["user_id"], name: "index_media_on_user_id"

@@ -2,6 +2,8 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
+# TODO: Fix session problem
+
 class HomeController < ApplicationController
   def index
     if user_signed_in?
@@ -15,14 +17,15 @@ class HomeController < ApplicationController
       if api_req.key?("Error")
         flash[:notice] = "Could not find \"" + params[:query] + "\" in IMDB database..."
       else
-        @mediaData = []
+        @imdbResData = []
         api_req['Search'].each do |data|
           id_ = data["imdbID"]
           imdbRes = fetch_imdb(id_)
           if (not imdbRes.key?("Error"))
-            @mediaData.append(imdbRes)
+            @imdbResData.append(imdbRes)
           end
         end
+        # session[:imdbRes] = imdbResData
       end
     end
   end
@@ -35,13 +38,13 @@ class HomeController < ApplicationController
 
     @all_types = ["movie", "series", "game", "podcast"]
     @selected_types = @all_types
-    @empty = false
     if params["commit"] == "Filter"
       @selected_types = params.select {|k, v| v == "1"}.keys
     end
 
     if user_signed_in?
-      @userMedia = Medium.where("user_id =?", current_user.id)
+      puts current_user.id
+      @userMedia = Medium.where(user_id: current_user.id)
       @media_to_show = []
       @userMedia.each do |m|
         if @selected_types.include? m[:media_type]
@@ -68,22 +71,6 @@ class HomeController < ApplicationController
 
   def isEmpty(record)
     return record.empty?
-  end
-
-  def friends
-    if !user_signed_in?
-      flash[:notice] = "You need to log in first!"
-      redirect_to new_user_session_path
-    end
-
-    @friendsEmpty = false
-
-    if user_signed_in?
-      @userFriends = Friend.where("user_id =?", current_user.id)
-      @users = User.where("id !=?", 0)
-
-      @friendsEmpty = isEmpty(@userFriends)
-    end
   end
 
   def recommendations
@@ -174,10 +161,6 @@ class HomeController < ApplicationController
           @movieRecommendedBy = Array.new
           Medium.where("media_type =?", "movie").where("title =?", @movieRecommendation.title).each do |hasSeen|
             @poss = User.where("id =?", hasSeen.user_id).first
-            puts "HIIIIIIIIIII!!!"
-            puts @movieRecommendation.title
-            puts hasSeen.user_id
-            puts @poss.id
             if Friend.where("name =?", @poss.id).where("user_id =?", current_user.id).present?
               @movieRecommendedBy.push @poss
             end

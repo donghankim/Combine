@@ -1,3 +1,7 @@
+<h4>Cant find your favorite media on IMDB?</h4>
+<%= link_to 'Add my own!', new_medium_path, class: "btn btn-outline-secondary btn-sm" %>
+<br />
+<br />
 <%= form_with url: home_media_path, method: :get do |form| %>
   <% @all_types.each do |type| %>
     <div class="form-check  form-check-inline">
@@ -8,11 +12,7 @@
   <%= form.submit 'Filter', class: 'btn btn-primary btn-md' %>
 <% end %>
 
-<br />
-<h4>Cant find your favorite media on IMDB?</h4>
-<%= link_to 'Add my own!', new_medium_path, class: "btn btn-outline-secondary btn-sm" %>
-
-<% unless @media_to_show.nil? %>
+<% unless @media_to_show.length == 0 %>
   <div class="album py-5">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -21,8 +21,6 @@
     </div>
   </div>
 <% end %>
-
-
 
 
 

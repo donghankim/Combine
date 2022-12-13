@@ -1,0 +1,54 @@
+<style>
+  td,
+  tr {
+      text-align: center;
+      vertical-align: middle;
+  }
+</style>
+
+
+<h4>Add Friends</h4>
+<%= form_tag friendsSearch_path %>
+<%= text_field_tag :friend_email, nil, placeholder: 'Friend Email' %>
+<%= submit_tag "Search" %>
+<br />
+<br />
+
+<% if @friend_search.length > 0 %>
+    <h6>Showing <%= @friend_search.length %> potential results:</h6>
+    <table class="table table-hover table-bordered" style="width:30%">
+        <tbody>
+        <% @friend_search.each do |friend| %>
+            <tr>
+                <th><%= friend[0] %></th>
+                <th><%= link_to 'Add Friend', addFriend_path(:friend_id => friend[1])%></th>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+<% end %>
+<br />
+<h4>My Friends</h4>
+<% if @myfriends.length == 0 %>
+    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+<% else %>
+    <table class="table table-hover table-bordered" style="width:25%">
+        <thead>
+            <tr>
+            <th>Email</th>
+            <th>Profile</th>
+            <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @myfriends.each do |ff| %>
+            <tr>
+                <td><%= User.find_by_id(ff[1]).email %></td>
+                <td><%= link_to 'Profile', showFriend_path(:id => ff[0], :friend_uid => ff[1]) %></td>
+                <td><%= link_to 'Remove', removeFriend_path(ff[0]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+<% end %>
+
