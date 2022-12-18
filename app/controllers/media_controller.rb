@@ -63,19 +63,6 @@ class MediaController < ApplicationController
     end
   end
 
-  # PATCH/PUT /media/1 or /media/1.json for user defined media
-  def update
-    respond_to do |format|
-      if @medium.update(medium_params)
-        format.html { redirect_to medium_url(@medium), notice: "Media was successfully updated." }
-        format.json { render :show, status: :ok, location: @medium }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @medium.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /media/1 or /media/1.json
   def destroy
     @medium.destroy
