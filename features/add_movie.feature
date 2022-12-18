@@ -12,6 +12,7 @@ Feature: Add New Movie
     Scenario: Add a Movie Using IMDB
         When I search for a movie
         And I click a result
+        Then I should see the movie info
         And I press "Add movie"
         Then I should see the new movie on my movies table
 
@@ -29,3 +30,8 @@ Feature: Add New Movie
         And I click a result
         And I press "Add movie"
         Then I should not be allowed to add it
+
+    Scenario: Log Out
+        When they have logged out
+        And I press "My Media"
+        Then I should see a request to log in
