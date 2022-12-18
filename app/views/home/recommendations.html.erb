@@ -20,9 +20,15 @@
                     <% end %>
                 <% end %>
             </h6>
+            <% if @movieRecommendation.poster_url == "N/A" %>
+                <h6><%= image_tag "notfound.png"%></h6>
+            <% else %>
+                <h6><img src=<%= @movieRecommendation.poster_url %> alt="Movie Poster"></h6>
+            <% end %>
             <h6>Rating: <%= @movieRecommendation.rating %></h6>
             <h6>Director: <%= @movieRecommendation.director %></h6>
             <h6>Genre: <%= @movieRecommendation.genre %></h6>
+            <h6>Summary: <%= @movieRecommendation.summary %></h6>
         </div>
     </div>
     <% end %>
@@ -42,6 +48,11 @@
                         <% end %>
                     <% end %>
                 </h6>
+                <% if @showRecommendation.poster_url == "N/A" %>
+                    <h6><%= image_tag "notfound.png"%></h6>
+                <% else %>
+                    <h6><img src=<%= @showRecommendation.poster_url %> alt="Tv Show Poster"></h6>
+                <% end %>
                 <h6>Rating: <%= @showRecommendation.rating %></h6>
                 <h6>Director: <%= @showRecommendation.director %></h6>
                 <h6>Genre: <%= @showRecommendation.genre %></h6>
@@ -64,6 +75,11 @@
                         <% end %>
                     <% end %>
                 </h6>
+                <% if @gameRecommendation.poster_url == "N/A" %>
+                    <h6><%= image_tag "notfound.png"%></h6>
+                <% else %>
+                    <h6><img src=<%= @gameRecommendation.poster_url %> alt="Game Poster"></h6>
+                <% end %>
                 <h6>Rating: <%= @gameRecommendation.rating %></h6>
                 <h6>Company: <%= @gameRecommendation.director %></h6>
                 <h6>Genre: <%= @gameRecommendation.genre %></h6>
@@ -86,6 +102,11 @@
                         <% end %>
                     <% end %>
                 </h6>
+                <% if @podcastRecommendation.poster_url == "N/A" %>
+                        <h6><%= image_tag "notfound.png"%></h6>
+                    <% else %>
+                        <h6><img src=<%= @podcastRecommendation.poster_url %> alt="Podcast Poster"></h6>
+                <% end %>
                 <h6>Rating: <%= @podcastRecommendation.rating %></h6>
                 <h6>Company: <%= @podcastRecommendation.director %></h6>
                 <h6>Genre: <%= @podcastRecommendation.genre %></h6>
