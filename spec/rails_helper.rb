@@ -2,6 +2,7 @@
 require 'simplecov'
 SimpleCov.start 'rails'
 require 'spec_helper'
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -62,4 +63,12 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include Capybara::DSL
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Devise::Test::IntegrationHelpers, type: :request
+
+  config.expect_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
 end

@@ -1,0 +1,2067 @@
+Started GET "/" for 127.0.0.1 at 2022-12-12 18:44:51 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 72.1ms | Allocations: 27749)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/donghankim/Desktop/pdev/github/Combine/public/packs
+[Webpacker] Hash: 7cd16cd621b09f7097fb
+Version: webpack 4.46.0
+Time: 358ms
+Built at: 12/12/2022 6:44:53 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-177d04817f4c42bebd74.js    124 KiB  application  [emitted] [immutable]  application
+js/application-177d04817f4c42bebd74.js.map    136 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-177d04817f4c42bebd74.js js/application-177d04817f4c42bebd74.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 493 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 553 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 1075)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 1918.7ms | Allocations: 39002)
+Completed 200 OK in 1945ms (Views: 1925.7ms | ActiveRecord: 0.0ms | Allocations: 46288)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-12 18:44:53 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 25.5ms | Allocations: 745)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 5737)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 8877)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-12 18:44:58 -0500
+Processing by Devise::RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 918)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  
+activerecord (6.1.7) lib/active_record/connection_adapters/sqlite3_adapter.rb:346:in `table_structure'
+activerecord (6.1.7) lib/active_record/connection_adapters/abstract/schema_statements.rb:116:in `columns'
+activerecord (6.1.7) lib/active_record/connection_adapters/schema_cache.rb:112:in `block in columns'
+activerecord (6.1.7) lib/active_record/connection_adapters/schema_cache.rb:111:in `fetch'
+activerecord (6.1.7) lib/active_record/connection_adapters/schema_cache.rb:111:in `columns'
+activerecord (6.1.7) lib/active_record/connection_adapters/schema_cache.rb:120:in `block in columns_hash'
+activerecord (6.1.7) lib/active_record/connection_adapters/schema_cache.rb:119:in `fetch'
+activerecord (6.1.7) lib/active_record/connection_adapters/schema_cache.rb:119:in `columns_hash'
+activerecord (6.1.7) lib/active_record/model_schema.rb:553:in `load_schema!'
+activerecord (6.1.7) lib/active_record/attributes.rb:250:in `load_schema!'
+activerecord (6.1.7) lib/active_record/model_schema.rb:539:in `block in load_schema'
+/Users/donghankim/.rbenv/versions/2.6.6/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (6.1.7) lib/active_record/model_schema.rb:536:in `load_schema'
+activerecord (6.1.7) lib/active_record/model_schema.rb:402:in `attribute_types'
+activerecord (6.1.7) lib/active_record/attribute_methods.rb:187:in `_has_attribute?'
+activerecord (6.1.7) lib/active_record/inheritance.rb:57:in `new'
+devise (4.8.1) lib/devise/models/registerable.rb:22:in `new_with_session'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:100:in `build_resource'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:10:in `new'
+actionpack (6.1.7) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.7) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.7) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.7) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.7) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.7) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.7) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.7) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.7) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.7) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.1.7) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.7) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (6.1.7) lib/rails/engine.rb:539:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "friends"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "friends" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" integer, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "media"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "media" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "imdb_id" varchar, "title" varchar, "director" varchar, "genre" varchar, "rating" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "media_type" varchar, "poster_url" varchar, "summary" varchar)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_media_on_user_id" ON "media" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221206033432)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-12 23:45:09.995641"], ["updated_at", "2022-12-12 23:45:09.995641"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "607e6caf69cdfb93a1527cf409125fbe66763cde"], ["created_at", "2022-12-12 23:45:10.003616"], ["updated_at", "2022-12-12 23:45:10.003616"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "friends"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "friends" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" integer, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "media"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "media" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "imdb_id" varchar, "title" varchar, "director" varchar, "genre" varchar, "rating" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "media_type" varchar, "poster_url" varchar, "summary" varchar)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_media_on_user_id" ON "media" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "development"], ["updated_at", "2022-12-12 23:45:10.026846"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-12-12 23:45:10.039190"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-12 18:45:21 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 310)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 560)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 5149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1118)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 16960)
+Completed 200 OK in 63ms (Views: 41.2ms | ActiveRecord: 0.5ms | Allocations: 25443)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-12 18:45:28 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "dk3245@columbia.edu"], ["encrypted_password", "$2a$12$0pXdSuhmSlFWqoKNHXPFH.ADwcGts6KDCgqfYB4XO.weqNCZveAmC"], ["created_at", "2022-12-12 23:45:30.512781"], ["updated_at", "2022-12-12 23:45:30.512781"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1838ms (ActiveRecord: 1.6ms | Allocations: 14488)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-12 18:45:30 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1235)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-12 18:45:30 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.8ms | Allocations: 1733)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 154)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7994)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms | Allocations: 9040)
+
+
+Started POST "/home/search" for 127.0.0.1 at 2022-12-12 18:45:35 -0500
+Processing by HomeController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "query"=>"black panther", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/_imdbCard.html.erb:23
+  Rendered home/_imdbCard.html.erb (Duration: 14.3ms | Allocations: 5666)
+  Rendered home/search.html.erb within layouts/application (Duration: 59.5ms | Allocations: 7217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 811)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 12325)
+Completed 200 OK in 2112ms (Views: 69.2ms | ActiveRecord: 0.1ms | Allocations: 23112)
+
+
+Started GET "/createImdb?director=Ryan+Coogler&genre=Action%2C+Adventure%2C+Sci-Fi&imdb_id=tt1825683&media_type=movie&poster_url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI%40._V1_SX300.jpg&rating=7.3&summary=T%27Challa%2C+heir+to+the+hidden+but+advanced+kingdom+of+Wakanda%2C+must+step+forward+to+lead+his+people+into+a+new+future+and+must+confront+a+challenger+from+his+country%27s+past.&title=Black+Panther&user_id=1" for 127.0.0.1 at 2022-12-12 18:45:39 -0500
+Processing by MediaController#createImdb as HTML
+  Parameters: {"director"=>"Ryan Coogler", "genre"=>"Action, Adventure, Sci-Fi", "imdb_id"=>"tt1825683", "media_type"=>"movie", "poster_url"=>"https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg", "rating"=>"7.3", "summary"=>"T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.", "title"=>"Black Panther", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ? AND "media"."imdb_id" = ?[0m  [["user_id", 1], ["imdb_id", "tt1825683"]]
+  ↳ app/controllers/media_controller.rb:21:in `createImdb'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+  [1m[36mMedium Create (0.3ms)[0m  [1m[32mINSERT INTO "media" ("user_id", "imdb_id", "title", "director", "genre", "rating", "created_at", "updated_at", "media_type", "poster_url", "summary") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["imdb_id", "tt1825683"], ["title", "Black Panther"], ["director", "Ryan Coogler"], ["genre", "Action, Adventure, Sci-Fi"], ["rating", 7.3], ["created_at", "2022-12-12 23:45:39.966346"], ["updated_at", "2022-12-12 23:45:39.966346"], ["media_type", "movie"], ["poster_url", "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg"], ["summary", "T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past."]]
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+Redirected to http://127.0.0.1:3000/home/media
+Completed 302 Found in 62ms (ActiveRecord: 2.0ms | Allocations: 18865)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-12 18:45:39 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 1.2ms | Allocations: 499)
+  Rendered home/media.html.erb within layouts/application (Duration: 10.2ms | Allocations: 6517)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 835)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 12685)
+Completed 200 OK in 26ms (Views: 20.2ms | ActiveRecord: 0.3ms | Allocations: 15054)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-12 18:45:42 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms | Allocations: 1097)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-12 18:45:42 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.2ms | Allocations: 1719)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 7351)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.2ms | Allocations: 7785)
+
+
+Started POST "/home/search" for 127.0.0.1 at 2022-12-12 18:45:48 -0500
+Processing by HomeController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "query"=>"minecraft", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/_imdbCard.html.erb:23
+  Rendered home/_imdbCard.html.erb (Duration: 40.2ms | Allocations: 5585)
+  Rendered home/search.html.erb within layouts/application (Duration: 50.1ms | Allocations: 6995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 802)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 12090)
+Completed 200 OK in 2167ms (Views: 60.2ms | ActiveRecord: 0.5ms | Allocations: 22830)
+
+
+Started GET "/createImdb?director=N%2FA&genre=Action%2C+Adventure%2C+Comedy&imdb_id=tt10680606&media_type=series&poster_url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BODk3M2ZlMzctMWZkYS00ZGM5LTkxODYtODkxOWZkOWYzODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM%40._V1_SX300.jpg&rating=9.5&summary=Pewdiepie+has+epic+adventures+in+Minecraft.+With+the+help+of+his+friends%2C+he+can+conquer+the+hostile+world%2C+and+maybe+learn+some+life+lessons.&title=Minecraft+Epic&user_id=1" for 127.0.0.1 at 2022-12-12 18:45:52 -0500
+Processing by MediaController#createImdb as HTML
+  Parameters: {"director"=>"N/A", "genre"=>"Action, Adventure, Comedy", "imdb_id"=>"tt10680606", "media_type"=>"series", "poster_url"=>"https://m.media-amazon.com/images/M/MV5BODk3M2ZlMzctMWZkYS00ZGM5LTkxODYtODkxOWZkOWYzODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_SX300.jpg", "rating"=>"9.5", "summary"=>"Pewdiepie has epic adventures in Minecraft. With the help of his friends, he can conquer the hostile world, and maybe learn some life lessons.", "title"=>"Minecraft Epic", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ? AND "media"."imdb_id" = ?[0m  [["user_id", 1], ["imdb_id", "tt10680606"]]
+  ↳ app/controllers/media_controller.rb:21:in `createImdb'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+  [1m[36mMedium Create (0.4ms)[0m  [1m[32mINSERT INTO "media" ("user_id", "imdb_id", "title", "director", "genre", "rating", "created_at", "updated_at", "media_type", "poster_url", "summary") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["imdb_id", "tt10680606"], ["title", "Minecraft Epic"], ["director", "N/A"], ["genre", "Action, Adventure, Comedy"], ["rating", 9.5], ["created_at", "2022-12-12 23:45:52.595083"], ["updated_at", "2022-12-12 23:45:52.595083"], ["media_type", "series"], ["poster_url", "https://m.media-amazon.com/images/M/MV5BODk3M2ZlMzctMWZkYS00ZGM5LTkxODYtODkxOWZkOWYzODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_SX300.jpg"], ["summary", "Pewdiepie has epic adventures in Minecraft. With the help of his friends, he can conquer the hostile world, and maybe learn some life lessons."]]
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+Redirected to http://127.0.0.1:3000/home/media
+Completed 302 Found in 29ms (ActiveRecord: 1.5ms | Allocations: 4550)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-12 18:45:52 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 0.5ms | Allocations: 226)
+  Rendered home/media.html.erb within layouts/application (Duration: 3.4ms | Allocations: 4663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 827)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 9875)
+Completed 200 OK in 18ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 11803)
+
+
+Started GET "/home/media?movie=0&movie=1&series=0&game=0&podcast=0&commit=Filter" for 127.0.0.1 at 2022-12-12 18:45:55 -0500
+Processing by HomeController#media as HTML
+  Parameters: {"movie"=>"1", "series"=>"0", "game"=>"0", "podcast"=>"0", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.5ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 0.5ms | Allocations: 133)
+  Rendered home/media.html.erb within layouts/application (Duration: 5.7ms | Allocations: 4565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 827)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 9668)
+Completed 200 OK in 33ms (Views: 18.4ms | ActiveRecord: 0.8ms | Allocations: 11587)
+
+
+Started GET "/home/media?movie=0&series=0&series=1&game=0&podcast=0&commit=Filter" for 127.0.0.1 at 2022-12-12 18:45:57 -0500
+Processing by HomeController#media as HTML
+  Parameters: {"movie"=>"0", "series"=>"1", "game"=>"0", "podcast"=>"0", "commit"=>"Filter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.4ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 0.5ms | Allocations: 133)
+  Rendered home/media.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 827)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 9668)
+Completed 200 OK in 34ms (Views: 18.6ms | ActiveRecord: 0.8ms | Allocations: 11586)
+
+
+Started GET "/home/media?movie=0&series=0&series=1&game=0&podcast=0&podcast=1&commit=Filter" for 127.0.0.1 at 2022-12-12 18:45:58 -0500
+Processing by HomeController#media as HTML
+  Parameters: {"movie"=>"0", "series"=>"1", "game"=>"0", "podcast"=>"1", "commit"=>"Filter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 0.6ms | Allocations: 133)
+  Rendered home/media.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 827)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 9669)
+Completed 200 OK in 33ms (Views: 18.2ms | ActiveRecord: 0.7ms | Allocations: 11588)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-12 18:46:00 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 811)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 6441)
+Completed 200 OK in 44ms (Views: 13.0ms | ActiveRecord: 0.7ms | Allocations: 10143)
+
+
+Started POST "/friends" for 127.0.0.1 at 2022-12-12 18:46:07 -0500
+Processing by FriendsController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "friend_email"=>"jack@columbia.edu", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/friends_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 877)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 803)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 6067)
+Completed 200 OK in 33ms (Views: 14.2ms | ActiveRecord: 0.9ms | Allocations: 8621)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-12 18:46:10 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 32ms (ActiveRecord: 0.3ms | Allocations: 11443)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-12 18:46:10 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1000)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 745)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6139)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 6741)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-12 18:46:11 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 113)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 935)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 766)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 6227)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 6775)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-12 18:46:18 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jack@columbia.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jack@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "jack@columbia.edu"], ["encrypted_password", "$2a$12$Il4AkTY9qBynhETjhFLqU.Jt4jELoDh06oPDg4I0MYLKKl6WUj5eO"], ["created_at", "2022-12-12 23:46:19.877602"], ["updated_at", "2022-12-12 23:46:19.877602"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1816ms (ActiveRecord: 1.7ms | Allocations: 5607)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-12 18:46:19 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1069)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-12 18:46:19 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.3ms | Allocations: 1722)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 7461)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms | Allocations: 7888)
+
+
+Started POST "/home/search" for 127.0.0.1 at 2022-12-12 18:46:24 -0500
+Processing by HomeController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "query"=>"iron man", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_imdbCard.html.erb:23
+  Rendered home/_imdbCard.html.erb (Duration: 20.6ms | Allocations: 5523)
+  Rendered home/search.html.erb within layouts/application (Duration: 31.0ms | Allocations: 6937)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 802)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 12029)
+Completed 200 OK in 2204ms (Views: 43.9ms | ActiveRecord: 0.4ms | Allocations: 22888)
+
+
+Started GET "/createImdb?director=Jon+Favreau&genre=Action%2C+Adventure%2C+Sci-Fi&imdb_id=tt0371746&media_type=movie&poster_url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw%40%40._V1_SX300.jpg&rating=7.9&summary=After+being+held+captive+in+an+Afghan+cave%2C+billionaire+engineer+Tony+Stark+creates+a+unique+weaponized+suit+of+armor+to+fight+evil.&title=Iron+Man&user_id=2" for 127.0.0.1 at 2022-12-12 18:46:28 -0500
+Processing by MediaController#createImdb as HTML
+  Parameters: {"director"=>"Jon Favreau", "genre"=>"Action, Adventure, Sci-Fi", "imdb_id"=>"tt0371746", "media_type"=>"movie", "poster_url"=>"https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg", "rating"=>"7.9", "summary"=>"After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.", "title"=>"Iron Man", "user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ? AND "media"."imdb_id" = ?[0m  [["user_id", 2], ["imdb_id", "tt0371746"]]
+  ↳ app/controllers/media_controller.rb:21:in `createImdb'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+  [1m[36mMedium Create (0.5ms)[0m  [1m[32mINSERT INTO "media" ("user_id", "imdb_id", "title", "director", "genre", "rating", "created_at", "updated_at", "media_type", "poster_url", "summary") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["imdb_id", "tt0371746"], ["title", "Iron Man"], ["director", "Jon Favreau"], ["genre", "Action, Adventure, Sci-Fi"], ["rating", 7.9], ["created_at", "2022-12-12 23:46:28.640391"], ["updated_at", "2022-12-12 23:46:28.640391"], ["media_type", "movie"], ["poster_url", "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg"], ["summary", "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil."]]
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/media_controller.rb:36:in `block in createImdb'
+Redirected to http://127.0.0.1:3000/home/media
+Completed 302 Found in 32ms (ActiveRecord: 1.9ms | Allocations: 4511)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-12 18:46:28 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 0.4ms | Allocations: 135)
+  Rendered home/media.html.erb within layouts/application (Duration: 3.7ms | Allocations: 4572)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 827)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 9782)
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 0.3ms | Allocations: 11691)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-12 18:46:30 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 811)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 5983)
+Completed 200 OK in 30ms (Views: 15.9ms | ActiveRecord: 0.5ms | Allocations: 7960)
+
+
+Started POST "/friends" for 127.0.0.1 at 2022-12-12 18:46:33 -0500
+Processing by FriendsController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "friend_email"=>"dk3245@columbia.edu", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/friends_controller.rb:27:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:31:in `block in index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 803)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 6032)
+Completed 200 OK in 38ms (Views: 13.6ms | ActiveRecord: 1.2ms | Allocations: 9353)
+
+
+Started GET "/addFriend?friend_id=1" for 127.0.0.1 at 2022-12-12 18:46:35 -0500
+Processing by FriendsController#addFriend as HTML
+  Parameters: {"friend_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friends_controller.rb:52:in `block in addFriend'
+  [1m[36mFriend Create (0.4ms)[0m  [1m[32mINSERT INTO "friends" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", 1], ["user_id", 2], ["created_at", "2022-12-12 23:46:35.417666"], ["updated_at", "2022-12-12 23:46:35.417666"]]
+  ↳ app/controllers/friends_controller.rb:52:in `block in addFriend'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friends_controller.rb:52:in `block in addFriend'
+Redirected to http://127.0.0.1:3000/friends
+Completed 302 Found in 36ms (ActiveRecord: 2.0ms | Allocations: 7599)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-12 18:46:35 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1069)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 828)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6379)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 8681)
+
+
+Started GET "/friend/1?friend_uid=1" for 127.0.0.1 at 2022-12-12 18:46:36 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"friend_uid"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:64:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friends/show.html.erb:4
+  Rendered friends/_mediaCard.html.erb (Duration: 1.4ms | Allocations: 347)
+  Rendered friends/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1613)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 1750)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 7753)
+Completed 200 OK in 34ms (Views: 25.4ms | ActiveRecord: 0.9ms | Allocations: 8942)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-12 18:46:39 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 6914)
+Completed 200 OK in 32ms (Views: 18.4ms | ActiveRecord: 0.9ms | Allocations: 8788)
+
+
+Started DELETE "/friend/1" for 127.0.0.1 at 2022-12-12 18:46:42 -0500
+Processing by FriendsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ? AND "friends"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:80:in `isVerified'
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:70:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friends_controller.rb:71:in `destroy'
+  [1m[36mFriend Destroy (0.4ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/friends_controller.rb:71:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friends_controller.rb:71:in `destroy'
+Redirected to http://127.0.0.1:3000/friends
+Completed 302 Found in 33ms (ActiveRecord: 2.6ms | Allocations: 4843)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-12 18:46:42 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 803)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6069)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 7935)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-12 18:46:45 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 18ms (ActiveRecord: 0.7ms | Allocations: 1751)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-12 18:46:45 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 745)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5864)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 6344)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 14:34:25 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 18.7ms | Allocations: 8935)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1102)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 15378)
+Completed 200 OK in 48ms (Views: 35.3ms | ActiveRecord: 0.0ms | Allocations: 18446)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 14:34:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 646)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 5088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 778)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 10250)
+Completed 200 OK in 42ms (Views: 24.7ms | ActiveRecord: 0.8ms | Allocations: 16753)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-12-18 14:34:32 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1849ms (ActiveRecord: 1.1ms | Allocations: 4965)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 14:34:33 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1119)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 14:34:33 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1662)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.3ms | Allocations: 1745)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 153)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 8037)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.1ms | Allocations: 8591)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 14:34:36 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 1.4ms | Allocations: 601)
+  Rendered home/media.html.erb within layouts/application (Duration: 5.9ms | Allocations: 5503)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 847)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 10628)
+Completed 200 OK in 64ms (Views: 23.8ms | ActiveRecord: 1.5ms | Allocations: 20817)
+
+
+Started GET "/home/recommendations" for 127.0.0.1 at 2022-12-18 14:34:39 -0500
+Processing by HomeController#recommendations as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:77:in `recommendations'
+  [1m[36mFriend Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "friends" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:73:in `isEmpty'
+  Rendering layout layouts/application.html.erb
+  Rendering home/recommendations.html.erb within layouts/application
+  Rendered home/recommendations.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 836)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 7107)
+Completed 200 OK in 49ms (Views: 28.1ms | ActiveRecord: 1.6ms | Allocations: 10222)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 14:34:40 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 823)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 6444)
+Completed 200 OK in 35ms (Views: 22.3ms | ActiveRecord: 0.4ms | Allocations: 9128)
+
+
+Started POST "/friends" for 127.0.0.1 at 2022-12-18 14:34:51 -0500
+Processing by FriendsController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "friend_email"=>"jack@columbia.edu", "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/friends_controller.rb:27:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:31:in `block in index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6060)
+Completed 200 OK in 71ms (Views: 9.8ms | ActiveRecord: 1.0ms | Allocations: 9445)
+
+
+Started GET "/addFriend?friend_id=2" for 127.0.0.1 at 2022-12-18 14:34:53 -0500
+Processing by FriendsController#addFriend as HTML
+  Parameters: {"friend_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friends_controller.rb:52:in `block in addFriend'
+  [1m[36mFriend Create (0.4ms)[0m  [1m[32mINSERT INTO "friends" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", 2], ["user_id", 1], ["created_at", "2022-12-18 19:34:53.803920"], ["updated_at", "2022-12-18 19:34:53.803920"]]
+  ↳ app/controllers/friends_controller.rb:52:in `block in addFriend'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friends_controller.rb:52:in `block in addFriend'
+Redirected to http://127.0.0.1:3000/friends
+Completed 302 Found in 56ms (ActiveRecord: 1.5ms | Allocations: 18242)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 14:34:53 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1069)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 840)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6390)
+Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 8292)
+
+
+Started GET "/friend/2?friend_uid=2" for 127.0.0.1 at 2022-12-18 14:34:55 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"friend_uid"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:64:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/friends/show.html.erb:4
+  Rendered friends/_mediaCard.html.erb (Duration: 2.7ms | Allocations: 331)
+  Rendered friends/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1495)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.9ms | Allocations: 1762)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 7634)
+Completed 200 OK in 42ms (Views: 33.4ms | ActiveRecord: 0.5ms | Allocations: 8809)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 14:34:59 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1070)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 840)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 6284)
+Completed 200 OK in 35ms (Views: 22.9ms | ActiveRecord: 0.5ms | Allocations: 8263)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-18 14:35:02 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms | Allocations: 2167)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 14:35:02 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 738)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 757)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5889)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 6370)
+
+
+Started GET "/home/recommendations" for 127.0.0.1 at 2022-12-18 14:35:04 -0500
+Processing by HomeController#recommendations as HTML
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 823)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 14:35:04 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 173)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1074)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 778)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 6385)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 7021)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 14:35:05 -0500
+Processing by FriendsController#index as HTML
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 14:35:05 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 172)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1065)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 770)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 6364)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 6987)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2022-12-18 14:35:06 -0500
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 1.8ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 816)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5476)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 6004)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 14:35:08 -0500
+Processing by HomeController#media as HTML
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 14:35:08 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 173)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1074)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 778)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 6383)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 7007)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 16:04:04 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 21.2ms | Allocations: 8983)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1102)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 15366)
+Completed 200 OK in 59ms (Views: 44.8ms | ActiveRecord: 0.0ms | Allocations: 18492)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 16:04:06 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 646)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 5087)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 778)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 10249)
+Completed 200 OK in 45ms (Views: 26.7ms | ActiveRecord: 0.9ms | Allocations: 16749)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-12-18 16:04:08 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1823ms (ActiveRecord: 1.3ms | Allocations: 4794)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 16:04:10 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1118)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 16:04:10 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.6ms | Allocations: 1745)
+  Rendered layouts/_alerts.html.erb (Duration: 0.6ms | Allocations: 153)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 8033)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.1ms | Allocations: 8586)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 16:04:12 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 1.7ms | Allocations: 605)
+  Rendered home/media.html.erb within layouts/application (Duration: 28.0ms | Allocations: 5507)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 847)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 10635)
+Completed 200 OK in 75ms (Views: 36.8ms | ActiveRecord: 1.4ms | Allocations: 20365)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 16:04:14 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1710)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 848)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 6934)
+Completed 200 OK in 45ms (Views: 16.5ms | ActiveRecord: 1.4ms | Allocations: 13455)
+
+
+Started GET "/friend/2?friend_uid=2" for 127.0.0.1 at 2022-12-18 16:04:15 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"friend_uid"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:64:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/friends/show.html.erb:4
+  Rendered friends/_mediaCard.html.erb (Duration: 1.2ms | Allocations: 331)
+  Rendered friends/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1588)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.1ms | Allocations: 1762)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 7727)
+Completed 200 OK in 36ms (Views: 27.9ms | ActiveRecord: 0.6ms | Allocations: 8914)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 16:04:19 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 840)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 6388)
+Completed 200 OK in 29ms (Views: 13.4ms | ActiveRecord: 0.8ms | Allocations: 8819)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 16:04:40 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1064)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 840)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 6278)
+Completed 200 OK in 32ms (Views: 18.4ms | ActiveRecord: 0.8ms | Allocations: 8154)
+
+
+Started GET "/home/recommendations" for 127.0.0.1 at 2022-12-18 16:04:42 -0500
+Processing by HomeController#recommendations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:77:in `recommendations'
+  [1m[36mFriend Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "friends" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:73:in `isEmpty'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:95:in `recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:97:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='series') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:107:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='game') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:115:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='podcast') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:123:in `block in recommendations'
+  [1m[36mCACHE Medium Load (0.0ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:147:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (title ='Iron Man')[0m
+  ↳ app/controllers/home_controller.rb:162:in `recommendations'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:163:in `block in recommendations'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (name =2) AND (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:164:in `block in recommendations'
+  Rendering layout layouts/application.html.erb
+  Rendering home/recommendations.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/home/recommendations.html.erb:17
+  Rendered home/recommendations.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 861)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 7374)
+Completed 200 OK in 55ms (Views: 14.7ms | ActiveRecord: 2.2ms | Allocations: 15912)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 16:04:42 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 0.6ms | Allocations: 228)
+  Rendered home/media.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4684)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 839)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 9923)
+Completed 200 OK in 47ms (Views: 32.0ms | ActiveRecord: 0.6ms | Allocations: 12336)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 16:04:43 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 1562)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 16:04:43 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1380)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 1731)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 7387)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms | Allocations: 7821)
+
+
+Started POST "/home/search" for 127.0.0.1 at 2022-12-18 16:04:47 -0500
+Processing by HomeController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "query"=>"minecraft", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/_imdbCard.html.erb:23
+  Rendered home/_imdbCard.html.erb (Duration: 26.4ms | Allocations: 5921)
+  Rendered home/search.html.erb within layouts/application (Duration: 37.1ms | Allocations: 7488)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 823)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 12605)
+Completed 200 OK in 1399ms (Views: 49.4ms | ActiveRecord: 0.3ms | Allocations: 23560)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 16:13:01 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 26ms (ActiveRecord: 0.7ms | Allocations: 7495)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 16:13:01 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 13.4ms | Allocations: 7106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 5.9ms | Allocations: 2093)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 14466)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.2ms | Allocations: 16605)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 16:13:03 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 1.5ms | Allocations: 605)
+  Rendered home/media.html.erb within layouts/application (Duration: 10.3ms | Allocations: 8000)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 847)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 13127)
+Completed 200 OK in 60ms (Views: 19.1ms | ActiveRecord: 1.5ms | Allocations: 23307)
+
+
+Started GET "/media/new" for 127.0.0.1 at 2022-12-18 16:13:08 -0500
+Processing by MediaController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering media/new.html.erb within layouts/application
+  Rendered media/_form.html.erb (Duration: 7.6ms | Allocations: 2440)
+  Rendered media/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2771)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 846)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 7930)
+Completed 200 OK in 41ms (Views: 19.1ms | ActiveRecord: 0.2ms | Allocations: 14564)
+
+
+Started POST "/media" for 127.0.0.1 at 2022-12-18 16:13:13 -0500
+Processing by MediaController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "medium"=>{"media_type"=>"movie", "title"=>"asda", "director"=>"asdsd", "genre"=>"asdsa", "rating"=>"12", "summary"=>"asd", "user_id"=>"1", "imdb_id"=>"NA", "poster_url"=>"N/A"}, "commit"=>"Create Medium"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/media_controller.rb:56:in `block in create'
+  [1m[36mMedium Create (0.9ms)[0m  [1m[32mINSERT INTO "media" ("user_id", "imdb_id", "title", "director", "genre", "rating", "created_at", "updated_at", "media_type", "poster_url", "summary") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["imdb_id", "NA"], ["title", "asda"], ["director", "asdsd"], ["genre", "asdsa"], ["rating", 12.0], ["created_at", "2022-12-18 21:13:13.961101"], ["updated_at", "2022-12-18 21:13:13.961101"], ["media_type", "movie"], ["poster_url", "N/A"], ["summary", "asd"]]
+  ↳ app/controllers/media_controller.rb:56:in `block in create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/media_controller.rb:56:in `block in create'
+Redirected to http://127.0.0.1:3000/home/media
+Completed 302 Found in 29ms (ActiveRecord: 2.4ms | Allocations: 4159)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 16:13:13 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 2.1ms | Allocations: 929)
+  Rendered home/media.html.erb within layouts/application (Duration: 5.5ms | Allocations: 5371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 821)
+  Rendered layouts/_alerts.html.erb (Duration: 1.7ms | Allocations: 154)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 10728)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 0.3ms | Allocations: 12657)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 16:16:28 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 26ms (ActiveRecord: 0.7ms | Allocations: 7498)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 16:16:28 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 12.4ms | Allocations: 7106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.3ms | Allocations: 2093)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 14466)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.2ms | Allocations: 16393)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-12-18 16:16:31 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 230)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2497)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 846)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7682)
+Completed 200 OK in 27ms (Views: 20.7ms | ActiveRecord: 0.2ms | Allocations: 10328)
+
+
+Started GET "/home/recommendations" for 127.0.0.1 at 2022-12-18 16:16:33 -0500
+Processing by HomeController#recommendations as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:77:in `recommendations'
+  [1m[36mFriend Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "friends" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:73:in `isEmpty'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:95:in `recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:97:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='series') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:107:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='game') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:115:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='podcast') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:123:in `block in recommendations'
+  [1m[36mCACHE Medium Load (0.0ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:147:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (title ='Iron Man')[0m
+  ↳ app/controllers/home_controller.rb:162:in `recommendations'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:163:in `block in recommendations'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (name =2) AND (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:164:in `block in recommendations'
+  Rendering layout layouts/application.html.erb
+  Rendering home/recommendations.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/home/recommendations.html.erb:17
+  Rendered home/recommendations.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 861)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 7386)
+Completed 200 OK in 102ms (Views: 14.2ms | ActiveRecord: 2.8ms | Allocations: 26625)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 16:16:41 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.4ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 3.5ms | Allocations: 1299)
+  Rendered home/media.html.erb within layouts/application (Duration: 12.4ms | Allocations: 8663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 822)
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 13668)
+Completed 200 OK in 40ms (Views: 25.9ms | ActiveRecord: 0.7ms | Allocations: 15927)
+
+
+Started GET "/home/recommendations" for 127.0.0.1 at 2022-12-18 16:16:42 -0500
+Processing by HomeController#recommendations as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:77:in `recommendations'
+  [1m[36mFriend Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "friends" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:73:in `isEmpty'
+  [1m[36mFriend Load (1.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:95:in `recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:97:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='series') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:107:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='game') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:115:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='podcast') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:123:in `block in recommendations'
+  [1m[36mCACHE Medium Load (0.0ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:147:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (title ='Iron Man')[0m
+  ↳ app/controllers/home_controller.rb:162:in `recommendations'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:163:in `block in recommendations'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (name =2) AND (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:164:in `block in recommendations'
+  Rendering layout layouts/application.html.erb
+  Rendering home/recommendations.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/home/recommendations.html.erb:17
+  Rendered home/recommendations.html.erb within layouts/application (Duration: 4.1ms | Allocations: 802)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 849)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 6029)
+Completed 200 OK in 67ms (Views: 20.6ms | ActiveRecord: 4.0ms | Allocations: 14324)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 16:19:00 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 4.5ms | Allocations: 1026)
+  Rendered home/media.html.erb within layouts/application (Duration: 15.7ms | Allocations: 5464)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 814)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 10459)
+Completed 200 OK in 45ms (Views: 28.3ms | ActiveRecord: 0.4ms | Allocations: 12932)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 16:19:00 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1109)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 16:19:00 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1380)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.4ms | Allocations: 1731)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 7389)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.1ms | Allocations: 7824)
+
+
+Started POST "/home/search" for 127.0.0.1 at 2022-12-18 16:19:04 -0500
+Processing by HomeController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "query"=>"hello world", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/_imdbCard.html.erb:23
+  Rendered home/_imdbCard.html.erb (Duration: 25.5ms | Allocations: 5893)
+  Rendered home/search.html.erb within layouts/application (Duration: 36.7ms | Allocations: 7460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 823)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 47.1ms | Allocations: 12577)
+Completed 200 OK in 15391ms (Views: 49.7ms | ActiveRecord: 0.3ms | Allocations: 23362)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 16:21:59 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 24ms (ActiveRecord: 0.6ms | Allocations: 7497)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 16:22:00 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 16.6ms | Allocations: 7166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 5.8ms | Allocations: 2093)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 14602)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.2ms | Allocations: 16912)
+
+
+Started GET "/media/new" for 127.0.0.1 at 2022-12-18 16:22:02 -0500
+Processing by MediaController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering media/new.html.erb within layouts/application
+  Rendered media/_form.html.erb (Duration: 7.3ms | Allocations: 4299)
+  Rendered media/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 4630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 846)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 9789)
+Completed 200 OK in 73ms (Views: 17.6ms | ActiveRecord: 0.7ms | Allocations: 23747)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 21:01:39 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 25ms (ActiveRecord: 0.7ms | Allocations: 7497)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 21:01:39 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 14.8ms | Allocations: 7106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 5.9ms | Allocations: 2093)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 14466)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.1ms | Allocations: 16393)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 21:01:39 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:9:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1062)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 21:01:39 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 7.2ms | Allocations: 1776)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 8147)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms | Allocations: 8568)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 21:01:42 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 2.7ms | Allocations: 1307)
+  Rendered home/media.html.erb within layouts/application (Duration: 11.1ms | Allocations: 8708)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 822)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 13713)
+Completed 200 OK in 83ms (Views: 43.0ms | ActiveRecord: 1.5ms | Allocations: 23946)
+
+
+Started GET "/media/new" for 127.0.0.1 at 2022-12-18 21:01:43 -0500
+Processing by MediaController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering media/new.html.erb within layouts/application
+  Rendered media/_form.html.erb (Duration: 5.9ms | Allocations: 2184)
+  Rendered media/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 846)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 7668)
+Completed 200 OK in 45ms (Views: 18.8ms | ActiveRecord: 0.3ms | Allocations: 14296)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 21:01:56 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:34:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:49:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 5.6ms | Allocations: 954)
+  Rendered home/media.html.erb within layouts/application (Duration: 15.7ms | Allocations: 5395)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.2ms | Allocations: 821)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 10497)
+Completed 200 OK in 52ms (Views: 35.4ms | ActiveRecord: 0.7ms | Allocations: 12921)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 23:01:27 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 25ms (ActiveRecord: 0.6ms | Allocations: 7311)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 23:01:27 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 16.7ms | Allocations: 7106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+Started GET "/" for 127.0.0.1 at 2022-12-18 23:01:27 -0500
+  Rendered layouts/_header.html.erb (Duration: 26.9ms | Allocations: 3500)
+Processing by HomeController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 862)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 62.3ms | Allocations: 17377)
+  ↳ app/controllers/home_controller.rb:8:in `index'
+Completed 200 OK in 70ms (Views: 66.9ms | ActiveRecord: 0.2ms | Allocations: 19703)
+
+
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms | Allocations: 2804)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 23:01:27 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 5.3ms | Allocations: 1739)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 8905)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.1ms | Allocations: 9325)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-12-18 23:01:29 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 230)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2503)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 846)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7687)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.2ms | Allocations: 10315)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-18 23:01:35 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 18ms (ActiveRecord: 0.3ms | Allocations: 4484)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 23:01:35 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 757)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 154)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 6414)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 7038)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 23:01:37 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.9ms | Allocations: 646)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2608)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 778)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 7823)
+Completed 200 OK in 53ms (Views: 46.8ms | ActiveRecord: 0.0ms | Allocations: 9229)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 23:02:52 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 503)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 6666)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1131)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 18555)
+Completed 200 OK in 64ms (Views: 41.3ms | ActiveRecord: 0.5ms | Allocations: 27334)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-18 23:02:54 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 229)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 153)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 778)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 6785)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 8037)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-18 23:02:57 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 109)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 778)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 6843)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.0ms | Allocations: 7459)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-12-18 23:02:58 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dk3245@columbia.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dk3245@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1819ms (ActiveRecord: 0.6ms | Allocations: 4817)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 23:03:00 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1163)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 23:03:00 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1664)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 4.3ms | Allocations: 1745)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 153)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 8039)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms | Allocations: 9083)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-12-18 23:03:04 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1654)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 846)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 6964)
+Completed 200 OK in 28ms (Views: 18.3ms | ActiveRecord: 0.4ms | Allocations: 8718)
+
+
+Started GET "/home/recommendations" for 127.0.0.1 at 2022-12-18 23:03:08 -0500
+Processing by HomeController#recommendations as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:74:in `recommendations'
+  [1m[36mFriend Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "friends" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:70:in `isEmpty'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:92:in `recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:94:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='series') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:104:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='game') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:112:in `block in recommendations'
+  [1m[36mMedium Load (1.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='podcast') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:120:in `block in recommendations'
+  [1m[36mCACHE Medium Load (0.0ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:144:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (title ='Iron Man')[0m
+  ↳ app/controllers/home_controller.rb:159:in `recommendations'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:160:in `block in recommendations'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (name =2) AND (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:161:in `block in recommendations'
+  Rendering layout layouts/application.html.erb
+  Rendering home/recommendations.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/home/recommendations.html.erb:17
+  Rendered home/recommendations.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 861)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 7380)
+Completed 200 OK in 118ms (Views: 26.7ms | ActiveRecord: 4.8ms | Allocations: 26630)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 23:03:11 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:32:in `media'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:46:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 3.9ms | Allocations: 1297)
+  Rendered home/media.html.erb within layouts/application (Duration: 13.6ms | Allocations: 6199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 822)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 11205)
+Completed 200 OK in 66ms (Views: 54.9ms | ActiveRecord: 0.3ms | Allocations: 13440)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 23:03:13 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+Redirected to http://127.0.0.1:3000/home/search
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms | Allocations: 1096)
+
+
+Started GET "/home/search" for 127.0.0.1 at 2022-12-18 23:03:13 -0500
+Processing by HomeController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/search.html.erb within layouts/application
+  Rendered home/search.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1380)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (Duration: 6.2ms | Allocations: 1731)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 7387)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.2ms | Allocations: 7822)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 23:03:14 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:32:in `media'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:46:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 2.3ms | Allocations: 1023)
+  Rendered home/media.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5464)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 814)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 10463)
+Completed 200 OK in 32ms (Views: 16.6ms | ActiveRecord: 0.5ms | Allocations: 12918)
+
+
+Started GET "/media/new" for 127.0.0.1 at 2022-12-18 23:03:15 -0500
+Processing by MediaController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering media/new.html.erb within layouts/application
+  Rendered media/_form.html.erb (Duration: 9.6ms | Allocations: 2037)
+  Rendered media/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2368)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 846)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 7526)
+Completed 200 OK in 57ms (Views: 29.2ms | ActiveRecord: 0.2ms | Allocations: 13363)
+
+
+Started POST "/media" for 127.0.0.1 at 2022-12-18 23:03:23 -0500
+Processing by MediaController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "medium"=>{"media_type"=>"movie", "title"=>"sds", "director"=>"asd", "genre"=>"asd", "rating"=>"12", "summary"=>"asd", "user_id"=>"1", "imdb_id"=>"NA", "poster_url"=>"N/A"}, "commit"=>"Create Medium"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/media_controller.rb:49:in `block in create'
+  [1m[36mMedium Create (0.5ms)[0m  [1m[32mINSERT INTO "media" ("user_id", "imdb_id", "title", "director", "genre", "rating", "created_at", "updated_at", "media_type", "poster_url", "summary") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["imdb_id", "NA"], ["title", "sds"], ["director", "asd"], ["genre", "asd"], ["rating", 12.0], ["created_at", "2022-12-19 04:03:23.321428"], ["updated_at", "2022-12-19 04:03:23.321428"], ["media_type", "movie"], ["poster_url", "N/A"], ["summary", "asd"]]
+  ↳ app/controllers/media_controller.rb:49:in `block in create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/media_controller.rb:49:in `block in create'
+Redirected to http://127.0.0.1:3000/home/media
+Completed 302 Found in 30ms (ActiveRecord: 1.5ms | Allocations: 4143)
+
+
+Started GET "/home/media" for 127.0.0.1 at 2022-12-18 23:03:23 -0500
+Processing by HomeController#media as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:32:in `media'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE "media"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/home_controller.rb:46:in `media'
+  Rendering layout layouts/application.html.erb
+  Rendering home/media.html.erb within layouts/application
+  Rendered home/_mediaCard.html.erb (Duration: 3.9ms | Allocations: 1275)
+  Rendered home/media.html.erb within layouts/application (Duration: 13.1ms | Allocations: 5716)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 821)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 10827)
+Completed 200 OK in 75ms (Views: 31.0ms | ActiveRecord: 0.2ms | Allocations: 12769)
+
+
+Started GET "/home/recommendations" for 127.0.0.1 at 2022-12-18 23:03:30 -0500
+Processing by HomeController#recommendations as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:74:in `recommendations'
+  [1m[36mFriend Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "friends" WHERE (user_id =1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:70:in `isEmpty'
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:92:in `recommendations'
+  [1m[36mMedium Load (0.3ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:94:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='series') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:104:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='game') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:112:in `block in recommendations'
+  [1m[36mMedium Load (0.2ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='podcast') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:120:in `block in recommendations'
+  [1m[36mCACHE Medium Load (0.0ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (user_id =2)[0m
+  ↳ app/controllers/home_controller.rb:144:in `block in recommendations'
+  [1m[36mMedium Load (0.1ms)[0m  [1m[34mSELECT "media".* FROM "media" WHERE (media_type ='movie') AND (title ='Iron Man')[0m
+  ↳ app/controllers/home_controller.rb:159:in `recommendations'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:160:in `block in recommendations'
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (name =2) AND (user_id =1)[0m
+  ↳ app/controllers/home_controller.rb:161:in `block in recommendations'
+  Rendering layout layouts/application.html.erb
+  Rendering home/recommendations.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id =2) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/home/recommendations.html.erb:17
+  Rendered home/recommendations.html.erb within layouts/application (Duration: 2.8ms | Allocations: 802)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 849)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 6028)
+Completed 200 OK in 48ms (Views: 11.6ms | ActiveRecord: 2.2ms | Allocations: 14321)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-12-18 23:03:31 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friends_controller.rb:8:in `index'
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/friends_controller.rb:17:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friends/index.html.erb:46
+  Rendered friends/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1713)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 848)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 6935)
+Completed 200 OK in 29ms (Views: 18.4ms | ActiveRecord: 0.7ms | Allocations: 9635)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-18 23:03:35 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 40ms (ActiveRecord: 0.3ms | Allocations: 11170)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-18 23:03:35 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 757)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6160)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 6762)
+
+

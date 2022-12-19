@@ -2,7 +2,6 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
-# TODO: Fix session problem
 
 class HomeController < ApplicationController
   def index
@@ -25,7 +24,6 @@ class HomeController < ApplicationController
             @imdbResData.append(imdbRes)
           end
         end
-        # session[:imdbRes] = imdbResData
       end
     end
   end
@@ -43,7 +41,6 @@ class HomeController < ApplicationController
     end
 
     if user_signed_in?
-      puts current_user.id
       @userMedia = Medium.where(user_id: current_user.id)
       @media_to_show = []
       @userMedia.each do |m|
