@@ -17,7 +17,7 @@ RSpec.describe HomeController, type: :controller do
       expect(response).to redirect_to(home_search_path)
     end
   end
-  
+
   describe 'Test IMDB search functionality' do
     login_user
     context 'When logged in users search IMDB' do
@@ -28,14 +28,14 @@ RSpec.describe HomeController, type: :controller do
       end
     end
   end
-  
+
   describe 'If user has not logged in' do
     it 'accessing media page should redirect them to login page' do
       get :media
       expect(flash).to have_attributes(notice: "You need to log in first!")
       response.should redirect_to(new_user_session_path)
     end
-  
+
     it 'accessing recommendations page should redirect them to login page' do
       get :recommendations
       expect(flash).to have_attributes(notice: "You need to log in first!")
@@ -51,12 +51,12 @@ RSpec.describe HomeController, type: :controller do
       expect(assigns(:all_types)).to be_an_instance_of(Array)
       expect(assigns(:all_types)).to eq(["movie", "series", "game", "podcast"])
       response.should render_template('media')
-    end 
+    end
   end
-  
-  describe "Check showDetails functionality" do
+
+  describe 'Check showDetails functionality' do
     login_user
-    it "sets the correct instance variables" do
+    it 'sets the correct instance variables' do
       get :showDetails, params: { mediaInfo: { "Type" => "movie", "Title" => "some movie", "imdbID" => "tt1234567" } }
 
       expect(assigns(:type)).to eq("movie")
@@ -65,16 +65,43 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe "Verify isEmpty functionality" do
-    it "returns true for an empty record" do
+  describe 'Verify isEmpty functionality' do
+    it 'returns true for an empty record' do
       expect(controller.isEmpty([])).to be(true)
       expect(controller.isEmpty({})).to be(true)
     end
 
-    it "returns false for a non-empty record" do
+    it 'returns false for a non-empty record' do
       expect(controller.isEmpty([1, 2, 3])).to be(false)
       expect(controller.isEmpty({ a: 1, b: 2 })).to be(false)
     end
   end
+
+
+  describe 'Check Recommendation functionality' do
+    let(:user) { FactoryBot.create(:user) }
+    let(:friendsEmpty) { false }
+
+    before do
+      sign_in user
+    end
+
+    it 'sets the correct instance variables for userFriends and friendsEmpty' do
+      get :recommendations
+      expect(assigns(:userFriends)).to eq(Friend.where("user_id =?", user.id))
+    end
+
+    # it 'correctly get the number of movies, shows, games, and podcasts based on the genre' do
+    #   FactoryBot.create(:medium, user: user, media_type: "movie", genre: "Action, Adventure")
+    #   FactoryBot.create(:medium, user: user, media_type: "movie", genre: "Action")
+    #   FactoryBot.create(:medium, user: user, media_type: "movie", genre: "Adventure")
+
+    #   get :recommendations
+
+    #   expected_hash = { "Action" => 2, "Adventure" => 2 }
+    #   expect(assigns(:movieGenres)).to eq(expected_hash)
+    # end
+  end
+
 
 end
