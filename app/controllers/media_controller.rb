@@ -12,10 +12,7 @@ class MediaController < ApplicationController
     @medium = current_user.media.build
   end
 
-  # GET /media/1/edit for user defined media
-  def edit
-  end
-
+  # GET: creates new media based on IMDB data
   def createImdb
     # check to see if imdb data already exists
     if Medium.where(user_id: params[:user_id].to_i, imdb_id: params[:imdb_id]).length > 0
@@ -44,13 +41,9 @@ class MediaController < ApplicationController
     end
   end
 
-
-  # POST /media or /media.json for user defined media
+  # POST: allows users to create their own media 
   def create
     @medium = current_user.media.build(medium_params)
-    if @medium["summary"] == 0
-      @medium["summary"] = "Not Provided..."
-    end
 
     respond_to do |format|
       if @medium.save
@@ -58,19 +51,6 @@ class MediaController < ApplicationController
         # format.json { render :show, status: :created, location: @medium }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @medium.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /media/1 or /media/1.json for user defined media
-  def update
-    respond_to do |format|
-      if @medium.update(medium_params)
-        format.html { redirect_to medium_url(@medium), notice: "Media was successfully updated." }
-        format.json { render :show, status: :ok, location: @medium }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @medium.errors, status: :unprocessable_entity }
       end
     end

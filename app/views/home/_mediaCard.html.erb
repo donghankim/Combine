@@ -5,8 +5,10 @@
                 <div class="col-md-4">
                     <% if media["poster_url"] == "N/A" %>
                         <%= image_tag "notfound.png", class: "card-img-top img-fluid rounded-start" %>
+                        <p style="text-align:center; margin-top: 10px; color:#717171;"><%= media['media_type'] %></p>
                     <% else %>
                         <img class="card-img-top" src="<%= media["poster_url"] %>" alt="Media Poster">
+                        <p style="text-align:center; margin-top: 10px; color:#717171;"><%= media['media_type'] %></p>
                     <% end %>
                 </div>
                 <div class="col-md-8">

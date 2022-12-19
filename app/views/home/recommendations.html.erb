@@ -1,127 +1,117 @@
 <h1>Recommendations</h1>
 <p>Recommendations based on what your friends have seen will be shown below!</p>
 
-<tbody>
-    <% if @friendsEmpty %>
-        <tr>
-            <td colspan="100%", style = "text-align: center;">You have not added any friends so we cant recommend anything...
-                <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
-            </td>
-        </tr>
-    <% else %>
-        <h2>Movie Recommendation</h2>
-        <% if @moviesEmpty %>
-            <tr>
-                <td colspan="100%", style = "text-align: center;">Youre friends have not added any movies so we cant recommend anything...
-                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
-                </td>
-            </tr>
-        <% else %>
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @movieRecommendation.title %></h3>
-                    <hr class="my-4">
-                    <h6>Friends that have seen this movie: 
-                        <% @movieRecommendedBy.each_with_index do |hasSeen, index| %> 
-                            <% if index == @movieRecommendedBy.size - 1 %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>
-                            <% else %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>, 
-                            <% end %>
-                        <% end %>
-                    </h6>
-                    <h6>Rating: <%= @movieRecommendation.rating %></h6>
-                    <h6>Director: <%= @movieRecommendation.director %></h6>
-                    <h6>Genre: <%= @movieRecommendation.genre %></h6>
-                </div>
-            </div>
-        <% end %>
-
-        <h2>TV Show Recommendation</h2>
-        <% if @showsEmpty %>
-            <tr>
-                <td colspan="100%", style = "text-align: center;">Youre friends have not added any shows so we cant recommend anything...
-                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
-                </td>
-            </tr>
-        <% else %>
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @showRecommendation.title %></h3>
-                    <hr class="my-4">
-                    <h6>Friends that have seen this show: 
-                        <% @showRecommendedBy.each_with_index do |hasSeen, index| %> 
-                            <% if index == @showRecommendedBy.size - 1 %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>
-                            <% else %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>, 
-                            <% end %>
-                        <% end %>
-                    </h6>
-                    <h6>Rating: <%= @showRecommendation.rating %></h6>
-                    <h6>Director: <%= @showRecommendation.director %></h6>
-                    <h6>Genre: <%= @showRecommendation.genre %></h6>
-                </div>
-            </div>
-        <% end %>
-
-        <h2>Game Recommendation</h2>
-        <% if @gamesEmpty %>
-            <tr>
-                <td colspan="100%", style = "text-align: center;">Youre friends have not added any games so we cant recommend anything...
-                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
-                </td>
-            </tr>
-        <% else %>
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @gameRecommendation.title %></h3>
-                    <hr class="my-4">
-                    <h6>Friends that have seen this game: 
-                        <% @gameRecommendedBy.each_with_index do |hasSeen, index| %> 
-                            <% if index == @gameRecommendedBy.size - 1 %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>
-                            <% else %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>, 
-                            <% end %>
-                        <% end %>
-                    </h6>
-                    <h6>Rating: <%= @gameRecommendation.rating %></h6>
-                    <h6>Company: <%= @gameRecommendation.director %></h6>
-                    <h6>Genre: <%= @gameRecommendation.genre %></h6>
-                </div>
-            </div>
-        <% end %>
-
-        <h2>Podcast Recommendation</h2>
-        <% if @podcastsEmpty %>
-            <tr>
-                <td colspan="100%", style = "text-align: center;">Youre friends have not added any podcasts so we cant recommend anything...
-                    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
-                </td>
-            </tr>
-        <% else %>
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h3 class="display-5 fw-bold"><%= @podcastRecommendation.title %></h3>
-                    <hr class="my-4">
-                    <h6>Friends that have heard this podcast: 
-                        <% @podcastRecommendedBy.each_with_index do |hasSeen, index| %> 
-                            <% if index == @podcastRecommendedBy.size - 1 %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>
-                            <% else %>
-                                <%= User.where("id =?", hasSeen.id).first.email %>, 
-                            <% end %>
-                        <% end %>
-                    </h6>
-                    <h6>Rating: <%= @podcastRecommendation.rating %></h6>
-                    <h6>Company: <%= @podcastRecommendation.director %></h6>
-                    <h6>Genre: <%= @podcastRecommendation.genre %></h6>
-                </div>
-            </div>
-        <% end %>
-
+<% if @friendsEmpty %>
+    <p>You have not added any friends so we cant recommend anything...</p>
+    <p><%= image_tag "sad_face_better.png", width: 100, height: 100 %></p>
+<% else %>
+    <% if !@moviesEmpty %>
+    <h2>Movie Recommendation</h2>
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h3 class="display-5 fw-bold"><%= @movieRecommendation.title %></h3>
+            <hr class="my-4">
+            <h6>Friends that have seen this movie:
+                <% @movieRecommendedBy.each_with_index do |hasSeen, index| %>
+                    <% if index == @movieRecommendedBy.size - 1 %>
+                        <%= User.where("id =?", hasSeen.id).first.email %>
+                    <% else %>
+                        <%= User.where("id =?", hasSeen.id).first.email %>,
+                    <% end %>
+                <% end %>
+            </h6>
+            <% if @movieRecommendation.poster_url == "N/A" %>
+                <h6><%= image_tag "notfound.png"%></h6>
+            <% else %>
+                <h6><img src=<%= @movieRecommendation.poster_url %> alt="Movie Poster"></h6>
+            <% end %>
+            <h6>Rating: <%= @movieRecommendation.rating %></h6>
+            <h6>Director: <%= @movieRecommendation.director %></h6>
+            <h6>Genre: <%= @movieRecommendation.genre %></h6>
+            <h6>Summary: <%= @movieRecommendation.summary %></h6>
+        </div>
+    </div>
     <% end %>
-</tbody>
 
-</table>
+    <% if !@showsEmpty %>
+        <h2>TV Show Recommendation</h2>
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h3 class="display-5 fw-bold"><%= @showRecommendation.title %></h3>
+                <hr class="my-4">
+                <h6>Friends that have seen this show:
+                    <% @showRecommendedBy.each_with_index do |hasSeen, index| %>
+                        <% if index == @showRecommendedBy.size - 1 %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>
+                        <% else %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>,
+                        <% end %>
+                    <% end %>
+                </h6>
+                <% if @showRecommendation.poster_url == "N/A" %>
+                    <h6><%= image_tag "notfound.png"%></h6>
+                <% else %>
+                    <h6><img src=<%= @showRecommendation.poster_url %> alt="Tv Show Poster"></h6>
+                <% end %>
+                <h6>Rating: <%= @showRecommendation.rating %></h6>
+                <h6>Director: <%= @showRecommendation.director %></h6>
+                <h6>Genre: <%= @showRecommendation.genre %></h6>
+            </div>
+        </div>
+    <% end %>
+
+    <% if !@gamesEmpty %>
+        <h2>Game Recommendation</h2>
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h3 class="display-5 fw-bold"><%= @gameRecommendation.title %></h3>
+                <hr class="my-4">
+                <h6>Friends that have seen this game:
+                    <% @gameRecommendedBy.each_with_index do |hasSeen, index| %>
+                        <% if index == @gameRecommendedBy.size - 1 %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>
+                        <% else %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>,
+                        <% end %>
+                    <% end %>
+                </h6>
+                <% if @gameRecommendation.poster_url == "N/A" %>
+                    <h6><%= image_tag "notfound.png"%></h6>
+                <% else %>
+                    <h6><img src=<%= @gameRecommendation.poster_url %> alt="Game Poster"></h6>
+                <% end %>
+                <h6>Rating: <%= @gameRecommendation.rating %></h6>
+                <h6>Company: <%= @gameRecommendation.director %></h6>
+                <h6>Genre: <%= @gameRecommendation.genre %></h6>
+            </div>
+        </div>
+    <% end %>
+
+    <% if !@podcastsEmpty %>
+        <h2>Podcast Recommendation</h2>
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h3 class="display-5 fw-bold"><%= @podcastRecommendation.title %></h3>
+                <hr class="my-4">
+                <h6>Friends that have heard this podcast:
+                    <% @podcastRecommendedBy.each_with_index do |hasSeen, index| %>
+                        <% if index == @podcastRecommendedBy.size - 1 %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>
+                        <% else %>
+                            <%= User.where("id =?", hasSeen.id).first.email %>,
+                        <% end %>
+                    <% end %>
+                </h6>
+                <% if @podcastRecommendation.poster_url == "N/A" %>
+                        <h6><%= image_tag "notfound.png"%></h6>
+                    <% else %>
+                        <h6><img src=<%= @podcastRecommendation.poster_url %> alt="Podcast Poster"></h6>
+                <% end %>
+                <h6>Rating: <%= @podcastRecommendation.rating %></h6>
+                <h6>Company: <%= @podcastRecommendation.director %></h6>
+                <h6>Genre: <%= @podcastRecommendation.genre %></h6>
+            </div>
+        </div>
+    <% end %>
+<% end %>
+

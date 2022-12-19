@@ -3,7 +3,7 @@ presentations/
 temp.txt
 scraps.txt
 db/*.sqlite3
-log/*.log
+log/test.log
 scripts/
 
 *.gem
