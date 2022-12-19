@@ -4,25 +4,16 @@
 * Donghan Kim dk3245
 * Elia Lejzerowicz eel2157
 
-## TODO:
-All main functionalities have been implemented and tested. A few bugs and some design changes will be addressed before the final submission (proj-launch)
-* ~~Fix MySQL and Postgres DB field type incompatibility issue -> look at createImdb function and difference between params and current_user.id~~
-* Update form template (design)
-* Add additional flash message colors
-* Change freinds table view
-* Convert recommendation view into card design
-
 ## Software Requirements
 * Ruby Version: 2.6.6
 * Rails Version: 6.1.7
 * Node Version: v14.20.1
 * Development DB: sqlite3 v1.4
 * Production DB: postgres v1.4
-* OS: Mac Monterey 12.5
 * Heroku stack: 20
 
 ## Software Installations Guide
-ALL packages were installed using homebrew. These steps will work on **M1/M2 macbooks**. However, for other mac variants some of these steps might not work at once.
+ALL packages were installed using homebrew. These steps will work on **M1/M2 macbooks**. However, for other mac variants some of these steps might not work.
 ```sh
 # install rbenv and ruby-build
 brew install rbenv ruby-build
@@ -43,7 +34,7 @@ brew install sqlite3
 # install postrgesql
 brew install postgresql
 ```
-If this doesnt work, checkout <a href="https://gorails.com/setup/macos/12-monterey" target="_blank">ruby^rails install guide</a>
+If this doesnt work, checkout <a href="https://gorails.com/setup/macos/12-monterey" target="_blank">ruby&rails install guide</a>
 
 ## Local Development
 The following are instructions to run this application on your local machine
@@ -57,7 +48,9 @@ rm Gemfile.lock
 bundle install
 
 # set up local database
-rails db:migrate
+rake db:drop
+rake db:create
+rake db:schema:load
 
 # start server on localhost:3000
 rails server
