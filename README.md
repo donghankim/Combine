@@ -4,21 +4,12 @@
 * Donghan Kim dk3245
 * Elia Lejzerowicz eel2157
 
-## TODO:
-All main functionalities have been implemented and tested. A few bugs and some design changes will be addressed before the final submission (proj-launch)
-* ~~Fix MySQL and Postgres DB field type incompatibility issue -> look at createImdb function and difference between params and current_user.id~~
-* Update form template (design)
-* Add additional flash message colors
-* Change freinds table view
-* Convert recommendation view into card design
-
 ## Software Requirements
 * Ruby Version: 2.6.6
 * Rails Version: 6.1.7
 * Node Version: v14.20.1
 * Development DB: sqlite3 v1.4
 * Production DB: postgres v1.4
-* OS: Mac Monterey 12.5
 * Heroku stack: 20
 
 ## Software Installations Guide
@@ -43,7 +34,7 @@ brew install sqlite3
 # install postrgesql
 brew install postgresql
 ```
-If this doesnt work, checkout <a href="https://gorails.com/setup/macos/12-monterey" target="_blank">ruby^rails install guide</a>
+If this doesnt work, checkout <a href="https://gorails.com/setup/macos/12-monterey" target="_blank">ruby & rails install guide</a>
 
 ## Local Development
 The following are instructions to run this application on your local machine
@@ -56,8 +47,10 @@ cd Combine
 rm Gemfile.lock
 bundle install
 
-# set up local database
-rails db:migrate
+# set up local database (please do not run rake db:migrate, no migration files have been uploaded!)
+rake db:drop
+rake db:create
+rake db:schema:load
 
 # start server on localhost:3000
 rails server
@@ -74,29 +67,16 @@ rspec
 ```
 If you get an error from running bundle install, try using **sudo bundle install**. This is not recommended, but will solve any permission errors you encounter.
 
-## Heroku Helper
-Application is hosted using Heroku eco dynos and mini Heroku Postgres DB.
-```sh
-# set heroku app stack version
-$ heroku stack:set heroku-20
+## Rspec and Cucumber
+* <strong>Cucumber coverage: 94.7% (12 scenarios, 76 steps, 0 failures)</strong>
+* <strong>Rspec coverage: 57.34% (27 example, 0 failures)</strong>
 
-# to add heroku remote url
-$ git remote add heroku https://git.heroku.com/app.git
+Please keep in mind you have to remove the coverage folder before running either cucumber or rspec for the most recent coverage report.
+<img src="media/cucumber.png" width="425"/><img src="media/rspec.png" width="425"/>
 
-# upload code to heroku server
-$ git push heroku main
+## Heroku
+We have created fake users to help you evaluate and test our application. You can check the recommendation, searching/adding/removing friends feature using the test account.
+* Email: test@gmail.com
+* Password: test1234
 
-# clean heroku (postgres) db and populate seed data if needed
-$ heroku restart; heroku pg:reset DATABASE --confirm group29-combine; heroku run rails db:migrate
-$ heroku run rails db:seed
-
-# without migrations (build db from schema)
-$ heroku run rails db:schema:load
-
-# view heoku server logs (tail)
-$ heroku logs -t
-
-# access postgres (\q to quit)
-$ heroku pg:psql
-```
-
+When searching friends, we use Levenshtein distance with some added tolerance to ensure friends are searchable even in the presence of typos. For example, searching micheal@nyu.edi (typo) still returns micheal@nyu.edu (actual email).
