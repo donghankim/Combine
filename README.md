@@ -72,7 +72,9 @@ If you get an error from running bundle install, try using **sudo bundle install
 * <strong>Rspec coverage: 57.34% (27 example, 0 failures)</strong>
 
 Please keep in mind you have to remove the coverage folder before running either cucumber or rspec for the most recent coverage report.
-<img src="media/cucumber.png" width="425"/><img src="media/rspec.png" width="425"/>
+
+<img src="media/cucumber.png" width="425"/
+><img src="media/rspec.png" width="425"/>
 
 ## Heroku
 We have created fake users to help you evaluate and test our application. You can check the recommendation, searching/adding/removing friends feature using the test account.
