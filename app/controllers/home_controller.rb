@@ -292,7 +292,7 @@ class HomeController < ApplicationController
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
       request = Net::HTTP::Get.new(url)
-      request["X-RapidAPI-Key"] = '5e123f2c8dmshc41d6e06564d61dp107f8djsn8f0e356490a4'
+      request["X-RapidAPI-Key"] = 'KEY_REMOVED'
       request["X-RapidAPI-Host"] = 'movie-database-alternative.p.rapidapi.com'
 
       response = http.request(request)
@@ -308,7 +308,7 @@ class HomeController < ApplicationController
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
       request = Net::HTTP::Get.new(url)
-      request["X-RapidAPI-Key"] = '5e123f2c8dmshc41d6e06564d61dp107f8djsn8f0e356490a4'
+      request["X-RapidAPI-Key"] = 'KEY_REMOVED'
       request["X-RapidAPI-Host"] = 'movie-database-alternative.p.rapidapi.com'
 
       response = http.request(request)
