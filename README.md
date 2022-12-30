@@ -1,4 +1,5 @@
-# [Group 29] Combine: <a href="https://group29-combine.herokuapp.com/" target="_blank">Heroku Application Link</a>
+# [Group 29] Combine: ~~<a href="https://group29-combine.herokuapp.com/" target="_blank">Heroku Application Link</a>~~
+Heroku application not available as of December 31st 2022.
 
 * Jade Kaleel jik2124
 * Donghan Kim dk3245
